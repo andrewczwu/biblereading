@@ -362,6 +362,88 @@ Allow a user to leave a group schedule.
 - `400`: Cannot leave (only admin), or missing fields
 - `404`: User not a member
 
+### Get Group Members
+Retrieve all members of a group reading schedule with their profile information and progress.
+
+**Endpoint:** `GET /api/group-members/{groupId}`
+
+**Query Parameters:**
+- `includeInactive` (optional): Include inactive/left members (default: false)
+
+**Example:**
+```
+/api/group-members/bellevue-yp-2024-spring?includeInactive=true
+```
+
+**Response (200 OK):**
+```json
+{
+  "message": "Group members retrieved successfully",
+  "group": {
+    "groupId": "bellevue-yp-2024-spring",
+    "groupName": "Bellevue Young People Spring 2024",
+    "templateName": "Bellevue Young People New Testament",
+    "startDate": "2024-03-01",
+    "endDate": "2024-12-15",
+    "currentDay": 15,
+    "status": "active",
+    "memberCount": 12,
+    "createdBy": "admin123",
+    "isPublic": true,
+    "maxMembers": 50
+  },
+  "members": [
+    {
+      "userId": "admin123",
+      "userName": "John Admin",
+      "email": "john@example.com",
+      "role": "admin",
+      "status": "active",
+      "joinedAt": "2024-03-01T08:00:00Z",
+      "leftAt": null,
+      "currentDay": 15,
+      "completedDays": 12,
+      "lastActiveAt": "2024-03-15T19:30:00Z",
+      "userProfile": {
+        "displayName": "John Admin",
+        "firstName": "John",
+        "lastName": "Admin",
+        "email": "john@example.com",
+        "timezone": "America/New_York",
+        "preferredLanguage": "en"
+      }
+    },
+    {
+      "userId": "member456",
+      "userName": "Jane Member",
+      "email": "jane@example.com",
+      "role": "member",
+      "status": "active",
+      "joinedAt": "2024-03-02T10:30:00Z",
+      "leftAt": null,
+      "currentDay": 14,
+      "completedDays": 10,
+      "lastActiveAt": "2024-03-14T20:15:00Z",
+      "userProfile": {
+        "displayName": "Jane Member",
+        "firstName": "Jane",
+        "lastName": "Member",
+        "email": "jane@example.com",
+        "timezone": "America/Los_Angeles",
+        "preferredLanguage": "en"
+      }
+    }
+  ],
+  "totalMembers": 12,
+  "activeMembers": 10,
+  "admins": 2
+}
+```
+
+**Error Responses:**
+- `400`: Missing groupId parameter
+- `404`: Group reading schedule not found
+
 ---
 
 ## Reading Progress
@@ -633,6 +715,7 @@ The API endpoints are implemented in the following files:
 - **Individual Schedules**: `api/create-reading-schedule.js`
 - **Group Schedules**: `api/create-group-reading-schedule.js`
 - **Group Membership**: `api/join-group-reading-schedule.js`
+- **Group Members**: `api/get-group-members.js`
 - **Progress Tracking**: `api/mark-reading-completed.js`
 - **Reading Retrieval**: `api/get-reading-schedule-with-progress.js`
 
@@ -709,6 +792,9 @@ curl -X POST http://localhost:3000/api/user-profile \
 curl -X POST http://localhost:3000/api/create-reading-schedule \
   -H "Content-Type: application/json" \
   -d '{"userId":"user123","templateId":"bellevueYPNT","startDate":"2024-01-01"}'
+
+# Get group members
+curl http://localhost:3000/api/group-members/bellevue-yp-2024-spring
 ```
 
 ### Prerequisites

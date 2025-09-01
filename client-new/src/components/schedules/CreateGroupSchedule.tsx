@@ -204,7 +204,7 @@ const CreateGroupSchedule: React.FC<CreateGroupScheduleProps> = ({ onSuccess, on
         startDate: data.startDate,
         createdBy: currentUser.uid,
         isPublic: data.isPublic,
-        maxMembers: data.maxMembers,
+        maxMembers: data.maxMembers || undefined,
         customGroupId: data.customGroupId || undefined,
       };
 

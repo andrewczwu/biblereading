@@ -67,6 +67,13 @@ export const groupScheduleAPI = {
     const response = await api.post('/leave-group-reading-schedule', leaveData);
     return response.data;
   },
+
+  getMembers: async (groupId: string, includeInactive: boolean = false) => {
+    const response = await api.get(`/group-members/${groupId}`, {
+      params: { includeInactive }
+    });
+    return response.data;
+  },
 };
 
 // Progress API

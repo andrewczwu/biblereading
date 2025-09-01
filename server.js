@@ -7,6 +7,7 @@ const { createUserProfile, getUserProfile, updateUserProfile, deleteUserProfile 
 const { createReadingSchedule } = require('./api/create-reading-schedule');
 const { createGroupReadingSchedule } = require('./api/create-group-reading-schedule');
 const { joinGroupReadingSchedule, leaveGroupReadingSchedule } = require('./api/join-group-reading-schedule');
+const { getGroupMembers } = require('./api/get-group-members');
 const { markReadingCompleted } = require('./api/mark-reading-completed');
 const { getReadingScheduleWithProgress, getDayReading } = require('./api/get-reading-schedule-with-progress');
 const { getReadingTemplates, getReadingTemplate } = require('./api/get-reading-templates');
@@ -30,6 +31,7 @@ app.post('/api/create-reading-schedule', createReadingSchedule);
 app.post('/api/create-group-reading-schedule', createGroupReadingSchedule);
 app.post('/api/join-group-reading-schedule', joinGroupReadingSchedule);
 app.post('/api/leave-group-reading-schedule', leaveGroupReadingSchedule);
+app.get('/api/group-members/:groupId', getGroupMembers);
 
 // Reading Progress endpoints
 app.post('/api/mark-reading-completed', markReadingCompleted);
@@ -59,7 +61,8 @@ app.get('/', (req, res) => {
       groupSchedules: {
         'POST /api/create-group-reading-schedule': 'Create group reading schedule',
         'POST /api/join-group-reading-schedule': 'Join group reading schedule',
-        'POST /api/leave-group-reading-schedule': 'Leave group reading schedule'
+        'POST /api/leave-group-reading-schedule': 'Leave group reading schedule',
+        'GET /api/group-members/:groupId': 'Get all members of a group reading schedule'
       },
       readingProgress: {
         'POST /api/mark-reading-completed': 'Mark reading as completed/incomplete'

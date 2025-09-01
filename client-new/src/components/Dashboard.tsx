@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
@@ -116,9 +116,59 @@ const ButtonGroup = styled.div`
   margin-top: ${theme.spacing[6]};
 `;
 
+const GroupMembersSection = styled.div`
+  margin-top: ${theme.spacing[8]};
+  padding-top: ${theme.spacing[6]};
+  border-top: 1px solid ${theme.colors.gray[200]};
+`;
+
+const SectionTitle = styled.h3`
+  font-size: ${theme.fontSizes.lg};
+  font-weight: ${theme.fontWeights.semibold};
+  color: ${theme.colors.gray[900]};
+  margin-bottom: ${theme.spacing[4]};
+  text-align: center;
+`;
+
+const GroupIdForm = styled.div`
+  display: flex;
+  gap: ${theme.spacing[3]};
+  align-items: stretch;
+  max-width: 400px;
+  margin: 0 auto;
+
+  @media (max-width: ${theme.breakpoints.sm}) {
+    flex-direction: column;
+  }
+`;
+
+const GroupIdInput = styled.input`
+  flex: 1;
+  padding: ${theme.spacing[3]};
+  border: 1px solid ${theme.colors.gray[300]};
+  border-radius: ${theme.borderRadius.md};
+  font-size: ${theme.fontSizes.base};
+  
+  &:focus {
+    outline: none;
+    border-color: ${theme.colors.primary[500]};
+    box-shadow: 0 0 0 3px ${theme.colors.primary[100]};
+  }
+
+  &::placeholder {
+    color: ${theme.colors.gray[400]};
+  }
+`;
+
+const ViewMembersButton = styled(Button)`
+  white-space: nowrap;
+  min-width: 120px;
+`;
+
 export const Dashboard: React.FC = () => {
   const { currentUser, userProfile } = useAuth();
   const navigate = useNavigate();
+  const [groupId, setGroupId] = useState('');
 
   // Debug logging
   console.log('Dashboard - currentUser:', currentUser);
@@ -129,6 +179,12 @@ export const Dashboard: React.FC = () => {
     if (hour < 12) return 'Good morning';
     if (hour < 18) return 'Good afternoon';
     return 'Good evening';
+  };
+
+  const handleViewMembers = () => {
+    if (groupId.trim()) {
+      navigate(`/group/${groupId.trim()}/members`);
+    }
   };
 
   return (
@@ -166,6 +222,30 @@ export const Dashboard: React.FC = () => {
               Join Group
             </Button>
           </ButtonGroup>
+
+          <GroupMembersSection>
+            <SectionTitle>View Group Members</SectionTitle>
+            <GroupIdForm>
+              <GroupIdInput
+                type="text"
+                placeholder="Enter group ID (e.g. bellevue-yp-2024-spring)"
+                value={groupId}
+                onChange={(e) => setGroupId(e.target.value)}
+                onKeyPress={(e) => {
+                  if (e.key === 'Enter') {
+                    handleViewMembers();
+                  }
+                }}
+              />
+              <ViewMembersButton 
+                $variant="primary" 
+                onClick={handleViewMembers}
+                disabled={!groupId.trim()}
+              >
+                View Members
+              </ViewMembersButton>
+            </GroupIdForm>
+          </GroupMembersSection>
         </WelcomeMessage>
       </Card>
     </Container>

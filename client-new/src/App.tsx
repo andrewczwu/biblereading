@@ -1,4 +1,4 @@
-import React from 'react';
+// Remove unused React import since JSX transform handles it
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { GlobalStyles } from './styles/GlobalStyles';
@@ -9,6 +9,7 @@ import { Login } from './components/auth/Login';
 import { Register } from './components/auth/Register';
 import { Dashboard } from './components/Dashboard';
 import Schedules from './pages/Schedules';
+import { GroupMembersPage } from './pages/GroupMembersPage';
 
 function App() {
   return (
@@ -55,6 +56,12 @@ function App() {
           <Route path="/schedules" element={
             <PrivateRoute requireProfile>
               <Schedules />
+            </PrivateRoute>
+          } />
+          
+          <Route path="/group/:groupId/members" element={
+            <PrivateRoute requireProfile>
+              <GroupMembersPage />
             </PrivateRoute>
           } />
           

@@ -108,7 +108,7 @@ const Schedules: React.FC = () => {
   const [activeView, setActiveView] = useState<ActiveView>('menu');
   const navigate = useNavigate();
 
-  const handleSuccess = (result: any) => {
+  const handleSuccess = (_result: any) => {
     // Navigate to dashboard or a success page
     navigate('/dashboard');
   };

@@ -1,12 +1,13 @@
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
+import type { ReactNode } from 'react';
 import { 
-  User,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
   onAuthStateChanged,
   updateProfile
 } from 'firebase/auth';
+import type { User } from 'firebase/auth';
 import { auth } from '../config/firebase';
 import { userProfileAPI } from '../services/api';
 
