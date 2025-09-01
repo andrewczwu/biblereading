@@ -63,21 +63,6 @@ const WeekTitle = styled.h2`
   margin: 0;
 `;
 
-const WeekDayHeaders = styled.div`
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 1px;
-  margin-bottom: ${theme.spacing[2]};
-`;
-
-const DayHeader = styled.div`
-  text-align: center;
-  font-size: ${theme.fontSizes.xs};
-  font-weight: ${theme.fontWeights.semibold};
-  color: ${theme.colors.gray[600]};
-  padding: ${theme.spacing[1]};
-  text-transform: uppercase;
-`;
 
 const ScrollContainer = styled.div`
   flex: 1;
@@ -221,15 +206,6 @@ const NoReading = styled.div<{ $isToday?: boolean }>`
       content: "📅 ";
       font-size: ${theme.fontSizes.lg};
       margin-right: ${theme.spacing[1]};
-    }
-    
-    &::after {
-      content: " - You're all caught up for today!";
-      display: block;
-      font-size: ${theme.fontSizes.xs};
-      color: ${theme.colors.primary[500]};
-      margin-top: ${theme.spacing[1]};
-      font-style: italic;
     }
   `}
 `;
@@ -526,12 +502,6 @@ export const WeekView: React.FC<WeekViewProps> = ({ scheduleId, groupId }) => {
             Next →
           </NavButton>
         </WeekNavigation>
-        
-        <WeekDayHeaders>
-          {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map(day => (
-            <DayHeader key={day}>{day}</DayHeader>
-          ))}
-        </WeekDayHeaders>
       </Header>
 
       <ScrollContainer>
