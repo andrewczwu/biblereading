@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { useSearchParams } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { ReadingCalendar } from '../components/calendar/ReadingCalendar';
+import { WeekView } from '../components/calendar/WeekView';
 import { userSchedulesAPI } from '../services/api';
 import { theme } from '../styles/theme';
 
@@ -13,6 +14,64 @@ const Container = styled.div`
 
   @media (max-width: ${theme.breakpoints.md}) {
     padding: ${theme.spacing[4]};
+  }
+
+  @media (max-width: ${theme.breakpoints.sm}) {
+    padding: ${theme.spacing[2]};
+  }
+`;
+
+const ViewToggle = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-bottom: ${theme.spacing[4]};
+  
+  @media (max-width: ${theme.breakpoints.sm}) {
+    margin-bottom: ${theme.spacing[2]};
+  }
+`;
+
+const ToggleButton = styled.button<{ $active: boolean }>`
+  padding: ${theme.spacing[2]} ${theme.spacing[4]};
+  border: 1px solid ${theme.colors.gray[300]};
+  background: ${props => props.$active ? theme.colors.primary[600] : theme.colors.white};
+  color: ${props => props.$active ? theme.colors.white : theme.colors.gray[700]};
+  font-size: ${theme.fontSizes.sm};
+  font-weight: ${theme.fontWeights.medium};
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:first-child {
+    border-top-left-radius: ${theme.borderRadius.lg};
+    border-bottom-left-radius: ${theme.borderRadius.lg};
+    border-right: none;
+  }
+
+  &:last-child {
+    border-top-right-radius: ${theme.borderRadius.lg};
+    border-bottom-right-radius: ${theme.borderRadius.lg};
+    border-left: none;
+  }
+
+  &:hover:not(:disabled) {
+    background: ${props => props.$active ? theme.colors.primary[700] : theme.colors.gray[50]};
+  }
+
+  @media (max-width: ${theme.breakpoints.sm}) {
+    padding: ${theme.spacing[2]} ${theme.spacing[3]};
+    font-size: ${theme.fontSizes.xs};
+  }
+`;
+
+const MobileContainer = styled.div`
+  @media (min-width: ${theme.breakpoints.md}) {
+    display: none;
+  }
+`;
+
+const DesktopContainer = styled.div`
+  @media (max-width: ${theme.breakpoints.md}) {
+    display: none;
   }
 `;
 
@@ -136,6 +195,10 @@ export const CalendarPage: React.FC = () => {
   const [selectedSchedule, setSelectedSchedule] = useState<Schedule | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [viewMode, setViewMode] = useState<'month' | 'week'>(() => {
+    // Default to week view on mobile, month view on desktop
+    return window.innerWidth <= 768 ? 'week' : 'month';
+  });
 
   const fetchAvailableSchedules = async () => {
     if (!currentUser) return;
@@ -266,10 +329,48 @@ export const CalendarPage: React.FC = () => {
       )}
 
       {selectedSchedule && (
-        <ReadingCalendar
-          scheduleId={selectedSchedule.type === 'individual' ? selectedSchedule.id : undefined}
-          groupId={selectedSchedule.type === 'group' ? selectedSchedule.id : undefined}
-        />
+        <>
+          {/* View Toggle - show on both mobile and desktop */}
+          <ViewToggle>
+            <ToggleButton 
+              $active={viewMode === 'month'} 
+              onClick={() => setViewMode('month')}
+            >
+              Month View
+            </ToggleButton>
+            <ToggleButton 
+              $active={viewMode === 'week'} 
+              onClick={() => setViewMode('week')}
+            >
+              Week View
+            </ToggleButton>
+          </ViewToggle>
+
+          {/* Conditional rendering based on view mode */}
+          {viewMode === 'month' ? (
+            <DesktopContainer>
+              <ReadingCalendar
+                scheduleId={selectedSchedule.type === 'individual' ? selectedSchedule.id : undefined}
+                groupId={selectedSchedule.type === 'group' ? selectedSchedule.id : undefined}
+              />
+            </DesktopContainer>
+          ) : (
+            <WeekView
+              scheduleId={selectedSchedule.type === 'individual' ? selectedSchedule.id : undefined}
+              groupId={selectedSchedule.type === 'group' ? selectedSchedule.id : undefined}
+            />
+          )}
+          
+          {/* Show month view on mobile when week is not selected - for fallback */}
+          {viewMode === 'month' && (
+            <MobileContainer>
+              <ReadingCalendar
+                scheduleId={selectedSchedule.type === 'individual' ? selectedSchedule.id : undefined}
+                groupId={selectedSchedule.type === 'group' ? selectedSchedule.id : undefined}
+              />
+            </MobileContainer>
+          )}
+        </>
       )}
     </Container>
   );

@@ -393,8 +393,6 @@ interface UserSchedule {
     totalReadings: number;
     completedReadings: number;
     completionPercentage: number;
-    currentStreak: number;
-    longestStreak: number;
   };
 }
 
@@ -501,7 +499,6 @@ export const Dashboard: React.FC = () => {
           {userProfile && (
             <>
               <p>Display Name: {userProfile.displayName}</p>
-              <p>Preferred Translation: {userProfile.readingPreferences?.preferredTranslation}</p>
             </>
           )}
           

@@ -117,8 +117,7 @@ async function createUserProfile(req, res) {
         totalSchedulesCreated: 0,
         totalGroupsJoined: 0,
         totalReadingsCompleted: 0,
-        currentActiveSchedules: 0,
-        longestStreak: 0
+        currentActiveSchedules: 0
       }
     };
 

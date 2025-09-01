@@ -182,31 +182,6 @@ async function getReadingScheduleWithProgress(req, res) {
     const completedReadings = readingsWithProgress.filter(r => r.isCompleted).length;
     const completionPercentage = totalReadings > 0 ? Math.round((completedReadings / totalReadings) * 100) : 0;
 
-    // Calculate streak information
-    let currentStreak = 0;
-    let longestStreak = 0;
-    let tempStreak = 0;
-
-    // Sort by day number for streak calculation
-    const sortedForStreak = [...readingsWithProgress].sort((a, b) => a.dayNumber - b.dayNumber);
-    
-    for (const reading of sortedForStreak) {
-      if (reading.isCompleted) {
-        tempStreak++;
-        longestStreak = Math.max(longestStreak, tempStreak);
-      } else {
-        tempStreak = 0;
-      }
-    }
-
-    // Calculate current streak (from most recent completed days)
-    for (let i = sortedForStreak.length - 1; i >= 0; i--) {
-      if (sortedForStreak[i].isCompleted) {
-        currentStreak++;
-      } else {
-        break;
-      }
-    }
 
     // Prepare response data
     const responseData = {
@@ -226,9 +201,7 @@ async function getReadingScheduleWithProgress(req, res) {
         totalReadings: totalReadings,
         completedReadings: completedReadings,
         remainingReadings: totalReadings - completedReadings,
-        completionPercentage: completionPercentage,
-        currentStreak: currentStreak,
-        longestStreak: longestStreak
+        completionPercentage: completionPercentage
       },
       readings: readingsWithProgress,
       pagination: {

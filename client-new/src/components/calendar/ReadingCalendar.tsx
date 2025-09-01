@@ -12,6 +12,12 @@ const Container = styled.div`
   @media (max-width: ${theme.breakpoints.md}) {
     padding: ${theme.spacing[4]};
   }
+
+  @media (max-width: ${theme.breakpoints.sm}) {
+    padding: ${theme.spacing[2]};
+    margin: 0;
+    max-width: 100%;
+  }
 `;
 
 const Header = styled.div`
@@ -74,6 +80,12 @@ const CalendarGrid = styled.div`
   border-radius: ${theme.borderRadius.lg};
   overflow: hidden;
   margin-bottom: ${theme.spacing[6]};
+  width: 100%;
+
+  @media (max-width: ${theme.breakpoints.sm}) {
+    margin-bottom: ${theme.spacing[4]};
+    border-radius: ${theme.borderRadius.md};
+  }
 `;
 
 const DayHeader = styled.div`
@@ -83,6 +95,11 @@ const DayHeader = styled.div`
   font-weight: ${theme.fontWeights.semibold};
   font-size: ${theme.fontSizes.sm};
   color: ${theme.colors.gray[700]};
+
+  @media (max-width: ${theme.breakpoints.sm}) {
+    padding: ${theme.spacing[2]};
+    font-size: ${theme.fontSizes.xs};
+  }
 `;
 
 const DayCell = styled.div<{ $isCurrentMonth: boolean; $isToday: boolean; $hasReading: boolean }>`
@@ -152,23 +169,6 @@ const ChapterVerse = styled.div`
   margin-bottom: ${theme.spacing[2]};
 `;
 
-const CompletionCheckbox = styled.div`
-  display: flex;
-  align-items: center;
-  gap: ${theme.spacing[1]};
-  margin-top: auto;
-`;
-
-const Checkbox = styled.input`
-  margin: 0;
-  cursor: pointer;
-`;
-
-const CheckboxLabel = styled.label`
-  font-size: ${theme.fontSizes.xs};
-  color: ${theme.colors.gray[600]};
-  cursor: pointer;
-`;
 
 const LoadingSpinner = styled.div`
   display: flex;
@@ -318,35 +318,6 @@ export const ReadingCalendar: React.FC<ReadingCalendarProps> = ({ scheduleId, gr
     }));
   };
 
-  const handleCheckboxChange = async (dayNumber: number, isCompleted: boolean) => {
-    if (!currentUser) return;
-
-    try {
-      const progressData: any = {
-        userId: currentUser.uid,
-        dayNumber,
-        isCompleted
-      };
-
-      if (scheduleId) {
-        progressData.scheduleId = scheduleId;
-      } else if (groupId) {
-        progressData.groupId = groupId;
-      }
-
-      await progressAPI.markCompleted(progressData);
-
-      // Update local state
-      setReadings(prev => prev.map(reading => 
-        reading.dayNumber === dayNumber 
-          ? { ...reading, isCompleted }
-          : reading
-      ));
-    } catch (err: any) {
-      console.error('Error updating reading progress:', err);
-      // You could add a toast notification here
-    }
-  };
 
   useEffect(() => {
     if (currentUser && (scheduleId || groupId)) {
@@ -464,23 +435,11 @@ export const ReadingCalendar: React.FC<ReadingCalendarProps> = ({ scheduleId, gr
                 <ReadingInfo>
                   {groupPortionsByBook(day.reading.portions).map((bookGroup, index) => (
                     <div key={index} style={{ marginBottom: '4px' }}>
-                      <BookName>{bookGroup.bookName}</BookName>
+                      <BookName>{bookGroup.bookName.substring(0, 4)}</BookName>
                       <ChapterVerse>{bookGroup.formattedVerse}</ChapterVerse>
                     </div>
                   ))}
                 </ReadingInfo>
-                
-                <CompletionCheckbox>
-                  <Checkbox
-                    type="checkbox"
-                    id={`reading-${day.reading.dayNumber}`}
-                    checked={day.reading.isCompleted}
-                    onChange={(e) => handleCheckboxChange(day.reading!.dayNumber, e.target.checked)}
-                  />
-                  <CheckboxLabel htmlFor={`reading-${day.reading.dayNumber}`}>
-                    Done
-                  </CheckboxLabel>
-                </CompletionCheckbox>
               </>
             )}
           </DayCell>

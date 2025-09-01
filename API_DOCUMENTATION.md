@@ -31,6 +31,9 @@ All endpoints are relative to your API base URL (e.g., `http://localhost:3000/ap
 3. **User Profile Updates**: Implemented proper nested object merging for partial updates
 4. **Soft Delete Handling**: Fixed issue where inactive profiles could be reactivated
 5. **Comprehensive Testing**: Added 30+ tests with automated cleanup utilities
+6. **Dynamic Member Counting**: Removed stored `memberCount` fields in favor of real-time counting from active members
+7. **Simplified User Profiles**: Removed timezone, preferredLanguage, and preferredTranslation from required fields
+8. **Removed Streak Tracking**: Eliminated currentStreak and longestStreak calculations to simplify progress tracking
 
 ### Known Issues
 - Group schedules: 1 test failing for "Handle leaving non-existent group" (returns 404 as expected)
@@ -41,7 +44,7 @@ All endpoints are relative to your API base URL (e.g., `http://localhost:3000/ap
 ## User Profile Management
 
 ### Create User Profile
-Create a user profile linked to Firebase Authentication.
+Create a user profile linked to Firebase Authentication. Only `uid`, `email`, `displayName`, and `firstName` are required. Optional fields like `timezone`, `preferredLanguage`, and `preferredTranslation` have sensible defaults.
 
 **Endpoint:** `POST /api/user-profile`
 
@@ -55,12 +58,12 @@ Create a user profile linked to Firebase Authentication.
   "lastName": "Doe", // Optional
   "dateOfBirth": "1995-06-15", // Optional, YYYY-MM-DD format
   "phoneNumber": "+1234567890", // Optional
-  "timezone": "America/New_York",
-  "preferredLanguage": "en",
+  "timezone": "UTC", // Optional, defaults to UTC
+  "preferredLanguage": "en", // Optional, defaults to "en"
   "readingPreferences": {
     "reminderTime": "07:30",
     "enableReminders": true,
-    "preferredTranslation": "NIV",
+    "preferredTranslation": "ESV", // Optional, defaults to "ESV"
     "readingGoal": "daily"
   },
   "privacy": {
@@ -80,12 +83,12 @@ Create a user profile linked to Firebase Authentication.
     "uid": "firebase-auth-uid-123",
     "email": "john.doe@example.com",
     "displayName": "John Doe",
-    "timezone": "America/New_York",
+    "timezone": "UTC",
     "preferredLanguage": "en",
     "readingPreferences": {
       "reminderTime": "07:30",
       "enableReminders": true,
-      "preferredTranslation": "NIV",
+      "preferredTranslation": "ESV",
       "readingGoal": "daily"
     },
     "privacy": {
@@ -140,8 +143,7 @@ Retrieve a user's profile information.
       "totalSchedulesCreated": 2,
       "totalGroupsJoined": 3,
       "totalReadingsCompleted": 150,
-      "currentActiveSchedules": 1,
-      "longestStreak": 45
+      "currentActiveSchedules": 1
     }
   }
 }
@@ -160,10 +162,9 @@ Update user profile information (partial updates supported).
 ```json
 {
   "displayName": "Johnny Doe",
-  "timezone": "America/Los_Angeles",
   "readingPreferences": {
     "reminderTime": "06:00",
-    "preferredTranslation": "ESV"
+    "preferredTranslation": "NIV"
   },
   "privacy": {
     "profileVisibility": "friends"
@@ -256,7 +257,7 @@ Create a personalized reading schedule from a template.
 ## Group Reading Schedules
 
 ### Create Group Reading Schedule
-Create a group reading schedule that multiple users can join.
+Create a group reading schedule that multiple users can join. Member counts are tracked dynamically by counting active members.
 
 **Endpoint:** `POST /api/create-group-reading-schedule`
 
@@ -289,8 +290,7 @@ Create a group reading schedule that multiple users can join.
     "status": "active",
     "createdBy": "admin123",
     "isPublic": true,
-    "maxMembers": 50,
-    "memberCount": 1
+    "maxMembers": 50
   }
 }
 ```
@@ -370,6 +370,8 @@ Retrieve all members of a group reading schedule with their profile information 
 **Query Parameters:**
 - `includeInactive` (optional): Include inactive/left members (default: false)
 
+**Note:** Member counts are calculated dynamically from active members. The response includes both `memberCount` (legacy field, always 0) and `totalMembers` (accurate count).
+
 **Example:**
 ```
 /api/group-members/bellevue-yp-2024-spring?includeInactive=true
@@ -387,7 +389,6 @@ Retrieve all members of a group reading schedule with their profile information 
     "endDate": "2024-12-15",
     "currentDay": 15,
     "status": "active",
-    "memberCount": 12,
     "createdBy": "admin123",
     "isPublic": true,
     "maxMembers": 50
@@ -409,7 +410,7 @@ Retrieve all members of a group reading schedule with their profile information 
         "firstName": "John",
         "lastName": "Admin",
         "email": "john@example.com",
-        "timezone": "America/New_York",
+        "timezone": "UTC",
         "preferredLanguage": "en"
       }
     },
@@ -429,7 +430,7 @@ Retrieve all members of a group reading schedule with their profile information 
         "firstName": "Jane",
         "lastName": "Member",
         "email": "jane@example.com",
-        "timezone": "America/Los_Angeles",
+        "timezone": "UTC",
         "preferredLanguage": "en"
       }
     }
@@ -536,9 +537,7 @@ Retrieve all readings in a schedule with completion status.
     "totalReadings": 10,
     "completedReadings": 7,
     "remainingReadings": 3,
-    "completionPercentage": 70,
-    "currentStreak": 3,
-    "longestStreak": 5
+    "completionPercentage": 70
   },
   "readings": [
     {
@@ -678,12 +677,12 @@ By Specific Date:
   "firstName": "John",
   "lastName": "Doe",
   "dateOfBirth": "1995-06-15",
-  "timezone": "America/New_York",
+  "timezone": "UTC",
   "preferredLanguage": "en",
   "readingPreferences": {
     "reminderTime": "07:30",
     "enableReminders": true,
-    "preferredTranslation": "NIV",
+    "preferredTranslation": "ESV",
     "readingGoal": "daily"
   },
   "privacy": {
@@ -699,8 +698,7 @@ By Specific Date:
     "totalSchedulesCreated": 2,
     "totalGroupsJoined": 3,
     "totalReadingsCompleted": 150,
-    "currentActiveSchedules": 1,
-    "longestStreak": 45
+    "currentActiveSchedules": 1
   }
 }
 ```

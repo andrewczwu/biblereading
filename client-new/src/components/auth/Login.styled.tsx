@@ -3,11 +3,15 @@ import { theme } from '../../styles/theme';
 
 export const Container = styled.div`
   min-height: 100vh;
+  width: 100vw;
   background: linear-gradient(135deg, ${theme.colors.primary[50]} 0%, ${theme.colors.primary[100]} 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: ${theme.spacing[4]};
+  position: relative;
+  margin: 0;
+  box-sizing: border-box;
 `;
 
 export const Card = styled.div`

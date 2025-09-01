@@ -34,8 +34,6 @@ async function getUserSchedules(req, res) {
       let progressStats = {
         totalReadings: scheduleData.durationDays || 0,
         completedReadings: 0,
-        currentStreak: 0,
-        longestStreak: 0,
         completionPercentage: 0
       };
 
@@ -99,8 +97,6 @@ async function getUserSchedules(req, res) {
         let groupProgress = {
           totalReadings: groupData.durationDays || 0,
           completedReadings: memberData.completedDays || 0,
-          currentStreak: 0,
-          longestStreak: 0,
           completionPercentage: 0
         };
 
