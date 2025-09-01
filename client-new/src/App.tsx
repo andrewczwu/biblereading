@@ -4,6 +4,7 @@ import { Toaster } from 'react-hot-toast';
 import { GlobalStyles } from './styles/GlobalStyles';
 import { AuthProvider } from './contexts/AuthContext';
 import { PrivateRoute } from './components/auth/PrivateRoute';
+import { Header } from './components/layout/Header';
 import { Login } from './components/auth/Login';
 import { Register } from './components/auth/Register';
 import { Dashboard } from './components/Dashboard';
@@ -36,6 +37,8 @@ function App() {
             },
           }}
         />
+        
+        <Header />
         
         <Routes>
           {/* Public routes */}

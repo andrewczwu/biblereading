@@ -117,20 +117,12 @@ const ButtonGroup = styled.div`
 `;
 
 export const Dashboard: React.FC = () => {
-  const { currentUser, userProfile, logout } = useAuth();
+  const { currentUser, userProfile } = useAuth();
   const navigate = useNavigate();
 
   // Debug logging
   console.log('Dashboard - currentUser:', currentUser);
   console.log('Dashboard - userProfile:', userProfile);
-
-  const handleLogout = async () => {
-    try {
-      await logout();
-    } catch (error) {
-      console.error('Logout error:', error);
-    }
-  };
 
   const getGreeting = () => {
     const hour = new Date().getHours();
@@ -172,9 +164,6 @@ export const Dashboard: React.FC = () => {
             </Button>
             <Button $variant="secondary" onClick={() => navigate('/schedules')}>
               Join Group
-            </Button>
-            <Button $variant="danger" onClick={handleLogout}>
-              Sign Out
             </Button>
           </ButtonGroup>
         </WelcomeMessage>

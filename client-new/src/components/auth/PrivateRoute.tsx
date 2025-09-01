@@ -33,7 +33,15 @@ interface PrivateRouteProps {
 export const PrivateRoute: React.FC<PrivateRouteProps> = ({ children, requireProfile = false }) => {
   const { currentUser, userProfile, loading, profileChecked } = useAuth();
 
+  // Debug logging
+  console.log('PrivateRoute - loading:', loading);
+  console.log('PrivateRoute - currentUser:', !!currentUser);
+  console.log('PrivateRoute - userProfile:', !!userProfile);
+  console.log('PrivateRoute - profileChecked:', profileChecked);
+  console.log('PrivateRoute - requireProfile:', requireProfile);
+
   if (loading) {
+    console.log('PrivateRoute - Showing loading spinner (auth loading)');
     return (
       <LoadingContainer>
         <Spinner />
@@ -42,11 +50,13 @@ export const PrivateRoute: React.FC<PrivateRouteProps> = ({ children, requirePro
   }
 
   if (!currentUser) {
+    console.log('PrivateRoute - Redirecting to login (no current user)');
     return <Navigate to="/login" />;
   }
 
   // If profile is required but we haven't checked yet, show loading
   if (requireProfile && !profileChecked) {
+    console.log('PrivateRoute - Showing loading spinner (profile not checked)');
     return (
       <LoadingContainer>
         <Spinner />
@@ -56,8 +66,10 @@ export const PrivateRoute: React.FC<PrivateRouteProps> = ({ children, requirePro
 
   // If profile is required and we've checked but no profile exists, redirect to register
   if (requireProfile && profileChecked && !userProfile) {
+    console.log('PrivateRoute - Redirecting to register (no profile)');
     return <Navigate to="/register" />;
   }
 
+  console.log('PrivateRoute - Allowing access to protected content');
   return <>{children}</>;
 };

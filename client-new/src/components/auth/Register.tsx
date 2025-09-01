@@ -49,7 +49,7 @@ interface RegisterFormData {
 
 export const Register: React.FC = () => {
   const { register, handleSubmit, watch, formState: { errors } } = useForm<RegisterFormData>();
-  const { signup } = useAuth();
+  const { signup, setUserProfileDirect } = useAuth();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
@@ -93,12 +93,33 @@ export const Register: React.FC = () => {
         }
       };
 
-      await userProfileAPI.create(profileData);
+      console.log('Register - Creating profile with data:', profileData);
+      const createResponse = await userProfileAPI.create(profileData);
+      console.log('Register - Profile created successfully, response:', createResponse);
+      
+      // Set the profile directly from the creation response to avoid UID mismatch issues
+      if (createResponse.profile) {
+        console.log('Register - Setting profile directly from creation response');
+        setUserProfileDirect(createResponse.profile);
+      } else {
+        console.error('Register - No profile in creation response, cannot proceed');
+        throw new Error('Profile creation response missing profile data');
+      }
+      
       toast.success('Account created successfully!');
+      console.log('Register - Navigating to dashboard');
       navigate('/dashboard');
     } catch (error: any) {
       console.error('Registration error:', error);
-      toast.error(error.message || 'Failed to create account');
+      
+      // Handle specific error cases
+      if (error.response?.status === 409) {
+        toast.error('An account with this email already exists');
+      } else if (error.response?.data?.error) {
+        toast.error(error.response.data.error);
+      } else {
+        toast.error(error.message || 'Failed to create account');
+      }
     } finally {
       setLoading(false);
     }

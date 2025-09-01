@@ -44,6 +44,8 @@ interface AuthContextType {
   login: (email: string, password: string) => Promise<void>;
   logout: () => Promise<void>;
   updateUserProfile: (profileData: Partial<UserProfile>) => Promise<void>;
+  refreshUserProfile: () => Promise<void>;
+  setUserProfileDirect: (profile: UserProfile) => void;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -88,6 +90,23 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     setUserProfile(updatedProfile);
   };
 
+  const refreshUserProfile = async (): Promise<void> => {
+    console.log('AuthContext - refreshUserProfile called');
+    if (!currentUser) {
+      console.log('AuthContext - No current user, skipping refresh');
+      return;
+    }
+    console.log('AuthContext - Calling fetchUserProfile for uid:', currentUser.uid);
+    await fetchUserProfile(currentUser.uid);
+    console.log('AuthContext - fetchUserProfile completed');
+  };
+
+  const setUserProfileDirect = (profile: UserProfile): void => {
+    console.log('AuthContext - Setting user profile directly:', profile);
+    setUserProfile(profile);
+    setProfileChecked(true);
+  };
+
   const fetchUserProfile = async (uid: string): Promise<void> => {
     console.log('AuthContext - Fetching profile for uid:', uid);
     try {
@@ -117,7 +136,19 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       setCurrentUser(user);
       
       if (user) {
-        await fetchUserProfile(user.uid);
+        // Only fetch profile if user has been around for more than a few seconds
+        // This avoids the immediate 404 for brand new users
+        const userCreatedAt = new Date(user.metadata.creationTime!).getTime();
+        const now = Date.now();
+        const isNewUser = (now - userCreatedAt) < 5000; // 5 seconds threshold
+        
+        if (isNewUser) {
+          console.log('AuthContext - New user detected, skipping initial profile fetch');
+          setUserProfile(null);
+          setProfileChecked(true);
+        } else {
+          await fetchUserProfile(user.uid);
+        }
       } else {
         setUserProfile(null);
         setProfileChecked(false);
@@ -138,6 +169,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     login,
     logout,
     updateUserProfile,
+    refreshUserProfile,
+    setUserProfileDirect,
   };
 
   return (
