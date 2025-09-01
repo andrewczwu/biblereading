@@ -13,6 +13,9 @@ interface CreateGroupFormData {
   isPublic: boolean;
   maxMembers: number | null;
   customGroupId: string;
+  enableVerseText: boolean;
+  enableFootnotes: boolean;
+  enablePartner: boolean;
 }
 
 interface Template {
@@ -28,6 +31,10 @@ const Container = styled.div`
   max-width: 600px;
   margin: 0 auto;
   padding: ${theme.spacing[6]};
+
+  @media (max-width: ${theme.breakpoints.sm}) {
+    padding: ${theme.spacing[4]};
+  }
 `;
 
 const Title = styled.h1`
@@ -101,6 +108,51 @@ const Checkbox = styled.input`
   accent-color: ${theme.colors.primary[600]};
 `;
 
+const CompletionTasksCheckboxGroup = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${theme.spacing[3]};
+`;
+
+const CheckboxLabel = styled.label`
+  display: flex;
+  align-items: center;
+  gap: ${theme.spacing[2]};
+  cursor: pointer;
+  font-size: ${theme.fontSizes.base};
+  color: ${theme.colors.gray[700]};
+  
+  &:hover {
+    color: ${theme.colors.primary[600]};
+  }
+`;
+
+const CompletionTasksCheckbox = styled.input`
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+`;
+
+const CompletionTasksSection = styled.div`
+  border: 1px solid ${theme.colors.gray[200]};
+  border-radius: ${theme.borderRadius.lg};
+  padding: ${theme.spacing[4]};
+  background-color: ${theme.colors.gray[50]};
+`;
+
+const SectionTitle = styled.h3`
+  font-size: ${theme.fontSizes.base};
+  font-weight: ${theme.fontWeights.semibold};
+  color: ${theme.colors.gray[900]};
+  margin-bottom: ${theme.spacing[3]};
+`;
+
+const SectionDescription = styled.p`
+  font-size: ${theme.fontSizes.sm};
+  color: ${theme.colors.gray[600]};
+  margin-bottom: ${theme.spacing[4]};
+`;
+
 const Button = styled.button<{ variant?: 'primary' | 'secondary' }>`
   padding: ${theme.spacing[3]} ${theme.spacing[4]};
   border-radius: ${theme.borderRadius.md};
@@ -171,6 +223,9 @@ const CreateGroupSchedule: React.FC<CreateGroupScheduleProps> = ({ onSuccess, on
       isPublic: true,
       maxMembers: null,
       customGroupId: '',
+      enableVerseText: true,
+      enableFootnotes: false,
+      enablePartner: false,
     },
   });
 
@@ -206,6 +261,11 @@ const CreateGroupSchedule: React.FC<CreateGroupScheduleProps> = ({ onSuccess, on
         isPublic: data.isPublic,
         maxMembers: data.maxMembers || undefined,
         customGroupId: data.customGroupId || undefined,
+        completionTasks: {
+          verseText: data.enableVerseText,
+          footnotes: data.enableFootnotes,
+          partner: data.enablePartner,
+        },
       };
 
       const response = await groupScheduleAPI.create(groupData);
@@ -340,6 +400,42 @@ const CreateGroupSchedule: React.FC<CreateGroupScheduleProps> = ({ onSuccess, on
           {errors.customGroupId && <ErrorMessage>{errors.customGroupId.message}</ErrorMessage>}
           <HelpText>Leave empty to auto-generate from group name</HelpText>
         </FormGroup>
+
+        <CompletionTasksSection>
+          <SectionTitle>Completion Tracking Options</SectionTitle>
+          <SectionDescription>
+            Choose which aspects of reading group members will track. Each member can mark these tasks separately to monitor their progress.
+          </SectionDescription>
+          <CompletionTasksCheckboxGroup>
+            <CheckboxLabel>
+              <CompletionTasksCheckbox
+                type="checkbox"
+                {...register('enableVerseText')}
+              />
+              <span>
+                <strong>Verse Text</strong> - Track completion of reading the Bible text itself
+              </span>
+            </CheckboxLabel>
+            <CheckboxLabel>
+              <CompletionTasksCheckbox
+                type="checkbox"
+                {...register('enableFootnotes')}
+              />
+              <span>
+                <strong>Footnotes</strong> - Track reading of study notes and footnotes
+              </span>
+            </CheckboxLabel>
+            <CheckboxLabel>
+              <CompletionTasksCheckbox
+                type="checkbox"
+                {...register('enablePartner')}
+              />
+              <span>
+                <strong>Partner</strong> - Track discussing the reading with a partner or group
+              </span>
+            </CheckboxLabel>
+          </CompletionTasksCheckboxGroup>
+        </CompletionTasksSection>
 
         <ButtonGroup>
           {onCancel && (

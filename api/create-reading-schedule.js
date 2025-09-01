@@ -14,7 +14,16 @@ function getDayOfWeek(dateString) {
 
 async function createReadingSchedule(req, res) {
   try {
-    const { userId, templateId, startDate } = req.body;
+    const { 
+      userId, 
+      templateId, 
+      startDate,
+      completionTasks = {
+        verseText: true,
+        footnotes: false,
+        partner: false
+      }
+    } = req.body;
 
     if (!userId || !templateId || !startDate) {
       return res.status(400).json({
@@ -82,6 +91,7 @@ async function createReadingSchedule(req, res) {
       durationDays: templateData.durationDays,
       currentDay: 1,
       status: 'active',
+      completionTasks: completionTasks, // Store which completion tasks are enabled
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString()
     };

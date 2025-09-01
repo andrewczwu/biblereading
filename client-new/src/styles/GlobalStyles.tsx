@@ -13,12 +13,24 @@ export const GlobalStyles = createGlobalStyle`
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    height: 100%;
+    width: 100%;
   }
 
   body {
     background-color: ${theme.colors.gray[50]};
     color: ${theme.colors.gray[900]};
     font-size: ${theme.fontSizes.base};
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  #root {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
   button {

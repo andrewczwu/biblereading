@@ -7,15 +7,23 @@ async function markReadingCompleted(req, res) {
       scheduleId, 
       groupId = null, 
       dayNumber, 
-      isCompleted, 
+      isCompleted,  // For backward compatibility
+      completionTasks = null,  // New: object with {verseText: bool, footnotes: bool, partner: bool}
       notes = null, 
       timeSpentMinutes = null 
     } = req.body;
 
     // Validate required fields
-    if (!userId || !dayNumber || typeof isCompleted !== 'boolean') {
+    if (!userId || !dayNumber) {
       return res.status(400).json({
-        error: 'Missing required fields: userId, dayNumber, and isCompleted are required'
+        error: 'Missing required fields: userId and dayNumber are required'
+      });
+    }
+
+    // Support both old (isCompleted) and new (completionTasks) formats
+    if (typeof isCompleted !== 'boolean' && !completionTasks) {
+      return res.status(400).json({
+        error: 'Must provide either isCompleted (boolean) or completionTasks object'
       });
     }
 
@@ -32,7 +40,33 @@ async function markReadingCompleted(req, res) {
       });
     }
 
-    console.log(`Marking day ${dayNumber} as ${isCompleted ? 'completed' : 'incomplete'} for user ${userId}`);
+    // Handle backward compatibility and determine completion status
+    let overallCompleted = false;
+    let tasksCompleted = null;
+    
+    if (completionTasks) {
+      // New format with multiple tasks
+      tasksCompleted = { ...completionTasks };
+      
+      // If verse text is not checked, automatically uncheck footnotes and partner
+      if (!completionTasks.verseText) {
+        tasksCompleted.footnotes = false;
+        tasksCompleted.partner = false;
+      }
+      
+      // Consider it complete only if verse text is marked as done
+      overallCompleted = tasksCompleted.verseText || false;
+    } else {
+      // Old format - convert to new format assuming only verse text
+      overallCompleted = isCompleted;
+      tasksCompleted = {
+        verseText: isCompleted,
+        footnotes: false,
+        partner: false
+      };
+    }
+
+    console.log(`Marking day ${dayNumber} with completion tasks for user ${userId}`);
 
     const dayId = String(dayNumber).padStart(3, '0');
     let progressRef;
@@ -144,11 +178,12 @@ async function markReadingCompleted(req, res) {
     const now = new Date().toISOString();
     const progressData = {
       dayNumber: dayNumber,
-      isCompleted: isCompleted,
+      isCompleted: overallCompleted,  // For backward compatibility
+      completionTasks: tasksCompleted,  // New detailed completion tracking
       updatedAt: now
     };
 
-    if (isCompleted) {
+    if (overallCompleted) {
       progressData.completedAt = now;
       if (notes) progressData.notes = notes;
       if (timeSpentMinutes) progressData.timeSpentMinutes = timeSpentMinutes;
@@ -184,17 +219,18 @@ async function markReadingCompleted(req, res) {
     // Update user's overall progress counters
     if (scheduleId) {
       // Individual schedule - update currentDay and completedDays count
-      await updateIndividualScheduleProgress(scheduleRef, userId, dayNumber, isCompleted);
+      await updateIndividualScheduleProgress(scheduleRef, userId, dayNumber, overallCompleted);
     } else {
       // Group schedule - update member's progress counters
-      await updateGroupMemberProgress(scheduleRef, userId, dayNumber, isCompleted);
+      await updateGroupMemberProgress(scheduleRef, userId, dayNumber, overallCompleted);
     }
 
     res.status(200).json({
-      message: `Successfully marked day ${dayNumber} as ${isCompleted ? 'completed' : 'incomplete'}`,
+      message: `Successfully updated day ${dayNumber} progress`,
       progress: {
         dayNumber: dayNumber,
-        isCompleted: isCompleted,
+        isCompleted: overallCompleted,  // For backward compatibility
+        completionTasks: tasksCompleted,  // New detailed tracking
         completedAt: progressData.completedAt,
         notes: progressData.notes,
         timeSpentMinutes: progressData.timeSpentMinutes,

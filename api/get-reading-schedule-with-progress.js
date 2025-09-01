@@ -163,6 +163,7 @@ async function getReadingScheduleWithProgress(req, res) {
         
         // Progress information
         isCompleted: progressData.isCompleted || false,
+        completionTasks: progressData.completionTasks || null,  // New: detailed completion tracking
         completedAt: progressData.completedAt || null,
         notes: progressData.notes || null,
         timeSpentMinutes: progressData.timeSpentMinutes || null,
@@ -195,7 +196,8 @@ async function getReadingScheduleWithProgress(req, res) {
         durationDays: scheduleData.durationDays,
         currentDay: scheduleData.currentDay,
         status: scheduleData.status,
-        isGroupSchedule: isGroupSchedule
+        isGroupSchedule: isGroupSchedule,
+        completionTasks: scheduleData.completionTasks || { verseText: true, footnotes: false, partner: false }  // Include completion tasks config
       },
       progress: {
         totalReadings: totalReadings,

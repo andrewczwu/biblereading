@@ -8,9 +8,12 @@ const { createReadingSchedule } = require('./api/create-reading-schedule');
 const { createGroupReadingSchedule } = require('./api/create-group-reading-schedule');
 const { joinGroupReadingSchedule, leaveGroupReadingSchedule } = require('./api/join-group-reading-schedule');
 const { getGroupMembers } = require('./api/get-group-members');
+const { getAvailableGroups } = require('./api/get-available-groups');
 const { getUserSchedules } = require('./api/get-user-schedules');
 const { markReadingCompleted } = require('./api/mark-reading-completed');
 const { getReadingScheduleWithProgress, getDayReading } = require('./api/get-reading-schedule-with-progress');
+const { getScheduleInfo } = require('./api/get-schedule-info');
+const { getScheduleProgress } = require('./api/get-schedule-progress');
 const { getReadingTemplates, getReadingTemplate } = require('./api/get-reading-templates');
 
 const app = express();
@@ -36,12 +39,15 @@ app.post('/api/create-group-reading-schedule', createGroupReadingSchedule);
 app.post('/api/join-group-reading-schedule', joinGroupReadingSchedule);
 app.post('/api/leave-group-reading-schedule', leaveGroupReadingSchedule);
 app.get('/api/group-members/:groupId', getGroupMembers);
+app.get('/api/available-groups', getAvailableGroups);
 
 // Reading Progress endpoints
 app.post('/api/mark-reading-completed', markReadingCompleted);
 
 // Reading Retrieval endpoints
 app.get('/api/get-reading-schedule-with-progress', getReadingScheduleWithProgress);
+app.get('/api/get-schedule-info', getScheduleInfo);
+app.get('/api/get-schedule-progress', getScheduleProgress);
 app.get('/api/get-day-reading', getDayReading);
 
 // Reading Templates endpoints
@@ -69,13 +75,16 @@ app.get('/', (req, res) => {
         'POST /api/create-group-reading-schedule': 'Create group reading schedule',
         'POST /api/join-group-reading-schedule': 'Join group reading schedule',
         'POST /api/leave-group-reading-schedule': 'Leave group reading schedule',
-        'GET /api/group-members/:groupId': 'Get all members of a group reading schedule'
+        'GET /api/group-members/:groupId': 'Get all members of a group reading schedule',
+        'GET /api/available-groups': 'Get all public groups available to join'
       },
       readingProgress: {
         'POST /api/mark-reading-completed': 'Mark reading as completed/incomplete'
       },
       readingRetrieval: {
-        'GET /api/get-reading-schedule-with-progress': 'Get readings with progress',
+        'GET /api/get-reading-schedule-with-progress': 'Get readings with progress (combined - legacy)',
+        'GET /api/get-schedule-info': 'Get schedule metadata and readings (cacheable)',
+        'GET /api/get-schedule-progress': 'Get user progress data only',
         'GET /api/get-day-reading': 'Get specific day reading'
       },
       readingTemplates: {

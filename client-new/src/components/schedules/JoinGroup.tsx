@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import styled from 'styled-components';
 import { toast } from 'react-hot-toast';
@@ -10,10 +10,32 @@ interface JoinGroupFormData {
   groupId: string;
 }
 
+interface AvailableGroup {
+  groupId: string;
+  groupName: string;
+  templateName: string;
+  startDate: string;
+  endDate: string;
+  durationDays: number;
+  currentDay: number;
+  memberCount: number;
+  maxMembers?: number;
+  isFull: boolean;
+  completionTasks: {
+    verseText: boolean;
+    footnotes: boolean;
+    partner: boolean;
+  };
+}
+
 const Container = styled.div`
   max-width: 500px;
   margin: 0 auto;
   padding: ${theme.spacing[6]};
+
+  @media (max-width: ${theme.breakpoints.sm}) {
+    padding: ${theme.spacing[4]};
+  }
 `;
 
 const Title = styled.h1`
@@ -42,11 +64,12 @@ const Label = styled.label`
   font-size: ${theme.fontSizes.sm};
 `;
 
-const Input = styled.input`
+const Select = styled.select`
   padding: ${theme.spacing[3]};
   border: 1px solid ${theme.colors.gray[300]};
   border-radius: ${theme.borderRadius.md};
   font-size: ${theme.fontSizes.base};
+  background-color: white;
   transition: all 0.2s;
   
   &:focus {
@@ -58,6 +81,33 @@ const Input = styled.input`
   &:invalid {
     border-color: ${theme.colors.red[500]};
   }
+`;
+
+const GroupCard = styled.div`
+  border: 1px solid ${theme.colors.gray[200]};
+  border-radius: ${theme.borderRadius.md};
+  padding: ${theme.spacing[4]};
+  margin-top: ${theme.spacing[3]};
+  background-color: ${theme.colors.gray[50]};
+`;
+
+const GroupName = styled.h3`
+  font-size: ${theme.fontSizes.lg};
+  font-weight: ${theme.fontWeights.semibold};
+  color: ${theme.colors.gray[900]};
+  margin-bottom: ${theme.spacing[1]};
+`;
+
+const GroupDetails = styled.p`
+  font-size: ${theme.fontSizes.sm};
+  color: ${theme.colors.gray[600]};
+  margin: ${theme.spacing[1]} 0;
+`;
+
+const LoadingMessage = styled.div`
+  text-align: center;
+  padding: ${theme.spacing[4]};
+  color: ${theme.colors.gray[600]};
 `;
 
 const Button = styled.button<{ variant?: 'primary' | 'secondary' }>`
@@ -137,12 +187,37 @@ interface JoinGroupProps {
 const JoinGroup: React.FC<JoinGroupProps> = ({ onSuccess, onCancel }) => {
   const { currentUser, userProfile } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
+  const [availableGroups, setAvailableGroups] = useState<AvailableGroup[]>([]);
+  const [groupsLoading, setGroupsLoading] = useState(true);
+  const [selectedGroupId, setSelectedGroupId] = useState<string>('');
 
   const {
     register,
     handleSubmit,
     formState: { errors },
+    setValue,
+    watch
   } = useForm<JoinGroupFormData>();
+
+  const watchedGroupId = watch('groupId');
+  const selectedGroup = availableGroups.find(group => group.groupId === watchedGroupId);
+
+  useEffect(() => {
+    fetchAvailableGroups();
+  }, []);
+
+  const fetchAvailableGroups = async () => {
+    try {
+      setGroupsLoading(true);
+      const response = await groupScheduleAPI.getAvailableGroups();
+      setAvailableGroups(response.groups || []);
+    } catch (error) {
+      console.error('Error fetching available groups:', error);
+      toast.error('Failed to load available groups');
+    } finally {
+      setGroupsLoading(false);
+    }
+  };
 
   const onSubmit = async (data: JoinGroupFormData) => {
     if (!currentUser || !userProfile) {
@@ -179,51 +254,89 @@ const JoinGroup: React.FC<JoinGroupProps> = ({ onSuccess, onCancel }) => {
       <Title>Join Reading Group</Title>
       
       <InfoBox>
-        <InfoTitle>How to join a group</InfoTitle>
+        <InfoTitle>Join a reading group</InfoTitle>
         <InfoText>
-          Enter the Group ID provided by the group creator. You'll automatically be added to their reading schedule 
+          Select from the available public reading groups below. You'll be added to their reading schedule 
           and can track your progress alongside other group members.
         </InfoText>
       </InfoBox>
 
-      <Form onSubmit={handleSubmit(onSubmit)}>
-        <FormGroup>
-          <Label htmlFor="groupId">Group ID *</Label>
-          <Input
-            id="groupId"
-            {...register('groupId', {
-              required: 'Group ID is required',
-              minLength: {
-                value: 3,
-                message: 'Group ID must be at least 3 characters',
-              },
-              maxLength: {
-                value: 50,
-                message: 'Group ID must not exceed 50 characters',
-              },
-              pattern: {
-                value: /^[a-zA-Z0-9-_]+$/,
-                message: 'Group ID can only contain letters, numbers, hyphens, and underscores',
-              },
-            })}
-            placeholder="Enter the group ID"
-            autoComplete="off"
-          />
-          {errors.groupId && <ErrorMessage>{errors.groupId.message}</ErrorMessage>}
-          <HelpText>Ask the group creator for this ID</HelpText>
-        </FormGroup>
+      {groupsLoading && (
+        <LoadingMessage>Loading available groups...</LoadingMessage>
+      )}
 
-        <ButtonGroup>
-          {onCancel && (
-            <Button type="button" onClick={onCancel} disabled={isLoading}>
-              Cancel
-            </Button>
+      {!groupsLoading && availableGroups.length === 0 && (
+        <InfoBox>
+          <InfoTitle>No groups available</InfoTitle>
+          <InfoText>
+            There are no public groups available to join at this time. 
+            Check back later or ask a group admin to create a public group.
+          </InfoText>
+        </InfoBox>
+      )}
+
+      {!groupsLoading && availableGroups.length > 0 && (
+        <Form onSubmit={handleSubmit(onSubmit)}>
+          <FormGroup>
+            <Label htmlFor="groupId">Select a Reading Group *</Label>
+            <Select
+              id="groupId"
+              {...register('groupId', {
+                required: 'Please select a group to join',
+              })}
+            >
+              <option value="">Choose a group...</option>
+              {availableGroups.map((group) => (
+                <option 
+                  key={group.groupId} 
+                  value={group.groupId}
+                  disabled={group.isFull}
+                >
+                  {group.groupName} ({group.memberCount}/{group.maxMembers || '∞'} members) 
+                  {group.isFull && ' - FULL'}
+                </option>
+              ))}
+            </Select>
+            {errors.groupId && <ErrorMessage>{errors.groupId.message}</ErrorMessage>}
+          </FormGroup>
+
+          {selectedGroup && (
+            <GroupCard>
+              <GroupName>{selectedGroup.groupName}</GroupName>
+              <GroupDetails><strong>Reading Plan:</strong> {selectedGroup.templateName}</GroupDetails>
+              <GroupDetails><strong>Duration:</strong> {selectedGroup.durationDays} days</GroupDetails>
+              <GroupDetails><strong>Start Date:</strong> {new Date(selectedGroup.startDate).toLocaleDateString()}</GroupDetails>
+              <GroupDetails><strong>End Date:</strong> {new Date(selectedGroup.endDate).toLocaleDateString()}</GroupDetails>
+              <GroupDetails><strong>Current Day:</strong> Day {selectedGroup.currentDay}</GroupDetails>
+              <GroupDetails><strong>Members:</strong> {selectedGroup.memberCount}{selectedGroup.maxMembers ? `/${selectedGroup.maxMembers}` : ''}</GroupDetails>
+              <GroupDetails>
+                <strong>Completion Tasks:</strong> {
+                  [
+                    selectedGroup.completionTasks.verseText && 'Verse Text',
+                    selectedGroup.completionTasks.footnotes && 'Footnotes',
+                    selectedGroup.completionTasks.partner && 'Partner'
+                  ].filter(Boolean).join(', ')
+                }
+              </GroupDetails>
+            </GroupCard>
           )}
-          <Button type="submit" variant="primary" disabled={isLoading}>
-            {isLoading ? 'Joining...' : 'Join Group'}
-          </Button>
-        </ButtonGroup>
-      </Form>
+
+          <ButtonGroup>
+            {onCancel && (
+              <Button type="button" onClick={onCancel} disabled={isLoading}>
+                Cancel
+              </Button>
+            )}
+            <Button 
+              type="submit" 
+              variant="primary" 
+              disabled={isLoading || !watchedGroupId || (selectedGroup?.isFull)}
+            >
+              {isLoading ? 'Joining...' : 'Join Group'}
+            </Button>
+          </ButtonGroup>
+        </Form>
+      )}
     </Container>
   );
 };

@@ -34,7 +34,8 @@ async function getUserSchedules(req, res) {
       let progressStats = {
         totalReadings: scheduleData.durationDays || 0,
         completedReadings: 0,
-        completionPercentage: 0
+        completionPercentage: 0,
+        pointsEarned: 0
       };
 
       try {
@@ -49,6 +50,22 @@ async function getUserSchedules(req, res) {
           const completedDays = progressSnapshot.docs.filter(doc => doc.data().isCompleted).length;
           progressStats.completedReadings = completedDays;
           progressStats.completionPercentage = Math.round((completedDays / progressStats.totalReadings) * 100);
+          
+          // Calculate points from completion tasks
+          let totalPoints = 0;
+          progressSnapshot.docs.forEach(progressDoc => {
+            const progressData = progressDoc.data();
+            if (progressData.completionTasks) {
+              // 1 point for each completed task
+              if (progressData.completionTasks.verseText) totalPoints += 1;
+              if (progressData.completionTasks.footnotes) totalPoints += 1;
+              if (progressData.completionTasks.partner) totalPoints += 1;
+            } else if (progressData.isCompleted) {
+              // Backward compatibility: if only isCompleted exists, assume 1 point for verse text
+              totalPoints += 1;
+            }
+          });
+          progressStats.pointsEarned = totalPoints;
         }
       } catch (progressError) {
         console.error(`Error fetching progress for schedule ${doc.id}:`, progressError);
@@ -97,13 +114,45 @@ async function getUserSchedules(req, res) {
         let groupProgress = {
           totalReadings: groupData.durationDays || 0,
           completedReadings: memberData.completedDays || 0,
-          completionPercentage: 0
+          completionPercentage: 0,
+          pointsEarned: 0
         };
 
         if (groupProgress.totalReadings > 0) {
           groupProgress.completionPercentage = Math.round(
             (groupProgress.completedReadings / groupProgress.totalReadings) * 100
           );
+        }
+
+        // Calculate points from group progress
+        try {
+          const groupProgressSnapshot = await db
+            .collection('groupReadingSchedules')
+            .doc(groupDoc.id)
+            .collection('progress')
+            .doc(userId)
+            .collection('dailyProgress')
+            .get();
+
+          if (!groupProgressSnapshot.empty) {
+            let totalPoints = 0;
+            groupProgressSnapshot.docs.forEach(progressDoc => {
+              const progressData = progressDoc.data();
+              if (progressData.completionTasks) {
+                // 1 point for each completed task
+                if (progressData.completionTasks.verseText) totalPoints += 1;
+                if (progressData.completionTasks.footnotes) totalPoints += 1;
+                if (progressData.completionTasks.partner) totalPoints += 1;
+              } else if (progressData.isCompleted) {
+                // Backward compatibility: if only isCompleted exists, assume 1 point for verse text
+                totalPoints += 1;
+              }
+            });
+            groupProgress.pointsEarned = totalPoints;
+          }
+        } catch (pointsError) {
+          console.error(`Error calculating points for group ${groupDoc.id}:`, pointsError);
+          // Continue without points
         }
 
         // Count active members dynamically to ensure accuracy

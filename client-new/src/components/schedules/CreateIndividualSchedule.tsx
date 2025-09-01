@@ -9,6 +9,9 @@ import { theme } from '../../styles/theme';
 interface CreateIndividualScheduleFormData {
   templateId: string;
   startDate: string;
+  enableVerseText: boolean;
+  enableFootnotes: boolean;
+  enablePartner: boolean;
 }
 
 interface Template {
@@ -24,6 +27,10 @@ const Container = styled.div`
   max-width: 600px;
   margin: 0 auto;
   padding: ${theme.spacing[6]};
+
+  @media (max-width: ${theme.breakpoints.sm}) {
+    padding: ${theme.spacing[4]};
+  }
 `;
 
 const Title = styled.h1`
@@ -183,6 +190,51 @@ const InfoText = styled.p`
   margin: 0;
 `;
 
+const CheckboxGroup = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${theme.spacing[3]};
+`;
+
+const CheckboxLabel = styled.label`
+  display: flex;
+  align-items: center;
+  gap: ${theme.spacing[2]};
+  cursor: pointer;
+  font-size: ${theme.fontSizes.base};
+  color: ${theme.colors.gray[700]};
+  
+  &:hover {
+    color: ${theme.colors.primary[600]};
+  }
+`;
+
+const Checkbox = styled.input`
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+`;
+
+const CompletionTasksSection = styled.div`
+  border: 1px solid ${theme.colors.gray[200]};
+  border-radius: ${theme.borderRadius.lg};
+  padding: ${theme.spacing[4]};
+  background-color: ${theme.colors.gray[50]};
+`;
+
+const SectionTitle = styled.h3`
+  font-size: ${theme.fontSizes.base};
+  font-weight: ${theme.fontWeights.semibold};
+  color: ${theme.colors.gray[900]};
+  margin-bottom: ${theme.spacing[3]};
+`;
+
+const SectionDescription = styled.p`
+  font-size: ${theme.fontSizes.sm};
+  color: ${theme.colors.gray[600]};
+  margin-bottom: ${theme.spacing[4]};
+`;
+
 interface CreateIndividualScheduleProps {
   onSuccess?: (schedule: any) => void;
   onCancel?: () => void;
@@ -202,6 +254,9 @@ const CreateIndividualSchedule: React.FC<CreateIndividualScheduleProps> = ({ onS
   } = useForm<CreateIndividualScheduleFormData>({
     defaultValues: {
       startDate: new Date().toISOString().split('T')[0],
+      enableVerseText: true,
+      enableFootnotes: false,
+      enablePartner: false,
     },
   });
 
@@ -238,6 +293,11 @@ const CreateIndividualSchedule: React.FC<CreateIndividualScheduleProps> = ({ onS
         userId: currentUser.uid,
         templateId: data.templateId,
         startDate: data.startDate,
+        completionTasks: {
+          verseText: data.enableVerseText,
+          footnotes: data.enableFootnotes,
+          partner: data.enablePartner,
+        },
       };
 
       const response = await individualScheduleAPI.create(scheduleData);
@@ -311,6 +371,42 @@ const CreateIndividualSchedule: React.FC<CreateIndividualScheduleProps> = ({ onS
           {errors.startDate && <ErrorMessage>{errors.startDate.message}</ErrorMessage>}
           <HelpText>Choose when you want to begin your reading schedule</HelpText>
         </FormGroup>
+
+        <CompletionTasksSection>
+          <SectionTitle>Completion Tracking Options</SectionTitle>
+          <SectionDescription>
+            Choose which aspects of your reading you want to track. You can mark each task separately to better monitor your progress.
+          </SectionDescription>
+          <CheckboxGroup>
+            <CheckboxLabel>
+              <Checkbox
+                type="checkbox"
+                {...register('enableVerseText')}
+              />
+              <span>
+                <strong>Verse Text</strong> - Track completion of reading the Bible text itself
+              </span>
+            </CheckboxLabel>
+            <CheckboxLabel>
+              <Checkbox
+                type="checkbox"
+                {...register('enableFootnotes')}
+              />
+              <span>
+                <strong>Footnotes</strong> - Track reading of study notes and footnotes
+              </span>
+            </CheckboxLabel>
+            <CheckboxLabel>
+              <Checkbox
+                type="checkbox"
+                {...register('enablePartner')}
+              />
+              <span>
+                <strong>Partner</strong> - Track discussing the reading with a partner or group
+              </span>
+            </CheckboxLabel>
+          </CheckboxGroup>
+        </CompletionTasksSection>
 
         <ButtonGroup>
           {onCancel && (

@@ -3,15 +3,18 @@ import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import CreateIndividualSchedule from '../components/schedules/CreateIndividualSchedule';
 import CreateGroupSchedule from '../components/schedules/CreateGroupSchedule';
-import JoinGroup from '../components/schedules/JoinGroup';
 import { theme } from '../styles/theme';
 
-type ActiveView = 'menu' | 'individual' | 'createGroup' | 'joinGroup';
+type ActiveView = 'menu' | 'individual' | 'createGroup';
 
 const Container = styled.div`
   max-width: 800px;
   margin: 0 auto;
   padding: ${theme.spacing[6]};
+
+  @media (max-width: ${theme.breakpoints.sm}) {
+    padding: ${theme.spacing[4]};
+  }
 `;
 
 const Title = styled.h1`
@@ -20,6 +23,10 @@ const Title = styled.h1`
   color: ${theme.colors.gray[900]};
   margin-bottom: ${theme.spacing[4]};
   text-align: center;
+
+  @media (max-width: ${theme.breakpoints.sm}) {
+    font-size: ${theme.fontSizes['2xl']};
+  }
 `;
 
 const Subtitle = styled.p`
@@ -108,6 +115,7 @@ const Schedules: React.FC = () => {
   const [activeView, setActiveView] = useState<ActiveView>('menu');
   const navigate = useNavigate();
 
+
   const handleSuccess = (_result: any) => {
     // Navigate to dashboard or a success page
     navigate('/dashboard');
@@ -135,13 +143,6 @@ const Schedules: React.FC = () => {
           />
         );
       
-      case 'joinGroup':
-        return (
-          <JoinGroup
-            onSuccess={handleSuccess}
-            onCancel={handleBack}
-          />
-        );
       
       default:
         return (
@@ -168,21 +169,7 @@ const Schedules: React.FC = () => {
                 </MenuDescription>
               </MenuCard>
               
-              <MenuCard onClick={() => setActiveView('joinGroup')}>
-                <MenuIcon>🤝</MenuIcon>
-                <MenuTitle>Join Group</MenuTitle>
-                <MenuDescription>
-                  Join an existing reading group with a Group ID from the creator
-                </MenuDescription>
-              </MenuCard>
-              
-              <MenuCard onClick={() => navigate('/dashboard')}>
-                <MenuIcon>📊</MenuIcon>
-                <MenuTitle>My Progress</MenuTitle>
-                <MenuDescription>
-                  View your current reading schedules and track your progress
-                </MenuDescription>
-              </MenuCard>
+            
             </MenuContainer>
           </>
         );

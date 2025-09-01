@@ -30,7 +30,12 @@ async function createGroupReadingSchedule(req, res) {
       createdBy,
       isPublic = true,
       maxMembers = null,
-      customGroupId = null
+      customGroupId = null,
+      completionTasks = {
+        verseText: true,
+        footnotes: false,
+        partner: false
+      }
     } = req.body;
 
     if (!groupName || !templateId || !startDate || !createdBy) {
@@ -103,6 +108,7 @@ async function createGroupReadingSchedule(req, res) {
       createdBy: createdBy,
       isPublic: isPublic,
       maxMembers: maxMembers,
+      completionTasks: completionTasks, // Store which completion tasks are enabled
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString()
     };

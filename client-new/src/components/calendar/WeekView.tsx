@@ -233,11 +233,20 @@ const ChapterVerse = styled.div`
 `;
 
 const CompletionSection = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding-top: ${theme.spacing[3]};
   border-top: 1px solid ${theme.colors.gray[200]};
+`;
+
+const TasksContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${theme.spacing[2]};
+`;
+
+const TaskRow = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 const Checkbox = styled.input`
@@ -245,15 +254,28 @@ const Checkbox = styled.input`
   height: 18px;
   margin-right: ${theme.spacing[2]};
   cursor: pointer;
+  
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
 `;
 
 const CheckboxLabel = styled.label`
   display: flex;
   align-items: center;
   font-size: ${theme.fontSizes.sm};
-  font-weight: ${theme.fontWeights.medium};
   color: ${theme.colors.gray[700]};
   cursor: pointer;
+  flex: 1;
+  
+  &:hover {
+    color: ${theme.colors.primary[600]};
+  }
+`;
+
+const TaskName = styled.span`
+  font-weight: ${theme.fontWeights.medium};
 `;
 
 const CompletedBadge = styled.div`
@@ -279,12 +301,19 @@ const ErrorContainer = styled.div`
   color: ${theme.colors.red[600]};
 `;
 
+interface CompletionTasks {
+  verseText: boolean;
+  footnotes: boolean;
+  partner: boolean;
+}
+
 interface ReadingDay {
   date: string;
   dayNumber: number;
   bookName: string;
   chapterVerse: string;
   isCompleted: boolean;
+  completionTasks?: CompletionTasks;
   portions: Array<{
     bookName: string;
     startChapter: number;
@@ -304,6 +333,11 @@ export const WeekView: React.FC<WeekViewProps> = ({ scheduleId, groupId }) => {
   const [readings, setReadings] = useState<ReadingDay[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [scheduleConfig, setScheduleConfig] = useState<CompletionTasks>({
+    verseText: true,
+    footnotes: false,
+    partner: false
+  });
   const [currentWeekStart, setCurrentWeekStart] = useState(() => {
     const today = new Date();
     const dayOfWeek = today.getDay(); // 0 = Sunday
@@ -365,6 +399,11 @@ export const WeekView: React.FC<WeekViewProps> = ({ scheduleId, groupId }) => {
 
       const response = await progressAPI.getScheduleWithProgress(params);
       
+      // Set schedule configuration for completion tasks
+      if (response.schedule?.completionTasks) {
+        setScheduleConfig(response.schedule.completionTasks);
+      }
+      
       if (response.readings) {
         const readingDays: ReadingDay[] = response.readings.map((reading: any) => ({
           date: reading.scheduledDate,
@@ -372,6 +411,11 @@ export const WeekView: React.FC<WeekViewProps> = ({ scheduleId, groupId }) => {
           bookName: reading.startBookName,
           chapterVerse: reading.portions?.map(formatSinglePortion).join(', ') || '',
           isCompleted: reading.isCompleted || false,
+          completionTasks: reading.completionTasks || {
+            verseText: reading.isCompleted || false,
+            footnotes: false,
+            partner: false
+          },
           portions: reading.portions
         }));
         
@@ -422,14 +466,33 @@ export const WeekView: React.FC<WeekViewProps> = ({ scheduleId, groupId }) => {
     });
   };
 
-  const handleCheckboxChange = async (dayNumber: number, isCompleted: boolean) => {
+  const handleTaskChange = async (dayNumber: number, taskType: keyof CompletionTasks, isChecked: boolean) => {
     if (!currentUser) return;
 
     try {
+      // Find the current reading to get its completion tasks
+      const currentReading = readings.find(r => r.dayNumber === dayNumber);
+      if (!currentReading) return;
+
+      // Update the specific task
+      let updatedTasks = {
+        ...(currentReading.completionTasks || { verseText: false, footnotes: false, partner: false }),
+        [taskType]: isChecked
+      };
+
+      // If verse text is unchecked, also uncheck footnotes and partner
+      if (taskType === 'verseText' && !isChecked) {
+        updatedTasks.footnotes = false;
+        updatedTasks.partner = false;
+      }
+
+      // Overall completion is based only on verse text being checked
+      const overallCompleted = updatedTasks.verseText;
+
       const progressData: any = {
         userId: currentUser.uid,
         dayNumber,
-        isCompleted
+        completionTasks: updatedTasks
       };
 
       if (scheduleId) {
@@ -443,7 +506,7 @@ export const WeekView: React.FC<WeekViewProps> = ({ scheduleId, groupId }) => {
       // Update local state
       setReadings(prev => prev.map(reading => 
         reading.dayNumber === dayNumber 
-          ? { ...reading, isCompleted } 
+          ? { ...reading, isCompleted: overallCompleted, completionTasks: updatedTasks } 
           : reading
       ));
     } catch (error) {
@@ -536,14 +599,54 @@ export const WeekView: React.FC<WeekViewProps> = ({ scheduleId, groupId }) => {
                     ))}
                     
                     <CompletionSection>
-                      <CheckboxLabel>
-                        <Checkbox
-                          type="checkbox"
-                          checked={day.reading.isCompleted}
-                          onChange={(e) => handleCheckboxChange(day.reading!.dayNumber, e.target.checked)}
-                        />
-                        Mark as completed
-                      </CheckboxLabel>
+                      <TasksContainer>
+                        {scheduleConfig.verseText && (
+                          <TaskRow>
+                            <CheckboxLabel>
+                              <Checkbox
+                                type="checkbox"
+                                checked={day.reading.completionTasks?.verseText || false}
+                                onChange={(e) => handleTaskChange(day.reading!.dayNumber, 'verseText', e.target.checked)}
+                              />
+                              <TaskName>Verse Text</TaskName>
+                            </CheckboxLabel>
+                          </TaskRow>
+                        )}
+                        {scheduleConfig.footnotes && (
+                          <TaskRow>
+                            <CheckboxLabel>
+                              <Checkbox
+                                type="checkbox"
+                                checked={day.reading.completionTasks?.footnotes || false}
+                                disabled={!(day.reading.completionTasks?.verseText || false)}
+                                onChange={(e) => handleTaskChange(day.reading!.dayNumber, 'footnotes', e.target.checked)}
+                              />
+                              <TaskName style={{ 
+                                opacity: (day.reading.completionTasks?.verseText || false) ? 1 : 0.5 
+                              }}>
+                                Footnotes
+                              </TaskName>
+                            </CheckboxLabel>
+                          </TaskRow>
+                        )}
+                        {scheduleConfig.partner && (
+                          <TaskRow>
+                            <CheckboxLabel>
+                              <Checkbox
+                                type="checkbox"
+                                checked={day.reading.completionTasks?.partner || false}
+                                disabled={!(day.reading.completionTasks?.verseText || false)}
+                                onChange={(e) => handleTaskChange(day.reading!.dayNumber, 'partner', e.target.checked)}
+                              />
+                              <TaskName style={{ 
+                                opacity: (day.reading.completionTasks?.verseText || false) ? 1 : 0.5 
+                              }}>
+                                Partner
+                              </TaskName>
+                            </CheckboxLabel>
+                          </TaskRow>
+                        )}
+                      </TasksContainer>
                     </CompletionSection>
                   </>
                 ) : (

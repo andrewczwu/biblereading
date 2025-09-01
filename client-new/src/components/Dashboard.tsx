@@ -325,6 +325,15 @@ const ProgressText = styled.div`
   color: ${theme.colors.gray[600]};
 `;
 
+const PointsText = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  font-size: ${theme.fontSizes.sm};
+  color: ${theme.colors.primary[600]};
+  font-weight: ${theme.fontWeights.medium};
+  margin-top: ${theme.spacing[2]};
+`;
+
 const ScheduleActions = styled.div`
   display: flex;
   gap: ${theme.spacing[2]};
@@ -486,59 +495,7 @@ export const Dashboard: React.FC = () => {
         <Subtitle>Welcome to your Bible reading dashboard</Subtitle>
       </Header>
 
-      <Card>
-        <WelcomeMessage>
-          <h2>Your Bible Reading Journey Starts Here</h2>
-          <p>
-            You've successfully created your account and logged in! Your reading schedule and progress 
-            will be displayed here once you set up your first Bible reading plan.
-          </p>
-          <p>
-            Email: {currentUser?.email}
-          </p>
-          {userProfile && (
-            <>
-              <p>Display Name: {userProfile.displayName}</p>
-            </>
-          )}
-          
-          <ButtonGroup>
-            <Button $variant="primary" onClick={() => navigate('/schedules')}>
-              Create Reading Schedule
-            </Button>
-            <Button $variant="secondary" onClick={() => navigate('/schedules')}>
-              Join Group
-            </Button>
-            <Button $variant="primary" onClick={() => navigate('/calendar')}>
-              View Calendar
-            </Button>
-          </ButtonGroup>
 
-          <GroupMembersSection>
-            <SectionTitle>View Group Members</SectionTitle>
-            <GroupIdForm>
-              <GroupIdInput
-                type="text"
-                placeholder="Enter group ID (e.g. bellevue-yp-2024-spring)"
-                value={groupId}
-                onChange={(e) => setGroupId(e.target.value)}
-                onKeyPress={(e) => {
-                  if (e.key === 'Enter') {
-                    handleViewMembers();
-                  }
-                }}
-              />
-              <ViewMembersButton 
-                $variant="primary" 
-                onClick={handleViewMembers}
-                disabled={!groupId.trim()}
-              >
-                View Members
-              </ViewMembersButton>
-            </GroupIdForm>
-          </GroupMembersSection>
-        </WelcomeMessage>
-      </Card>
 
       <SchedulesSection>
         <SchedulesHeader>
@@ -567,8 +524,8 @@ export const Dashboard: React.FC = () => {
           <EmptyState>
             <h3>No Reading Schedules Yet</h3>
             <p>You haven't created any individual schedules or joined any groups yet.</p>
-            <Button onClick={() => navigate('/schedules')}>
-              Get Started
+            <Button onClick={() => navigate('/join-group')}>
+              Join Group
             </Button>
           </EmptyState>
         )}
@@ -599,15 +556,6 @@ export const Dashboard: React.FC = () => {
                   </ScheduleMeta>
                 )}
 
-                <ProgressSection>
-                  <ProgressBar>
-                    <ProgressFill $percentage={schedule.progress.completionPercentage} />
-                  </ProgressBar>
-                  <ProgressText>
-                    <span>{schedule.progress.completedReadings} of {schedule.progress.totalReadings} readings</span>
-                    <span>{schedule.progress.completionPercentage}% complete</span>
-                  </ProgressText>
-                </ProgressSection>
 
                 <ScheduleActions>
                   <ActionButton 
@@ -617,7 +565,7 @@ export const Dashboard: React.FC = () => {
                     View Calendar
                   </ActionButton>
                   
-                  {schedule.type === 'group' && (
+                  {schedule.type === 'group' && schedule.memberRole === 'admin' && (
                     <ActionButton 
                       $variant="secondary" 
                       onClick={() => handleViewGroupMembers(schedule)}
@@ -631,6 +579,51 @@ export const Dashboard: React.FC = () => {
           </SchedulesGrid>
         )}
       </SchedulesSection>
+
+      {userSchedules.some(schedule => schedule.memberRole === 'admin') && (
+        <Card>
+          <WelcomeMessage>
+            <h2>Admin</h2>
+            
+            <ButtonGroup>
+              <Button $variant="primary" onClick={() => navigate('/schedules')}>
+                Create Reading Schedule
+              </Button>
+              <Button $variant="secondary" onClick={() => navigate('/join-group')}>
+                Join Group
+              </Button>
+            <Button $variant="primary" onClick={() => navigate('/calendar')}>
+              View Calendar
+            </Button>
+          </ButtonGroup>
+
+          <GroupMembersSection>
+            <SectionTitle>View Group Members</SectionTitle>
+            <GroupIdForm>
+              <GroupIdInput
+                type="text"
+                placeholder="Enter group ID (e.g. bellevue-yp-2024-spring)"
+                value={groupId}
+                onChange={(e) => setGroupId(e.target.value)}
+                onKeyPress={(e) => {
+                  if (e.key === 'Enter') {
+                    handleViewMembers();
+                  }
+                }}
+              />
+              <ViewMembersButton 
+                $variant="primary" 
+                onClick={handleViewMembers}
+                disabled={!groupId.trim()}
+              >
+                View Members
+              </ViewMembersButton>
+            </GroupIdForm>
+          </GroupMembersSection>
+        </WelcomeMessage>
+        </Card>
+      )}
+
     </Container>
   );
 };
