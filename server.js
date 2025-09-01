@@ -259,9 +259,12 @@ app.use((error, req, res, next) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`Bible Reading API server is running on port ${PORT}`);
-  console.log(`Visit http://localhost:${PORT} for API documentation`);
-});
+// Only start server if not in test environment
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(PORT, () => {
+    console.log(`Bible Reading API server is running on port ${PORT}`);
+    console.log(`Visit http://localhost:${PORT} for API documentation`);
+  });
+}
 
 module.exports = app;

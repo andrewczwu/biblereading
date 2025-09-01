@@ -6,6 +6,11 @@
     "express": "^5.1.0",
     "firebase-admin": "^13.5.0"
   },
+  "devDependencies": {
+    "@jest/globals": "^29.7.0",
+    "jest": "^29.7.0",
+    "supertest": "^7.1.4"
+  },
   "name": "biblereading",
   "version": "1.0.0",
   "main": "server.js",
@@ -13,7 +18,30 @@
     "start": "node server.js",
     "dev": "node server.js",
     "seed": "node -e \"require('./utils/seedData').seedBibleData()\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "setupFilesAfterEnv": [
+      "<rootDir>/__tests__/setup.js"
+    ],
+    "collectCoverageFrom": [
+      "api/**/*.js",
+      "!api/**/*.test.js"
+    ],
+    "coverageDirectory": "coverage",
+    "coverageReporters": [
+      "text",
+      "lcov",
+      "html"
+    ],
+    "testMatch": [
+      "**/__tests__/**/*.test.js"
+    ],
+    "clearMocks": true,
+    "restoreMocks": true
   },
   "keywords": [],
   "author": "",

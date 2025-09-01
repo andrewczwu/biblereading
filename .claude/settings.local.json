@@ -17,7 +17,9 @@
       "Bash(npm run dev:*)",
       "Bash(npm uninstall:*)",
       "Bash(npm create:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(NODE_ENV=test npx jest __tests__/api/user-profile.test.js --verbose)",
+      "Bash(NODE_ENV=test npm test -- --passWithNoTests)"
     ],
     "deny": [],
     "ask": []
