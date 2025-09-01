@@ -200,14 +200,14 @@ async function testGroupScheduleEndpoints() {
       groupId: 'non-existent-group-999'
     };
     
-    // This should either return 404 or handle gracefully
-    // The exact behavior depends on implementation
-    const response = await makeRequest('POST', '/leave-group-reading-schedule', leaveData);
+    // Should return 404 since user cannot be a member of non-existent group
+    const response = await makeRequest('POST', '/leave-group-reading-schedule', leaveData, 404);
     
-    // Accept either 404 (group not found) or 200 (handled gracefully)
-    if (response.status !== 404 && response.status !== 200) {
-      throw new Error(`Expected 404 or 200, got ${response.status}`);
+    if (response.status !== 404) {
+      throw new Error(`Expected 404 not found, got ${response.status}`);
     }
+    
+    validateResponse(response, ['error']);
   })) {
     passedTests++;
   }
