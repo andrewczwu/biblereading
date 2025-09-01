@@ -7,6 +7,7 @@ import { PrivateRoute } from './components/auth/PrivateRoute';
 import { Login } from './components/auth/Login';
 import { Register } from './components/auth/Register';
 import { Dashboard } from './components/Dashboard';
+import Schedules from './pages/Schedules';
 
 function App() {
   return (
@@ -45,6 +46,12 @@ function App() {
           <Route path="/dashboard" element={
             <PrivateRoute requireProfile>
               <Dashboard />
+            </PrivateRoute>
+          } />
+          
+          <Route path="/schedules" element={
+            <PrivateRoute requireProfile>
+              <Schedules />
             </PrivateRoute>
           } />
           

@@ -9,6 +9,7 @@ const { createGroupReadingSchedule } = require('./api/create-group-reading-sched
 const { joinGroupReadingSchedule, leaveGroupReadingSchedule } = require('./api/join-group-reading-schedule');
 const { markReadingCompleted } = require('./api/mark-reading-completed');
 const { getReadingScheduleWithProgress, getDayReading } = require('./api/get-reading-schedule-with-progress');
+const { getReadingTemplates, getReadingTemplate } = require('./api/get-reading-templates');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -37,6 +38,10 @@ app.post('/api/mark-reading-completed', markReadingCompleted);
 app.get('/api/get-reading-schedule-with-progress', getReadingScheduleWithProgress);
 app.get('/api/get-day-reading', getDayReading);
 
+// Reading Templates endpoints
+app.get('/api/reading-templates', getReadingTemplates);
+app.get('/api/reading-templates/:templateId', getReadingTemplate);
+
 app.get('/', (req, res) => {
   res.json({
     message: 'Bible Reading Schedule API',
@@ -62,6 +67,10 @@ app.get('/', (req, res) => {
       readingRetrieval: {
         'GET /api/get-reading-schedule-with-progress': 'Get readings with progress',
         'GET /api/get-day-reading': 'Get specific day reading'
+      },
+      readingTemplates: {
+        'GET /api/reading-templates': 'Get all available reading templates',
+        'GET /api/reading-templates/:templateId': 'Get specific reading template details'
       }
     }
   });

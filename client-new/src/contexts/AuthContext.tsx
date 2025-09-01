@@ -39,6 +39,7 @@ interface AuthContextType {
   currentUser: User | null;
   userProfile: UserProfile | null;
   loading: boolean;
+  profileChecked: boolean;
   signup: (email: string, password: string, displayName: string) => Promise<User>;
   login: (email: string, password: string) => Promise<void>;
   logout: () => Promise<void>;
@@ -63,6 +64,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
   const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
   const [loading, setLoading] = useState(true);
+  const [profileChecked, setProfileChecked] = useState(false);
 
   const signup = async (email: string, password: string, displayName: string): Promise<User> => {
     const { user } = await createUserWithEmailAndPassword(auth, email, password);
@@ -87,15 +89,26 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   };
 
   const fetchUserProfile = async (uid: string): Promise<void> => {
+    console.log('AuthContext - Fetching profile for uid:', uid);
     try {
-      const profile = await userProfileAPI.get(uid);
-      setUserProfile(profile);
+      const response = await userProfileAPI.get(uid);
+      console.log('AuthContext - Profile fetched successfully:', response);
+      // Extract the profile from the response wrapper
+      setUserProfile(response.profile || response);
     } catch (error: any) {
-      console.error('Error fetching user profile:', error);
-      // Profile doesn't exist yet - that's okay for new users
-      if (error.response?.status !== 404) {
-        console.error('Unexpected error fetching profile:', error);
+      console.error('AuthContext - Error fetching user profile:', error);
+      console.error('AuthContext - Error response:', error.response);
+      // Only set userProfile to null if it's a 404 (profile doesn't exist)
+      // For other errors, leave userProfile as-is to avoid false redirects
+      if (error.response?.status === 404) {
+        console.log('AuthContext - Profile not found (404), setting userProfile to null');
+        setUserProfile(null);
+      } else {
+        console.error('AuthContext - Unexpected error fetching profile, keeping current state');
+        // Don't change userProfile state for non-404 errors
       }
+    } finally {
+      setProfileChecked(true);
     }
   };
 
@@ -107,6 +120,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         await fetchUserProfile(user.uid);
       } else {
         setUserProfile(null);
+        setProfileChecked(false);
       }
       
       setLoading(false);
@@ -119,6 +133,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     currentUser,
     userProfile,
     loading,
+    profileChecked,
     signup,
     login,
     logout,

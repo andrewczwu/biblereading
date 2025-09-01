@@ -11,12 +11,13 @@
       "Bash(grep:*)",
       "Bash(rg:*)",
       "Bash(jq:*)",
-      "Bash(PORT=3001 node server.js)",
-      "Bash(API_BASE_URL=http://localhost:3001/api node tests/test-user-profile.js)",
-      "Bash(API_BASE_URL=http://localhost:3001/api node tests/test-individual-schedules.js)",
+      "Bash(PORT=3000 node server.js)",
+      "Bash(API_BASE_URL=http://localhost:3000/api node tests/test-user-profile.js)",
+      "Bash(API_BASE_URL=http://localhost:3000/api node tests/test-individual-schedules.js)",
       "Bash(npm run dev:*)",
       "Bash(npm uninstall:*)",
-      "Bash(npm create:*)"
+      "Bash(npm create:*)",
+      "Bash(curl:*)"
     ],
     "deny": [],
     "ask": []

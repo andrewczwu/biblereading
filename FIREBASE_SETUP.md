@@ -139,7 +139,7 @@ VITE_FIREBASE_MESSAGING_SENDER_ID=65211879809
 VITE_FIREBASE_APP_ID=1:65211879909:web:3ae38ef1cdcb2e01fe5f0c
 
 # API Configuration (keep as is for local development)
-VITE_API_BASE_URL=http://localhost:3001/api
+VITE_API_BASE_URL=http://localhost:3000/api
 ```
 
 ### Step 6: Get Service Account Key (for Backend)
@@ -240,7 +240,7 @@ VITE_FIREBASE_MESSAGING_SENDER_ID=123456789012
 VITE_FIREBASE_APP_ID=1:123456789012:web:abcdef123456789abcdef
 
 # API Configuration
-VITE_API_BASE_URL=http://localhost:3001/api
+VITE_API_BASE_URL=http://localhost:3000/api
 ```
 
 ## 🎉 Success Indicators

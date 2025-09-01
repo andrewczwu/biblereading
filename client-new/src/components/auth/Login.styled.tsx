@@ -85,10 +85,10 @@ export const InputContainer = styled.div`
   position: relative;
 `;
 
-export const Input = styled.input<{ hasError?: boolean }>`
+export const Input = styled.input<{ $hasError?: boolean }>`
   width: 100%;
   padding: ${theme.spacing[3]} ${theme.spacing[4]};
-  border: 1px solid ${props => props.hasError ? theme.colors.red[500] : theme.colors.gray[300]};
+  border: 1px solid ${props => props.$hasError ? theme.colors.red[500] : theme.colors.gray[300]};
   border-radius: ${theme.borderRadius.lg};
   font-size: ${theme.fontSizes.base};
   transition: all 0.2s;

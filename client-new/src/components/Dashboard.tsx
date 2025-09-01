@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { theme } from '../styles/theme';
 
@@ -59,25 +60,69 @@ const WelcomeMessage = styled.div`
   }
 `;
 
-const LogoutButton = styled.button`
-  background: ${theme.colors.red[600]};
-  color: ${theme.colors.white};
+const Button = styled.button<{ $variant?: 'primary' | 'secondary' | 'danger' }>`
   border: none;
   border-radius: ${theme.borderRadius.lg};
-  padding: ${theme.spacing[2]} ${theme.spacing[4]};
-  font-size: ${theme.fontSizes.sm};
+  padding: ${theme.spacing[3]} ${theme.spacing[4]};
+  font-size: ${theme.fontSizes.base};
   font-weight: ${theme.fontWeights.medium};
   cursor: pointer;
   transition: all 0.2s;
-  margin-top: ${theme.spacing[4]};
+  margin: ${theme.spacing[2]};
+  
+  ${props => {
+    switch (props.$variant) {
+      case 'primary':
+        return `
+          background: ${theme.colors.primary[600]};
+          color: ${theme.colors.white};
+          &:hover {
+            background: ${theme.colors.primary[700]};
+          }
+        `;
+      case 'secondary':
+        return `
+          background: ${theme.colors.gray[200]};
+          color: ${theme.colors.gray[900]};
+          &:hover {
+            background: ${theme.colors.gray[300]};
+          }
+        `;
+      case 'danger':
+        return `
+          background: ${theme.colors.red[600]};
+          color: ${theme.colors.white};
+          &:hover {
+            background: ${theme.colors.red[700]};
+          }
+        `;
+      default:
+        return `
+          background: ${theme.colors.primary[600]};
+          color: ${theme.colors.white};
+          &:hover {
+            background: ${theme.colors.primary[700]};
+          }
+        `;
+    }
+  }}
+`;
 
-  &:hover {
-    background: ${theme.colors.red[700]};
-  }
+const ButtonGroup = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: ${theme.spacing[2]};
+  margin-top: ${theme.spacing[6]};
 `;
 
 export const Dashboard: React.FC = () => {
   const { currentUser, userProfile, logout } = useAuth();
+  const navigate = useNavigate();
+
+  // Debug logging
+  console.log('Dashboard - currentUser:', currentUser);
+  console.log('Dashboard - userProfile:', userProfile);
 
   const handleLogout = async () => {
     try {
@@ -120,9 +165,18 @@ export const Dashboard: React.FC = () => {
               <p>Timezone: {userProfile.timezone}</p>
             </>
           )}
-          <LogoutButton onClick={handleLogout}>
-            Sign Out
-          </LogoutButton>
+          
+          <ButtonGroup>
+            <Button $variant="primary" onClick={() => navigate('/schedules')}>
+              Create Reading Schedule
+            </Button>
+            <Button $variant="secondary" onClick={() => navigate('/schedules')}>
+              Join Group
+            </Button>
+            <Button $variant="danger" onClick={handleLogout}>
+              Sign Out
+            </Button>
+          </ButtonGroup>
         </WelcomeMessage>
       </Card>
     </Container>

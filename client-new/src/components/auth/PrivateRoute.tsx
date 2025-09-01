@@ -31,7 +31,7 @@ interface PrivateRouteProps {
 }
 
 export const PrivateRoute: React.FC<PrivateRouteProps> = ({ children, requireProfile = false }) => {
-  const { currentUser, userProfile, loading } = useAuth();
+  const { currentUser, userProfile, loading, profileChecked } = useAuth();
 
   if (loading) {
     return (
@@ -45,8 +45,18 @@ export const PrivateRoute: React.FC<PrivateRouteProps> = ({ children, requirePro
     return <Navigate to="/login" />;
   }
 
-  if (requireProfile && !userProfile) {
-    return <Navigate to="/complete-profile" />;
+  // If profile is required but we haven't checked yet, show loading
+  if (requireProfile && !profileChecked) {
+    return (
+      <LoadingContainer>
+        <Spinner />
+      </LoadingContainer>
+    );
+  }
+
+  // If profile is required and we've checked but no profile exists, redirect to register
+  if (requireProfile && profileChecked && !userProfile) {
+    return <Navigate to="/register" />;
   }
 
   return <>{children}</>;

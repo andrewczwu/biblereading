@@ -135,7 +135,7 @@ export const Register: React.FC = () => {
                   })}
                   type="email"
                   placeholder="john@example.com"
-                  hasError={!!errors.email}
+                  $hasError={!!errors.email}
                 />
                 {errors.email && <ErrorMessage>{errors.email.message}</ErrorMessage>}
               </FormGroup>
@@ -146,7 +146,7 @@ export const Register: React.FC = () => {
                   {...register('displayName', { required: 'Display name is required' })}
                   type="text"
                   placeholder="JohnDoe"
-                  hasError={!!errors.displayName}
+                  $hasError={!!errors.displayName}
                 />
                 {errors.displayName && <ErrorMessage>{errors.displayName.message}</ErrorMessage>}
               </FormGroup>
@@ -165,7 +165,7 @@ export const Register: React.FC = () => {
                       }
                     })}
                     type={showPassword ? 'text' : 'password'}
-                    hasError={!!errors.password}
+                    $hasError={!!errors.password}
                   />
                   <PasswordToggle
                     type="button"
@@ -197,7 +197,7 @@ export const Register: React.FC = () => {
                       validate: value => value === password || 'Passwords do not match'
                     })}
                     type={showConfirmPassword ? 'text' : 'password'}
-                    hasError={!!errors.confirmPassword}
+                    $hasError={!!errors.confirmPassword}
                   />
                   <PasswordToggle
                     type="button"
@@ -233,7 +233,7 @@ export const Register: React.FC = () => {
                   {...register('firstName', { required: 'First name is required' })}
                   type="text"
                   placeholder="John"
-                  hasError={!!errors.firstName}
+                  $hasError={!!errors.firstName}
                 />
                 {errors.firstName && <ErrorMessage>{errors.firstName.message}</ErrorMessage>}
               </FormGroup>
@@ -244,7 +244,7 @@ export const Register: React.FC = () => {
                   {...register('lastName', { required: 'Last name is required' })}
                   type="text"
                   placeholder="Doe"
-                  hasError={!!errors.lastName}
+                  $hasError={!!errors.lastName}
                 />
                 {errors.lastName && <ErrorMessage>{errors.lastName.message}</ErrorMessage>}
               </FormGroup>
@@ -277,7 +277,7 @@ export const Register: React.FC = () => {
                 <Label>Timezone *</Label>
                 <Select
                   {...register('timezone', { required: 'Timezone is required' })}
-                  hasError={!!errors.timezone}
+                  $hasError={!!errors.timezone}
                 >
                   <option value="">Select timezone</option>
                   <option value="America/New_York">Eastern Time</option>
@@ -293,7 +293,7 @@ export const Register: React.FC = () => {
                 <Label>Preferred Language *</Label>
                 <Select
                   {...register('preferredLanguage', { required: 'Language is required' })}
-                  hasError={!!errors.preferredLanguage}
+                  $hasError={!!errors.preferredLanguage}
                 >
                   <option value="">Select language</option>
                   <option value="en">English</option>
@@ -310,7 +310,7 @@ export const Register: React.FC = () => {
                   {...register('reminderTime', { required: 'Reminder time is required' })}
                   type="time"
                   defaultValue="08:00"
-                  hasError={!!errors.reminderTime}
+                  $hasError={!!errors.reminderTime}
                 />
                 {errors.reminderTime && <ErrorMessage>{errors.reminderTime.message}</ErrorMessage>}
               </FormGroup>
@@ -319,7 +319,7 @@ export const Register: React.FC = () => {
                 <Label>Preferred Translation *</Label>
                 <Select
                   {...register('preferredTranslation', { required: 'Translation is required' })}
-                  hasError={!!errors.preferredTranslation}
+                  $hasError={!!errors.preferredTranslation}
                 >
                   <option value="">Select translation</option>
                   <option value="NIV">NIV</option>

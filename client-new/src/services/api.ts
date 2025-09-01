@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001/api';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000/api';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
@@ -17,7 +17,10 @@ export const userProfileAPI = {
   },
 
   get: async (uid: string) => {
+    console.log('API - Making request to get user profile for uid:', uid);
+    console.log('API - Base URL:', API_BASE_URL);
     const response = await api.get(`/user-profile/${uid}`);
+    console.log('API - User profile response:', response.data);
     return response.data;
   },
 
@@ -32,25 +35,36 @@ export const userProfileAPI = {
   },
 };
 
-// Schedule API
-export const scheduleAPI = {
-  create: async (scheduleData: any) => {
-    const response = await api.post('/schedule', scheduleData);
+// Individual Reading Schedule API
+export const individualScheduleAPI = {
+  create: async (scheduleData: { userId: string; templateId: string; startDate: string }) => {
+    const response = await api.post('/create-reading-schedule', scheduleData);
+    return response.data;
+  },
+};
+
+// Group Reading Schedule API
+export const groupScheduleAPI = {
+  create: async (groupData: { 
+    groupName: string; 
+    templateId: string; 
+    startDate: string; 
+    createdBy: string;
+    isPublic?: boolean;
+    maxMembers?: number;
+    customGroupId?: string;
+  }) => {
+    const response = await api.post('/create-group-reading-schedule', groupData);
     return response.data;
   },
 
-  getByUser: async (userId: string) => {
-    const response = await api.get(`/schedule/user/${userId}`);
+  join: async (joinData: { userId: string; groupId: string; userName?: string; email?: string }) => {
+    const response = await api.post('/join-group-reading-schedule', joinData);
     return response.data;
   },
 
-  update: async (scheduleId: string, scheduleData: any) => {
-    const response = await api.put(`/schedule/${scheduleId}`, scheduleData);
-    return response.data;
-  },
-
-  delete: async (scheduleId: string) => {
-    const response = await api.delete(`/schedule/${scheduleId}`);
+  leave: async (leaveData: { userId: string; groupId: string }) => {
+    const response = await api.post('/leave-group-reading-schedule', leaveData);
     return response.data;
   },
 };
@@ -58,41 +72,31 @@ export const scheduleAPI = {
 // Progress API
 export const progressAPI = {
   markCompleted: async (progressData: { userId: string; dayNumber: number; isCompleted: boolean }) => {
-    const response = await api.post('/progress', progressData);
+    const response = await api.post('/mark-reading-completed', progressData);
     return response.data;
   },
 
   getScheduleWithProgress: async (params: { userId: string; limit?: number }) => {
-    const response = await api.get('/progress/schedule-with-progress', { params });
+    const response = await api.get('/get-reading-schedule-with-progress', { params });
     return response.data;
   },
 
   getDayReading: async (params: { userId: string; date: string }) => {
-    const response = await api.get('/progress/day-reading', { params });
+    const response = await api.get('/get-day-reading', { params });
     return response.data;
   },
 };
 
-// Groups API
-export const groupsAPI = {
-  create: async (groupData: any) => {
-    const response = await api.post('/groups', groupData);
-    return response.data;
+// Reading Template API
+export const templateAPI = {
+  getAll: async () => {
+    const response = await api.get('/reading-templates');
+    return response.data.templates;
   },
 
-  getByUser: async (userId: string) => {
-    const response = await api.get(`/groups/user/${userId}`);
-    return response.data;
-  },
-
-  join: async (groupId: string, userId: string) => {
-    const response = await api.post(`/groups/${groupId}/join`, { userId });
-    return response.data;
-  },
-
-  leave: async (groupId: string, userId: string) => {
-    const response = await api.post(`/groups/${groupId}/leave`, { userId });
-    return response.data;
+  getById: async (templateId: string) => {
+    const response = await api.get(`/reading-templates/${templateId}`);
+    return response.data.template;
   },
 };
 

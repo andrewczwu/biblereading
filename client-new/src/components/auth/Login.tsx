@@ -90,7 +90,7 @@ export const Login: React.FC = () => {
               })}
               type="email"
               placeholder="john@example.com"
-              hasError={!!errors.email}
+              $hasError={!!errors.email}
             />
             {errors.email && (
               <ErrorMessage>{errors.email.message}</ErrorMessage>
@@ -110,7 +110,7 @@ export const Login: React.FC = () => {
                 })}
                 type={showPassword ? 'text' : 'password'}
                 placeholder="••••••••"
-                hasError={!!errors.password}
+                $hasError={!!errors.password}
               />
               <PasswordToggle
                 type="button"

@@ -7,7 +7,7 @@ This document outlines all the API endpoints for the Bible Reading Schedule appl
 The API supports both individual and group Bible reading schedules based on templates. Users can create schedules, join groups, track progress, and mark daily readings as complete.
 
 ## Base URL
-All endpoints are relative to your API base URL (e.g., `http://localhost:3001/api`)
+All endpoints are relative to your API base URL (e.g., `http://localhost:3000/api`)
 
 ## Implementation Status
 
@@ -20,7 +20,7 @@ All endpoints are relative to your API base URL (e.g., `http://localhost:3001/ap
 - **Overall Success Rate**: 30/31 tests (96.8%) ✅
 
 ### Server Status
-- **Running on**: `http://localhost:3001`
+- **Running on**: `http://localhost:3000`
 - **Database**: Firebase Firestore (connected)
 - **Environment**: Node.js with Express
 - **Dependencies**: All installed and configured
@@ -681,32 +681,32 @@ This API provides complete functionality for creating, managing, and tracking Bi
 cd E:\Project\biblereading
 npm start
 # or for development with custom port:
-PORT=3001 node server.js
+PORT=3000 node server.js
 ```
 
 ### Running Tests
 ```bash
 # Run individual test suites
-API_BASE_URL=http://localhost:3001/api node tests/test-user-profile.js
-API_BASE_URL=http://localhost:3001/api node tests/test-individual-schedules.js  
-API_BASE_URL=http://localhost:3001/api node tests/test-group-schedules.js
+API_BASE_URL=http://localhost:3000/api node tests/test-user-profile.js
+API_BASE_URL=http://localhost:3000/api node tests/test-individual-schedules.js  
+API_BASE_URL=http://localhost:3000/api node tests/test-group-schedules.js
 
 # Enable debug output
-DEBUG=true API_BASE_URL=http://localhost:3001/api node tests/test-user-profile.js
+DEBUG=true API_BASE_URL=http://localhost:3000/api node tests/test-user-profile.js
 ```
 
 ### Example API Calls
 ```bash
 # Get API documentation
-curl http://localhost:3001/
+curl http://localhost:3000/
 
 # Create a user profile
-curl -X POST http://localhost:3001/api/user-profile \
+curl -X POST http://localhost:3000/api/user-profile \
   -H "Content-Type: application/json" \
   -d '{"uid":"user123","email":"test@example.com","displayName":"Test User"}'
 
 # Create an individual reading schedule
-curl -X POST http://localhost:3001/api/create-reading-schedule \
+curl -X POST http://localhost:3000/api/create-reading-schedule \
   -H "Content-Type: application/json" \
   -d '{"userId":"user123","templateId":"bellevueYPNT","startDate":"2024-01-01"}'
 ```
