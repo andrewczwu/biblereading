@@ -53,33 +53,44 @@ node tests/test-reading-retrieval.js
 
 ## Test Coverage
 
-### User Profile Management
-- ✅ Create user profile
+### User Profile Management ✅ (10/10 tests passing)
+- ✅ Create user profile (with reactivation of soft-deleted profiles)
 - ✅ Get user profile
-- ✅ Update user profile
-- ✅ Delete user profile
+- ✅ Update user profile (with nested object merging)
+- ✅ Delete user profile (soft delete)
 - ✅ Error handling (validation, duplicates, not found)
+- ✅ Email format validation
+- ✅ Date format validation
+- ✅ Required fields validation
 
-### Individual Reading Schedules
+### Individual Reading Schedules ✅ (8/8 tests passing)
 - ✅ Create individual schedule from template
-- ✅ Error handling (missing template, duplicate schedule)
+- ✅ Prevent duplicate schedule creation
+- ✅ Create schedules with different start dates
+- ✅ Handle non-existent templates
+- ✅ Validate required fields and date formats
+- ✅ Multi-user schedule creation
+- ✅ End date calculation validation
 
-### Group Reading Schedules
+### Group Reading Schedules ✅ (12/13 tests passing)
 - ✅ Create group schedule
 - ✅ Join group schedule
 - ✅ Leave group schedule
-- ✅ Error handling (group not found, already member, permission errors)
+- ✅ Handle various error scenarios
+- ✅ Custom group ID support
+- ✅ Admin permission handling
+- ❌ 1 test failing: "Handle leaving non-existent group" (returns expected 404)
 
-### Reading Progress Tracking
-- ✅ Mark reading as completed/incomplete
-- ✅ Support for both individual and group schedules
-- ✅ Optional notes and time tracking
+### Reading Progress Tracking (Implementation exists, tests not found)
+- 🔧 Mark reading as completed/incomplete
+- 🔧 Support for both individual and group schedules  
+- 🔧 Optional notes and time tracking
 
-### Reading Retrieval
-- ✅ Get all readings with progress
-- ✅ Get specific day's reading (by day number and date)
-- ✅ Pagination support
-- ✅ Progress statistics calculation
+### Reading Retrieval (Implementation exists, tests not found)
+- 🔧 Get all readings with progress
+- 🔧 Get specific day's reading (by day number and date)
+- 🔧 Pagination support
+- 🔧 Progress statistics calculation
 
 ## Test Data
 
@@ -98,16 +109,34 @@ Successful test runs will show:
 ✅ Create user profile
 ✅ Get user profile  
 ✅ Update user profile
+✅ Prevent duplicate user profile creation
+✅ Handle non-existent user profile
+✅ Handle update of non-existent user profile
+✅ Reject invalid email format
+✅ Reject invalid date format
+✅ Reject missing required fields
 ✅ Delete user profile
-✅ Error handling tests
+📊 User Profile Tests Summary:
+   Passed: 10/10
 
 🧪 Testing Individual Schedule Endpoints...
-✅ Create individual schedule
-✅ Error handling tests
+✅ Create individual reading schedule
+✅ Prevent duplicate schedule creation
+✅ Create schedule with different start date
+✅ Handle non-existent template
+✅ Reject missing required fields
+✅ Reject invalid date format
+✅ Create schedule for different user
+✅ Validate end date calculation
+📊 Individual Schedule Tests Summary:
+   Passed: 8/8
 
-... (more test results)
-
-🎉 All tests passed!
+🧪 Testing Group Schedule Endpoints...
+✅ Create group reading schedule
+... (12 more passing tests)
+❌ Handle leaving non-existent group
+📊 Group Schedule Tests Summary:
+   Passed: 12/13
 ```
 
 ## Troubleshooting
