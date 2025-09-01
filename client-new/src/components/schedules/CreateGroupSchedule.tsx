@@ -5,6 +5,9 @@ import { toast } from 'react-hot-toast';
 import { useAuth } from '../../contexts/AuthContext';
 import { groupScheduleAPI, templateAPI } from '../../services/api';
 import { theme } from '../../styles/theme';
+import { Button } from '../ui/Button';
+import { Form, FormGroup, Label, Input, Select, ErrorMessage, HelpText } from '../ui/Form';
+import { Container, Title } from '../ui/Layout';
 
 interface CreateGroupFormData {
   groupName: string;
@@ -27,73 +30,8 @@ interface Template {
   difficulty?: string;
 }
 
-const Container = styled.div`
+const StyledContainer = styled(Container)`
   max-width: 600px;
-  margin: 0 auto;
-  padding: ${theme.spacing[6]};
-
-  @media (max-width: ${theme.breakpoints.sm}) {
-    padding: ${theme.spacing[4]};
-  }
-`;
-
-const Title = styled.h1`
-  font-size: ${theme.fontSizes['2xl']};
-  font-weight: ${theme.fontWeights.bold};
-  color: ${theme.colors.gray[900]};
-  margin-bottom: ${theme.spacing[8]};
-  text-align: center;
-`;
-
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  gap: ${theme.spacing[6]};
-`;
-
-const FormGroup = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${theme.spacing[2]};
-`;
-
-const Label = styled.label`
-  font-weight: ${theme.fontWeights.medium};
-  color: ${theme.colors.gray[700]};
-  font-size: ${theme.fontSizes.sm};
-`;
-
-const Input = styled.input`
-  padding: ${theme.spacing[3]};
-  border: 1px solid ${theme.colors.gray[300]};
-  border-radius: ${theme.borderRadius.md};
-  font-size: ${theme.fontSizes.base};
-  transition: all 0.2s;
-  
-  &:focus {
-    outline: none;
-    border-color: ${theme.colors.primary[500]};
-    box-shadow: 0 0 0 3px ${theme.colors.primary[100]};
-  }
-  
-  &:invalid {
-    border-color: ${theme.colors.red[500]};
-  }
-`;
-
-const Select = styled.select`
-  padding: ${theme.spacing[3]};
-  border: 1px solid ${theme.colors.gray[300]};
-  border-radius: ${theme.borderRadius.md};
-  font-size: ${theme.fontSizes.base};
-  background-color: white;
-  transition: all 0.2s;
-  
-  &:focus {
-    outline: none;
-    border-color: ${theme.colors.primary[500]};
-    box-shadow: 0 0 0 3px ${theme.colors.primary[100]};
-  }
 `;
 
 const CheckboxGroup = styled.div`
@@ -153,47 +91,6 @@ const SectionDescription = styled.p`
   margin-bottom: ${theme.spacing[4]};
 `;
 
-const Button = styled.button<{ variant?: 'primary' | 'secondary' }>`
-  padding: ${theme.spacing[3]} ${theme.spacing[4]};
-  border-radius: ${theme.borderRadius.md};
-  font-weight: ${theme.fontWeights.medium};
-  font-size: ${theme.fontSizes.base};
-  cursor: pointer;
-  transition: all 0.2s;
-  
-  ${props => props.variant === 'primary' ? `
-    background-color: ${theme.colors.primary[600]};
-    color: white;
-    border: none;
-    
-    &:hover {
-      background-color: ${theme.colors.primary[700]};
-    }
-    
-    &:disabled {
-      background-color: ${theme.colors.gray[400]};
-      cursor: not-allowed;
-    }
-  ` : `
-    background-color: white;
-    color: ${theme.colors.gray[700]};
-    border: 1px solid ${theme.colors.gray[300]};
-    
-    &:hover {
-      background-color: ${theme.colors.gray[50]};
-    }
-  `}
-`;
-
-const ErrorMessage = styled.span`
-  color: ${theme.colors.red[600]};
-  font-size: ${theme.fontSizes.sm};
-`;
-
-const HelpText = styled.span`
-  color: ${theme.colors.gray[600]};
-  font-size: ${theme.fontSizes.xs};
-`;
 
 const ButtonGroup = styled.div`
   display: flex;
@@ -284,7 +181,7 @@ const CreateGroupSchedule: React.FC<CreateGroupScheduleProps> = ({ onSuccess, on
   };
 
   return (
-    <Container>
+    <StyledContainer>
       <Title>Create Reading Group</Title>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <FormGroup>
@@ -448,7 +345,7 @@ const CreateGroupSchedule: React.FC<CreateGroupScheduleProps> = ({ onSuccess, on
           </Button>
         </ButtonGroup>
       </Form>
-    </Container>
+    </StyledContainer>
   );
 };
 
