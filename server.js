@@ -58,39 +58,170 @@ app.get('/', (req, res) => {
   res.json({
     message: 'Bible Reading Schedule API',
     version: '1.0.0',
+    description: 'Full-stack Bible reading application API with individual and group reading schedules',
+    features: [
+      'User profile management with Firebase authentication',
+      'Individual reading schedules from templates',
+      'Group reading schedules with member management', 
+      'Multiple completion task tracking (verse text, footnotes, partner)',
+      'Points system for gamification',
+      'Progress tracking with optimistic updates',
+      'Client-side caching support'
+    ],
     endpoints: {
       userProfile: {
-        'POST /api/user-profile': 'Create user profile',
-        'GET /api/user-profile/:uid': 'Get user profile',
-        'PUT /api/user-profile/:uid': 'Update user profile',
-        'DELETE /api/user-profile/:uid': 'Delete user profile'
+        'POST /api/user-profile': {
+          description: 'Create user profile after Firebase authentication',
+          body: {
+            uid: 'string (Firebase UID)',
+            email: 'string',
+            displayName: 'string',
+            firstName: 'string',
+            lastName: 'string (optional)',
+            dateOfBirth: 'string (optional)',
+            phoneNumber: 'string (optional)'
+          }
+        },
+        'GET /api/user-profile/:uid': {
+          description: 'Get user profile by Firebase UID',
+          response: 'User profile object with all fields'
+        },
+        'PUT /api/user-profile/:uid': {
+          description: 'Update user profile',
+          body: 'Partial user profile object with fields to update'
+        },
+        'DELETE /api/user-profile/:uid': {
+          description: 'Delete user profile and all associated data'
+        }
       },
       userSchedules: {
-        'GET /api/user-schedules/:userId': 'Get all schedules and group memberships for a user'
+        'GET /api/user-schedules/:userId': {
+          description: 'Get all schedules and group memberships for a user with progress stats',
+          response: {
+            individualSchedules: 'Array with schedule info, progress stats, and points earned',
+            groupSchedules: 'Array with group info, member role, progress stats, and points earned'
+          }
+        }
       },
       individualSchedules: {
-        'POST /api/create-reading-schedule': 'Create individual reading schedule'
+        'POST /api/create-reading-schedule': {
+          description: 'Create personal reading schedule from template',
+          body: {
+            userId: 'string (Firebase UID)',
+            templateId: 'string',
+            startDate: 'string (YYYY-MM-DD)',
+            completionTasks: {
+              verseText: 'boolean',
+              footnotes: 'boolean', 
+              partner: 'boolean'
+            }
+          }
+        }
       },
       groupSchedules: {
-        'POST /api/create-group-reading-schedule': 'Create group reading schedule',
-        'POST /api/join-group-reading-schedule': 'Join group reading schedule',
-        'POST /api/leave-group-reading-schedule': 'Leave group reading schedule',
-        'GET /api/group-members/:groupId': 'Get all members of a group reading schedule',
-        'GET /api/available-groups': 'Get all public groups available to join'
+        'POST /api/create-group-reading-schedule': {
+          description: 'Create group reading schedule',
+          body: {
+            groupName: 'string',
+            templateId: 'string', 
+            startDate: 'string (YYYY-MM-DD)',
+            createdBy: 'string (Firebase UID)',
+            isPublic: 'boolean',
+            maxMembers: 'number (optional)',
+            customGroupId: 'string (optional)',
+            completionTasks: {
+              verseText: 'boolean',
+              footnotes: 'boolean',
+              partner: 'boolean'
+            }
+          }
+        },
+        'POST /api/join-group-reading-schedule': {
+          description: 'Join existing group by ID',
+          body: {
+            userId: 'string (Firebase UID)',
+            groupId: 'string',
+            userName: 'string',
+            email: 'string'
+          }
+        },
+        'POST /api/leave-group-reading-schedule': {
+          description: 'Leave group reading schedule',
+          body: {
+            userId: 'string (Firebase UID)',
+            groupId: 'string'
+          }
+        },
+        'GET /api/group-members/:groupId': {
+          description: 'Get all members of a group with roles and progress',
+          response: 'Array of member objects with user info and reading progress'
+        },
+        'GET /api/available-groups': {
+          description: 'Get all public groups available to join',
+          response: 'Array of group objects with member counts and capacity info'
+        }
       },
       readingProgress: {
-        'POST /api/mark-reading-completed': 'Mark reading as completed/incomplete'
+        'POST /api/mark-reading-completed': {
+          description: 'Mark daily reading tasks as completed/incomplete with points calculation',
+          body: {
+            userId: 'string (Firebase UID)',
+            scheduleId: 'string',
+            dayNumber: 'number',
+            completionTasks: {
+              verseText: 'boolean (1 point)',
+              footnotes: 'boolean (1 point)', 
+              partner: 'boolean (1 point)'
+            },
+            scheduleType: 'string (individual or group)'
+          }
+        }
       },
       readingRetrieval: {
-        'GET /api/get-reading-schedule-with-progress': 'Get readings with progress (combined - legacy)',
-        'GET /api/get-schedule-info': 'Get schedule metadata and readings (cacheable)',
-        'GET /api/get-schedule-progress': 'Get user progress data only',
-        'GET /api/get-day-reading': 'Get specific day reading'
+        'GET /api/get-reading-schedule-with-progress': {
+          description: 'Get readings with progress (legacy - combined data)',
+          query: 'userId, scheduleId, scheduleType, limit (optional)'
+        },
+        'GET /api/get-schedule-info': {
+          description: 'Get schedule metadata and readings only (cacheable)',
+          query: 'scheduleId, scheduleType',
+          response: 'Schedule info with reading plan data (no progress)'
+        },
+        'GET /api/get-schedule-progress': {
+          description: 'Get user progress data only (separate from schedule for better caching)',
+          query: 'userId, scheduleId, scheduleType, limit (optional)',
+          response: 'Array of progress entries with completion tasks and points'
+        },
+        'GET /api/get-day-reading': {
+          description: 'Get specific day reading with progress',
+          query: 'userId, scheduleId, scheduleType, dayNumber'
+        }
       },
       readingTemplates: {
-        'GET /api/reading-templates': 'Get all available reading templates',
-        'GET /api/reading-templates/:templateId': 'Get specific reading template details'
+        'GET /api/reading-templates': {
+          description: 'Get all available reading plan templates',
+          response: 'Array of template objects with name, description, duration'
+        },
+        'GET /api/reading-templates/:templateId': {
+          description: 'Get specific reading template with full details'
+        }
+      },
+      utility: {
+        'POST /api/seed': {
+          description: 'Seed database with Bible book data (development only)'
+        }
       }
+    },
+    architecture: {
+      database: 'Firebase Firestore with nested collections',
+      authentication: 'Firebase Auth integration',
+      caching: 'Separate endpoints for cacheable schedule data vs dynamic progress data',
+      pointsSystem: 'Each completion task worth 1 point for gamification'
+    },
+    usage: {
+      baseUrl: 'http://localhost:3000/api',
+      authentication: 'Firebase UID required for user-specific operations',
+      errorHandling: 'Consistent JSON error responses with HTTP status codes'
     }
   });
 });
