@@ -11,6 +11,171 @@ All endpoints are relative to your API base URL (e.g., `http://localhost:3000/ap
 
 ---
 
+## User Profile Management
+
+### Create User Profile
+Create a user profile linked to Firebase Authentication.
+
+**Endpoint:** `POST /api/user-profile`
+
+**Request Body:**
+```json
+{
+  "uid": "firebase-auth-uid-123",
+  "email": "john.doe@example.com",
+  "displayName": "John Doe",
+  "firstName": "John", // Optional
+  "lastName": "Doe", // Optional
+  "dateOfBirth": "1995-06-15", // Optional, YYYY-MM-DD format
+  "phoneNumber": "+1234567890", // Optional
+  "timezone": "America/New_York",
+  "preferredLanguage": "en",
+  "readingPreferences": {
+    "reminderTime": "07:30",
+    "enableReminders": true,
+    "preferredTranslation": "NIV",
+    "readingGoal": "daily"
+  },
+  "privacy": {
+    "profileVisibility": "public",
+    "showReadingProgress": true,
+    "allowGroupInvitations": true
+  },
+  "profileImageUrl": "https://storage.googleapis.com/profile-images/user123.jpg" // Optional
+}
+```
+
+**Response (201 Created):**
+```json
+{
+  "message": "User profile created successfully",
+  "profile": {
+    "uid": "firebase-auth-uid-123",
+    "email": "john.doe@example.com",
+    "displayName": "John Doe",
+    "timezone": "America/New_York",
+    "preferredLanguage": "en",
+    "readingPreferences": {
+      "reminderTime": "07:30",
+      "enableReminders": true,
+      "preferredTranslation": "NIV",
+      "readingGoal": "daily"
+    },
+    "privacy": {
+      "profileVisibility": "public",
+      "showReadingProgress": true,
+      "allowGroupInvitations": true
+    },
+    "createdAt": "2024-01-15T10:30:00Z"
+  }
+}
+```
+
+**Error Responses:**
+- `400`: Missing required fields, invalid email format, or invalid date format
+- `409`: User profile already exists
+
+### Get User Profile
+Retrieve a user's profile information.
+
+**Endpoint:** `GET /api/user-profile/{uid}`
+
+**Response (200 OK):**
+```json
+{
+  "message": "User profile retrieved successfully",
+  "profile": {
+    "uid": "firebase-auth-uid-123",
+    "email": "john.doe@example.com",
+    "displayName": "John Doe",
+    "firstName": "John",
+    "lastName": "Doe",
+    "dateOfBirth": "1995-06-15",
+    "timezone": "America/New_York",
+    "preferredLanguage": "en",
+    "readingPreferences": {
+      "reminderTime": "07:30",
+      "enableReminders": true,
+      "preferredTranslation": "NIV",
+      "readingGoal": "daily"
+    },
+    "privacy": {
+      "profileVisibility": "public",
+      "showReadingProgress": true,
+      "allowGroupInvitations": true
+    },
+    "isActive": true,
+    "emailVerified": true,
+    "lastLoginAt": "2024-01-15T10:30:00Z",
+    "createdAt": "2024-01-01T12:00:00Z",
+    "updatedAt": "2024-01-15T10:30:00Z",
+    "stats": {
+      "totalSchedulesCreated": 2,
+      "totalGroupsJoined": 3,
+      "totalReadingsCompleted": 150,
+      "currentActiveSchedules": 1,
+      "longestStreak": 45
+    }
+  }
+}
+```
+
+**Error Responses:**
+- `400`: Missing uid parameter
+- `404`: User profile not found
+
+### Update User Profile
+Update user profile information (partial updates supported).
+
+**Endpoint:** `PUT /api/user-profile/{uid}`
+
+**Request Body (partial update example):**
+```json
+{
+  "displayName": "Johnny Doe",
+  "timezone": "America/Los_Angeles",
+  "readingPreferences": {
+    "reminderTime": "06:00",
+    "preferredTranslation": "ESV"
+  },
+  "privacy": {
+    "profileVisibility": "friends"
+  }
+}
+```
+
+**Response (200 OK):**
+```json
+{
+  "message": "User profile updated successfully",
+  "profile": {
+    // Updated complete profile data
+  }
+}
+```
+
+**Error Responses:**
+- `400`: Missing uid parameter or invalid date format
+- `404`: User profile not found
+
+### Delete User Profile
+Soft delete a user profile (marks as inactive).
+
+**Endpoint:** `DELETE /api/user-profile/{uid}`
+
+**Response (200 OK):**
+```json
+{
+  "message": "User profile deleted successfully"
+}
+```
+
+**Error Responses:**
+- `400`: Missing uid parameter
+- `404`: User profile not found
+
+---
+
 ## Reading Templates
 
 ### Get Available Templates
@@ -395,12 +560,49 @@ By Specific Date:
 }
 ```
 
+### User Profile
+```json
+{
+  "uid": "firebase-auth-uid-123",
+  "email": "john.doe@example.com",
+  "displayName": "John Doe",
+  "firstName": "John",
+  "lastName": "Doe",
+  "dateOfBirth": "1995-06-15",
+  "timezone": "America/New_York",
+  "preferredLanguage": "en",
+  "readingPreferences": {
+    "reminderTime": "07:30",
+    "enableReminders": true,
+    "preferredTranslation": "NIV",
+    "readingGoal": "daily"
+  },
+  "privacy": {
+    "profileVisibility": "public",
+    "showReadingProgress": true,
+    "allowGroupInvitations": true
+  },
+  "isActive": true,
+  "emailVerified": true,
+  "createdAt": "2024-01-01T12:00:00Z",
+  "updatedAt": "2024-01-15T10:30:00Z",
+  "stats": {
+    "totalSchedulesCreated": 2,
+    "totalGroupsJoined": 3,
+    "totalReadingsCompleted": 150,
+    "currentActiveSchedules": 1,
+    "longestStreak": 45
+  }
+}
+```
+
 ---
 
 ## File Structure
 
 The API endpoints are implemented in the following files:
 
+- **User Profiles**: `api/user-profile.js`
 - **Individual Schedules**: `api/create-reading-schedule.js`
 - **Group Schedules**: `api/create-group-reading-schedule.js`
 - **Group Membership**: `api/join-group-reading-schedule.js`
@@ -421,6 +623,9 @@ The API endpoints are implemented in the following files:
 
 ### Collections Structure
 ```
+userProfiles/
+  └── {firebase-uid}/ (user profile document)
+
 readingTemplates/
   └── bellevueYPNT/
       └── dailyReadings/ (subcollection)

@@ -1,4 +1,4 @@
-const { db } = require('../scripts/config/firebase');
+const { db } = require('../config/firebase');
 
 function calculateDate(startDate, dayOffset) {
   const date = new Date(startDate);
