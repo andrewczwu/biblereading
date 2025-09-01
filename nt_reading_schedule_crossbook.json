@@ -1,0 +1,6461 @@
+[
+  {
+    "dayNumber": 1,
+    "date": "2024-09-16",
+    "dayOfWeek": "Monday",
+    "rawReading": "Matt. 1:1 – 1:6",
+    "portions": [
+      {
+        "bookName": "Matthew",
+        "bookId": "matthew",
+        "startChapter": 1,
+        "startVerse": 1,
+        "endChapter": 1,
+        "endVerse": 6,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Matthew",
+    "startBookId": "matthew",
+    "endBookName": "Matthew",
+    "endBookId": "matthew"
+  },
+  {
+    "dayNumber": 2,
+    "date": "2024-09-17",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "1:7 – 1:17",
+    "portions": [
+      {
+        "bookName": "Matthew",
+        "bookId": "matthew",
+        "startChapter": 1,
+        "startVerse": 7,
+        "endChapter": 1,
+        "endVerse": 17,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Matthew",
+    "startBookId": "matthew",
+    "endBookName": "Matthew",
+    "endBookId": "matthew"
+  },
+  {
+    "dayNumber": 3,
+    "date": "2024-09-18",
+    "dayOfWeek": "Wednesday",
+    "rawReading": "1:18 – 2:23",
+    "portions": [
+      {
+        "bookName": "Matthew",
+        "bookId": "matthew",
+        "startChapter": 1,
+        "startVerse": 18,
+        "endChapter": 2,
+        "endVerse": 23,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Matthew",
+    "startBookId": "matthew",
+    "endBookName": "Matthew",
+    "endBookId": "matthew"
+  },
+  {
+    "dayNumber": 4,
+    "date": "2024-09-19",
+    "dayOfWeek": "Thursday",
+    "rawReading": "3:1 – 3:12",
+    "portions": [
+      {
+        "bookName": "Matthew",
+        "bookId": "matthew",
+        "startChapter": 3,
+        "startVerse": 1,
+        "endChapter": 3,
+        "endVerse": 12,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Matthew",
+    "startBookId": "matthew",
+    "endBookName": "Matthew",
+    "endBookId": "matthew"
+  },
+  {
+    "dayNumber": 5,
+    "date": "2024-09-20",
+    "dayOfWeek": "Friday",
+    "rawReading": "3:13 – 4:11",
+    "portions": [
+      {
+        "bookName": "Matthew",
+        "bookId": "matthew",
+        "startChapter": 3,
+        "startVerse": 13,
+        "endChapter": 4,
+        "endVerse": 11,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Matthew",
+    "startBookId": "matthew",
+    "endBookName": "Matthew",
+    "endBookId": "matthew"
+  },
+  {
+    "dayNumber": 6,
+    "date": "2024-09-21",
+    "dayOfWeek": "Saturday",
+    "rawReading": "4:12 – 5:3",
+    "portions": [
+      {
+        "bookName": "Matthew",
+        "bookId": "matthew",
+        "startChapter": 4,
+        "startVerse": 12,
+        "endChapter": 5,
+        "endVerse": 3,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Matthew",
+    "startBookId": "matthew",
+    "endBookName": "Matthew",
+    "endBookId": "matthew"
+  },
+  {
+    "dayNumber": 7,
+    "date": "2024-09-22",
+    "dayOfWeek": "Sunday",
+    "rawReading": "5:4 – 5:16",
+    "portions": [
+      {
+        "bookName": "Matthew",
+        "bookId": "matthew",
+        "startChapter": 5,
+        "startVerse": 4,
+        "endChapter": 5,
+        "endVerse": 16,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Matthew",
+    "startBookId": "matthew",
+    "endBookName": "Matthew",
+    "endBookId": "matthew"
+  },
+  {
+    "dayNumber": 8,
+    "date": "2024-09-23",
+    "dayOfWeek": "Monday",
+    "rawReading": "5:17 – 5:33",
+    "portions": [
+      {
+        "bookName": "Matthew",
+        "bookId": "matthew",
+        "startChapter": 5,
+        "startVerse": 17,
+        "endChapter": 5,
+        "endVerse": 33,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Matthew",
+    "startBookId": "matthew",
+    "endBookName": "Matthew",
+    "endBookId": "matthew"
+  },
+  {
+    "dayNumber": 9,
+    "date": "2024-09-24",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "5:34 – 6:11",
+    "portions": [
+      {
+        "bookName": "Matthew",
+        "bookId": "matthew",
+        "startChapter": 5,
+        "startVerse": 34,
+        "endChapter": 6,
+        "endVerse": 11,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Matthew",
+    "startBookId": "matthew",
+    "endBookName": "Matthew",
+    "endBookId": "matthew"
+  },
+  {
+    "dayNumber": 10,
+    "date": "2024-09-25",
+    "dayOfWeek": "Wednesday",
+    "rawReading": "6:12 – 7:12",
+    "portions": [
+      {
+        "bookName": "Matthew",
+        "bookId": "matthew",
+        "startChapter": 6,
+        "startVerse": 12,
+        "endChapter": 7,
+        "endVerse": 12,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Matthew",
+    "startBookId": "matthew",
+    "endBookName": "Matthew",
+    "endBookId": "matthew"
+  },
+  {
+    "dayNumber": 11,
+    "date": "2024-09-26",
+    "dayOfWeek": "Thursday",
+    "rawReading": "7:13 – 8:9",
+    "portions": [
+      {
+        "bookName": "Matthew",
+        "bookId": "matthew",
+        "startChapter": 7,
+        "startVerse": 13,
+        "endChapter": 8,
+        "endVerse": 9,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Matthew",
+    "startBookId": "matthew",
+    "endBookName": "Matthew",
+    "endBookId": "matthew"
+  },
+  {
+    "dayNumber": 12,
+    "date": "2024-09-27",
+    "dayOfWeek": "Friday",
+    "rawReading": "8:10 – 8:34",
+    "portions": [
+      {
+        "bookName": "Matthew",
+        "bookId": "matthew",
+        "startChapter": 8,
+        "startVerse": 10,
+        "endChapter": 8,
+        "endVerse": 34,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Matthew",
+    "startBookId": "matthew",
+    "endBookName": "Matthew",
+    "endBookId": "matthew"
+  },
+  {
+    "dayNumber": 13,
+    "date": "2024-09-28",
+    "dayOfWeek": "Saturday",
+    "rawReading": "9:1 – 9:16",
+    "portions": [
+      {
+        "bookName": "Matthew",
+        "bookId": "matthew",
+        "startChapter": 9,
+        "startVerse": 1,
+        "endChapter": 9,
+        "endVerse": 16,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Matthew",
+    "startBookId": "matthew",
+    "endBookName": "Matthew",
+    "endBookId": "matthew"
+  },
+  {
+    "dayNumber": 14,
+    "date": "2024-09-29",
+    "dayOfWeek": "Sunday",
+    "rawReading": "9:17 – 10:4",
+    "portions": [
+      {
+        "bookName": "Matthew",
+        "bookId": "matthew",
+        "startChapter": 9,
+        "startVerse": 17,
+        "endChapter": 10,
+        "endVerse": 4,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Matthew",
+    "startBookId": "matthew",
+    "endBookName": "Matthew",
+    "endBookId": "matthew"
+  },
+  {
+    "dayNumber": 15,
+    "date": "2024-09-30",
+    "dayOfWeek": "Monday",
+    "rawReading": "10:5 – 10:39",
+    "portions": [
+      {
+        "bookName": "Matthew",
+        "bookId": "matthew",
+        "startChapter": 10,
+        "startVerse": 5,
+        "endChapter": 10,
+        "endVerse": 39,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Matthew",
+    "startBookId": "matthew",
+    "endBookName": "Matthew",
+    "endBookId": "matthew"
+  },
+  {
+    "dayNumber": 16,
+    "date": "2024-10-01",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "10:40 – 11:24",
+    "portions": [
+      {
+        "bookName": "Matthew",
+        "bookId": "matthew",
+        "startChapter": 10,
+        "startVerse": 40,
+        "endChapter": 11,
+        "endVerse": 24,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Matthew",
+    "startBookId": "matthew",
+    "endBookName": "Matthew",
+    "endBookId": "matthew"
+  },
+  {
+    "dayNumber": 17,
+    "date": "2024-10-02",
+    "dayOfWeek": "Wednesday",
+    "rawReading": "11:25 – 12:14",
+    "portions": [
+      {
+        "bookName": "Matthew",
+        "bookId": "matthew",
+        "startChapter": 11,
+        "startVerse": 25,
+        "endChapter": 12,
+        "endVerse": 14,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Matthew",
+    "startBookId": "matthew",
+    "endBookName": "Matthew",
+    "endBookId": "matthew"
+  },
+  {
+    "dayNumber": 18,
+    "date": "2024-10-03",
+    "dayOfWeek": "Thursday",
+    "rawReading": "12:15 – 12:42",
+    "portions": [
+      {
+        "bookName": "Matthew",
+        "bookId": "matthew",
+        "startChapter": 12,
+        "startVerse": 15,
+        "endChapter": 12,
+        "endVerse": 42,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Matthew",
+    "startBookId": "matthew",
+    "endBookName": "Matthew",
+    "endBookId": "matthew"
+  },
+  {
+    "dayNumber": 19,
+    "date": "2024-10-04",
+    "dayOfWeek": "Friday",
+    "rawReading": "12:43 – 13:23",
+    "portions": [
+      {
+        "bookName": "Matthew",
+        "bookId": "matthew",
+        "startChapter": 12,
+        "startVerse": 43,
+        "endChapter": 13,
+        "endVerse": 23,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Matthew",
+    "startBookId": "matthew",
+    "endBookName": "Matthew",
+    "endBookId": "matthew"
+  },
+  {
+    "dayNumber": 20,
+    "date": "2024-10-05",
+    "dayOfWeek": "Saturday",
+    "rawReading": "13:24 – 13:44",
+    "portions": [
+      {
+        "bookName": "Matthew",
+        "bookId": "matthew",
+        "startChapter": 13,
+        "startVerse": 24,
+        "endChapter": 13,
+        "endVerse": 44,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Matthew",
+    "startBookId": "matthew",
+    "endBookName": "Matthew",
+    "endBookId": "matthew"
+  },
+  {
+    "dayNumber": 21,
+    "date": "2024-10-06",
+    "dayOfWeek": "Sunday",
+    "rawReading": "13:45 – 14:21",
+    "portions": [
+      {
+        "bookName": "Matthew",
+        "bookId": "matthew",
+        "startChapter": 13,
+        "startVerse": 45,
+        "endChapter": 14,
+        "endVerse": 21,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Matthew",
+    "startBookId": "matthew",
+    "endBookName": "Matthew",
+    "endBookId": "matthew"
+  },
+  {
+    "dayNumber": 22,
+    "date": "2024-10-07",
+    "dayOfWeek": "Monday",
+    "rawReading": "14:22 – 15:20",
+    "portions": [
+      {
+        "bookName": "Matthew",
+        "bookId": "matthew",
+        "startChapter": 14,
+        "startVerse": 22,
+        "endChapter": 15,
+        "endVerse": 20,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Matthew",
+    "startBookId": "matthew",
+    "endBookName": "Matthew",
+    "endBookId": "matthew"
+  },
+  {
+    "dayNumber": 23,
+    "date": "2024-10-08",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "15:21 – 16:17",
+    "portions": [
+      {
+        "bookName": "Matthew",
+        "bookId": "matthew",
+        "startChapter": 15,
+        "startVerse": 21,
+        "endChapter": 16,
+        "endVerse": 17,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Matthew",
+    "startBookId": "matthew",
+    "endBookName": "Matthew",
+    "endBookId": "matthew"
+  },
+  {
+    "dayNumber": 24,
+    "date": "2024-10-09",
+    "dayOfWeek": "Wednesday",
+    "rawReading": "16:18 – 17:4",
+    "portions": [
+      {
+        "bookName": "Matthew",
+        "bookId": "matthew",
+        "startChapter": 16,
+        "startVerse": 18,
+        "endChapter": 17,
+        "endVerse": 4,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Matthew",
+    "startBookId": "matthew",
+    "endBookName": "Matthew",
+    "endBookId": "matthew"
+  },
+  {
+    "dayNumber": 25,
+    "date": "2024-10-10",
+    "dayOfWeek": "Thursday",
+    "rawReading": "17:5 – 18:17",
+    "portions": [
+      {
+        "bookName": "Matthew",
+        "bookId": "matthew",
+        "startChapter": 17,
+        "startVerse": 5,
+        "endChapter": 18,
+        "endVerse": 17,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Matthew",
+    "startBookId": "matthew",
+    "endBookName": "Matthew",
+    "endBookId": "matthew"
+  },
+  {
+    "dayNumber": 26,
+    "date": "2024-10-11",
+    "dayOfWeek": "Friday",
+    "rawReading": "18:18 – 19:15",
+    "portions": [
+      {
+        "bookName": "Matthew",
+        "bookId": "matthew",
+        "startChapter": 18,
+        "startVerse": 18,
+        "endChapter": 19,
+        "endVerse": 15,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Matthew",
+    "startBookId": "matthew",
+    "endBookName": "Matthew",
+    "endBookId": "matthew"
+  },
+  {
+    "dayNumber": 27,
+    "date": "2024-10-12",
+    "dayOfWeek": "Saturday",
+    "rawReading": "19:16 – 20:19",
+    "portions": [
+      {
+        "bookName": "Matthew",
+        "bookId": "matthew",
+        "startChapter": 19,
+        "startVerse": 16,
+        "endChapter": 20,
+        "endVerse": 19,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Matthew",
+    "startBookId": "matthew",
+    "endBookName": "Matthew",
+    "endBookId": "matthew"
+  },
+  {
+    "dayNumber": 28,
+    "date": "2024-10-13",
+    "dayOfWeek": "Sunday",
+    "rawReading": "20:20 – 21:32",
+    "portions": [
+      {
+        "bookName": "Matthew",
+        "bookId": "matthew",
+        "startChapter": 20,
+        "startVerse": 20,
+        "endChapter": 21,
+        "endVerse": 32,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Matthew",
+    "startBookId": "matthew",
+    "endBookName": "Matthew",
+    "endBookId": "matthew"
+  },
+  {
+    "dayNumber": 29,
+    "date": "2024-10-14",
+    "dayOfWeek": "Monday",
+    "rawReading": "21:33 – 22:33",
+    "portions": [
+      {
+        "bookName": "Matthew",
+        "bookId": "matthew",
+        "startChapter": 21,
+        "startVerse": 33,
+        "endChapter": 22,
+        "endVerse": 33,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Matthew",
+    "startBookId": "matthew",
+    "endBookName": "Matthew",
+    "endBookId": "matthew"
+  },
+  {
+    "dayNumber": 30,
+    "date": "2024-10-15",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "22:34 – 23:39",
+    "portions": [
+      {
+        "bookName": "Matthew",
+        "bookId": "matthew",
+        "startChapter": 22,
+        "startVerse": 34,
+        "endChapter": 23,
+        "endVerse": 39,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Matthew",
+    "startBookId": "matthew",
+    "endBookName": "Matthew",
+    "endBookId": "matthew"
+  },
+  {
+    "dayNumber": 31,
+    "date": "2024-10-16",
+    "dayOfWeek": "Wednesday",
+    "rawReading": "24:1 – 24:26",
+    "portions": [
+      {
+        "bookName": "Matthew",
+        "bookId": "matthew",
+        "startChapter": 24,
+        "startVerse": 1,
+        "endChapter": 24,
+        "endVerse": 26,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Matthew",
+    "startBookId": "matthew",
+    "endBookName": "Matthew",
+    "endBookId": "matthew"
+  },
+  {
+    "dayNumber": 32,
+    "date": "2024-10-17",
+    "dayOfWeek": "Thursday",
+    "rawReading": "24:27 – 24:51",
+    "portions": [
+      {
+        "bookName": "Matthew",
+        "bookId": "matthew",
+        "startChapter": 24,
+        "startVerse": 27,
+        "endChapter": 24,
+        "endVerse": 51,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Matthew",
+    "startBookId": "matthew",
+    "endBookName": "Matthew",
+    "endBookId": "matthew"
+  },
+  {
+    "dayNumber": 33,
+    "date": "2024-10-18",
+    "dayOfWeek": "Friday",
+    "rawReading": "25:1 – 25:18",
+    "portions": [
+      {
+        "bookName": "Matthew",
+        "bookId": "matthew",
+        "startChapter": 25,
+        "startVerse": 1,
+        "endChapter": 25,
+        "endVerse": 18,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Matthew",
+    "startBookId": "matthew",
+    "endBookName": "Matthew",
+    "endBookId": "matthew"
+  },
+  {
+    "dayNumber": 34,
+    "date": "2024-10-19",
+    "dayOfWeek": "Saturday",
+    "rawReading": "25:19 – 25:46",
+    "portions": [
+      {
+        "bookName": "Matthew",
+        "bookId": "matthew",
+        "startChapter": 25,
+        "startVerse": 19,
+        "endChapter": 25,
+        "endVerse": 46,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Matthew",
+    "startBookId": "matthew",
+    "endBookName": "Matthew",
+    "endBookId": "matthew"
+  },
+  {
+    "dayNumber": 35,
+    "date": "2024-10-20",
+    "dayOfWeek": "Sunday",
+    "rawReading": "26:1 – 26:35",
+    "portions": [
+      {
+        "bookName": "Matthew",
+        "bookId": "matthew",
+        "startChapter": 26,
+        "startVerse": 1,
+        "endChapter": 26,
+        "endVerse": 35,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Matthew",
+    "startBookId": "matthew",
+    "endBookName": "Matthew",
+    "endBookId": "matthew"
+  },
+  {
+    "dayNumber": 36,
+    "date": "2024-10-21",
+    "dayOfWeek": "Monday",
+    "rawReading": "26:36 – 27:26",
+    "portions": [
+      {
+        "bookName": "Matthew",
+        "bookId": "matthew",
+        "startChapter": 26,
+        "startVerse": 36,
+        "endChapter": 27,
+        "endVerse": 26,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Matthew",
+    "startBookId": "matthew",
+    "endBookName": "Matthew",
+    "endBookId": "matthew"
+  },
+  {
+    "dayNumber": 37,
+    "date": "2024-10-22",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "27:27 – 27:66",
+    "portions": [
+      {
+        "bookName": "Matthew",
+        "bookId": "matthew",
+        "startChapter": 27,
+        "startVerse": 27,
+        "endChapter": 27,
+        "endVerse": 66,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Matthew",
+    "startBookId": "matthew",
+    "endBookName": "Matthew",
+    "endBookId": "matthew"
+  },
+  {
+    "dayNumber": 38,
+    "date": "2024-10-23",
+    "dayOfWeek": "Wednesday",
+    "rawReading": "28:1 – 28:20",
+    "portions": [
+      {
+        "bookName": "Matthew",
+        "bookId": "matthew",
+        "startChapter": 28,
+        "startVerse": 1,
+        "endChapter": 28,
+        "endVerse": 20,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Matthew",
+    "startBookId": "matthew",
+    "endBookName": "Matthew",
+    "endBookId": "matthew"
+  },
+  {
+    "dayNumber": 39,
+    "date": "2024-10-24",
+    "dayOfWeek": "Thursday",
+    "rawReading": "Mark 1:1 – 1:13",
+    "portions": [
+      {
+        "bookName": "Mark",
+        "bookId": "mark",
+        "startChapter": 1,
+        "startVerse": 1,
+        "endChapter": 1,
+        "endVerse": 13,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Mark",
+    "startBookId": "mark",
+    "endBookName": "Mark",
+    "endBookId": "mark"
+  },
+  {
+    "dayNumber": 40,
+    "date": "2024-10-25",
+    "dayOfWeek": "Friday",
+    "rawReading": "1:14 – 1:39",
+    "portions": [
+      {
+        "bookName": "Mark",
+        "bookId": "mark",
+        "startChapter": 1,
+        "startVerse": 14,
+        "endChapter": 1,
+        "endVerse": 39,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Mark",
+    "startBookId": "mark",
+    "endBookName": "Mark",
+    "endBookId": "mark"
+  },
+  {
+    "dayNumber": 41,
+    "date": "2024-10-26",
+    "dayOfWeek": "Saturday",
+    "rawReading": "1:40 – 2:17",
+    "portions": [
+      {
+        "bookName": "Mark",
+        "bookId": "mark",
+        "startChapter": 1,
+        "startVerse": 40,
+        "endChapter": 2,
+        "endVerse": 17,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Mark",
+    "startBookId": "mark",
+    "endBookName": "Mark",
+    "endBookId": "mark"
+  },
+  {
+    "dayNumber": 42,
+    "date": "2024-10-27",
+    "dayOfWeek": "Sunday",
+    "rawReading": "2:18 – 3:30",
+    "portions": [
+      {
+        "bookName": "Mark",
+        "bookId": "mark",
+        "startChapter": 2,
+        "startVerse": 18,
+        "endChapter": 3,
+        "endVerse": 30,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Mark",
+    "startBookId": "mark",
+    "endBookName": "Mark",
+    "endBookId": "mark"
+  },
+  {
+    "dayNumber": 43,
+    "date": "2024-10-28",
+    "dayOfWeek": "Monday",
+    "rawReading": "3:31 – 4:41",
+    "portions": [
+      {
+        "bookName": "Mark",
+        "bookId": "mark",
+        "startChapter": 3,
+        "startVerse": 31,
+        "endChapter": 4,
+        "endVerse": 41,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Mark",
+    "startBookId": "mark",
+    "endBookName": "Mark",
+    "endBookId": "mark"
+  },
+  {
+    "dayNumber": 44,
+    "date": "2024-10-29",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "5:1 – 6:13",
+    "portions": [
+      {
+        "bookName": "Mark",
+        "bookId": "mark",
+        "startChapter": 5,
+        "startVerse": 1,
+        "endChapter": 6,
+        "endVerse": 13,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Mark",
+    "startBookId": "mark",
+    "endBookName": "Mark",
+    "endBookId": "mark"
+  },
+  {
+    "dayNumber": 45,
+    "date": "2024-10-30",
+    "dayOfWeek": "Wednesday",
+    "rawReading": "6:14 – 7:23",
+    "portions": [
+      {
+        "bookName": "Mark",
+        "bookId": "mark",
+        "startChapter": 6,
+        "startVerse": 14,
+        "endChapter": 7,
+        "endVerse": 23,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Mark",
+    "startBookId": "mark",
+    "endBookName": "Mark",
+    "endBookId": "mark"
+  },
+  {
+    "dayNumber": 46,
+    "date": "2024-10-31",
+    "dayOfWeek": "Thursday",
+    "rawReading": "7:24 – 9:1",
+    "portions": [
+      {
+        "bookName": "Mark",
+        "bookId": "mark",
+        "startChapter": 7,
+        "startVerse": 24,
+        "endChapter": 9,
+        "endVerse": 1,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Mark",
+    "startBookId": "mark",
+    "endBookName": "Mark",
+    "endBookId": "mark"
+  },
+  {
+    "dayNumber": 47,
+    "date": "2024-11-01",
+    "dayOfWeek": "Friday",
+    "rawReading": "9:2 – 9:50",
+    "portions": [
+      {
+        "bookName": "Mark",
+        "bookId": "mark",
+        "startChapter": 9,
+        "startVerse": 2,
+        "endChapter": 9,
+        "endVerse": 50,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Mark",
+    "startBookId": "mark",
+    "endBookName": "Mark",
+    "endBookId": "mark"
+  },
+  {
+    "dayNumber": 48,
+    "date": "2024-11-02",
+    "dayOfWeek": "Saturday",
+    "rawReading": "10:1 – 10:45",
+    "portions": [
+      {
+        "bookName": "Mark",
+        "bookId": "mark",
+        "startChapter": 10,
+        "startVerse": 1,
+        "endChapter": 10,
+        "endVerse": 45,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Mark",
+    "startBookId": "mark",
+    "endBookName": "Mark",
+    "endBookId": "mark"
+  },
+  {
+    "dayNumber": 49,
+    "date": "2024-11-03",
+    "dayOfWeek": "Sunday",
+    "rawReading": "10:46 – 12:17",
+    "portions": [
+      {
+        "bookName": "Mark",
+        "bookId": "mark",
+        "startChapter": 10,
+        "startVerse": 46,
+        "endChapter": 12,
+        "endVerse": 17,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Mark",
+    "startBookId": "mark",
+    "endBookName": "Mark",
+    "endBookId": "mark"
+  },
+  {
+    "dayNumber": 50,
+    "date": "2024-11-04",
+    "dayOfWeek": "Monday",
+    "rawReading": "12:18 – 13:20",
+    "portions": [
+      {
+        "bookName": "Mark",
+        "bookId": "mark",
+        "startChapter": 12,
+        "startVerse": 18,
+        "endChapter": 13,
+        "endVerse": 20,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Mark",
+    "startBookId": "mark",
+    "endBookName": "Mark",
+    "endBookId": "mark"
+  },
+  {
+    "dayNumber": 51,
+    "date": "2024-11-05",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "13:21 – 14:26",
+    "portions": [
+      {
+        "bookName": "Mark",
+        "bookId": "mark",
+        "startChapter": 13,
+        "startVerse": 21,
+        "endChapter": 14,
+        "endVerse": 26,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Mark",
+    "startBookId": "mark",
+    "endBookName": "Mark",
+    "endBookId": "mark"
+  },
+  {
+    "dayNumber": 52,
+    "date": "2024-11-06",
+    "dayOfWeek": "Wednesday",
+    "rawReading": "14:27 – 15:15",
+    "portions": [
+      {
+        "bookName": "Mark",
+        "bookId": "mark",
+        "startChapter": 14,
+        "startVerse": 27,
+        "endChapter": 15,
+        "endVerse": 15,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Mark",
+    "startBookId": "mark",
+    "endBookName": "Mark",
+    "endBookId": "mark"
+  },
+  {
+    "dayNumber": 53,
+    "date": "2024-11-07",
+    "dayOfWeek": "Thursday",
+    "rawReading": "15:16 – 16:20",
+    "portions": [
+      {
+        "bookName": "Mark",
+        "bookId": "mark",
+        "startChapter": 15,
+        "startVerse": 16,
+        "endChapter": 16,
+        "endVerse": 20,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Mark",
+    "startBookId": "mark",
+    "endBookName": "Mark",
+    "endBookId": "mark"
+  },
+  {
+    "dayNumber": 54,
+    "date": "2024-11-08",
+    "dayOfWeek": "Friday",
+    "rawReading": "Luke 1:1 – 1:25",
+    "portions": [
+      {
+        "bookName": "Luke",
+        "bookId": "luke",
+        "startChapter": 1,
+        "startVerse": 1,
+        "endChapter": 1,
+        "endVerse": 25,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Luke",
+    "startBookId": "luke",
+    "endBookName": "Luke",
+    "endBookId": "luke"
+  },
+  {
+    "dayNumber": 55,
+    "date": "2024-11-09",
+    "dayOfWeek": "Saturday",
+    "rawReading": "1:26 – 1:80",
+    "portions": [
+      {
+        "bookName": "Luke",
+        "bookId": "luke",
+        "startChapter": 1,
+        "startVerse": 26,
+        "endChapter": 1,
+        "endVerse": 80,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Luke",
+    "startBookId": "luke",
+    "endBookName": "Luke",
+    "endBookId": "luke"
+  },
+  {
+    "dayNumber": 56,
+    "date": "2024-11-10",
+    "dayOfWeek": "Sunday",
+    "rawReading": "2:1 – 2:39",
+    "portions": [
+      {
+        "bookName": "Luke",
+        "bookId": "luke",
+        "startChapter": 2,
+        "startVerse": 1,
+        "endChapter": 2,
+        "endVerse": 39,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Luke",
+    "startBookId": "luke",
+    "endBookName": "Luke",
+    "endBookId": "luke"
+  },
+  {
+    "dayNumber": 57,
+    "date": "2024-11-11",
+    "dayOfWeek": "Monday",
+    "rawReading": "2:40 – 3:38",
+    "portions": [
+      {
+        "bookName": "Luke",
+        "bookId": "luke",
+        "startChapter": 2,
+        "startVerse": 40,
+        "endChapter": 3,
+        "endVerse": 38,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Luke",
+    "startBookId": "luke",
+    "endBookName": "Luke",
+    "endBookId": "luke"
+  },
+  {
+    "dayNumber": 58,
+    "date": "2024-11-12",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "4:1 – 4:44",
+    "portions": [
+      {
+        "bookName": "Luke",
+        "bookId": "luke",
+        "startChapter": 4,
+        "startVerse": 1,
+        "endChapter": 4,
+        "endVerse": 44,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Luke",
+    "startBookId": "luke",
+    "endBookName": "Luke",
+    "endBookId": "luke"
+  },
+  {
+    "dayNumber": 59,
+    "date": "2024-11-13",
+    "dayOfWeek": "Wednesday",
+    "rawReading": "5:1 – 6:16",
+    "portions": [
+      {
+        "bookName": "Luke",
+        "bookId": "luke",
+        "startChapter": 5,
+        "startVerse": 1,
+        "endChapter": 6,
+        "endVerse": 16,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Luke",
+    "startBookId": "luke",
+    "endBookName": "Luke",
+    "endBookId": "luke"
+  },
+  {
+    "dayNumber": 60,
+    "date": "2024-11-14",
+    "dayOfWeek": "Thursday",
+    "rawReading": "6:17 – 7:35",
+    "portions": [
+      {
+        "bookName": "Luke",
+        "bookId": "luke",
+        "startChapter": 6,
+        "startVerse": 17,
+        "endChapter": 7,
+        "endVerse": 35,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Luke",
+    "startBookId": "luke",
+    "endBookName": "Luke",
+    "endBookId": "luke"
+  },
+  {
+    "dayNumber": 61,
+    "date": "2024-11-15",
+    "dayOfWeek": "Friday",
+    "rawReading": "7:36 – 8:39",
+    "portions": [
+      {
+        "bookName": "Luke",
+        "bookId": "luke",
+        "startChapter": 7,
+        "startVerse": 36,
+        "endChapter": 8,
+        "endVerse": 39,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Luke",
+    "startBookId": "luke",
+    "endBookName": "Luke",
+    "endBookId": "luke"
+  },
+  {
+    "dayNumber": 62,
+    "date": "2024-11-16",
+    "dayOfWeek": "Saturday",
+    "rawReading": "8:40 – 9:56",
+    "portions": [
+      {
+        "bookName": "Luke",
+        "bookId": "luke",
+        "startChapter": 8,
+        "startVerse": 40,
+        "endChapter": 9,
+        "endVerse": 56,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Luke",
+    "startBookId": "luke",
+    "endBookName": "Luke",
+    "endBookId": "luke"
+  },
+  {
+    "dayNumber": 63,
+    "date": "2024-11-17",
+    "dayOfWeek": "Sunday",
+    "rawReading": "9:57 – 10:33",
+    "portions": [
+      {
+        "bookName": "Luke",
+        "bookId": "luke",
+        "startChapter": 9,
+        "startVerse": 57,
+        "endChapter": 10,
+        "endVerse": 33,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Luke",
+    "startBookId": "luke",
+    "endBookName": "Luke",
+    "endBookId": "luke"
+  },
+  {
+    "dayNumber": 64,
+    "date": "2024-11-18",
+    "dayOfWeek": "Monday",
+    "rawReading": "10:34 – 11:32",
+    "portions": [
+      {
+        "bookName": "Luke",
+        "bookId": "luke",
+        "startChapter": 10,
+        "startVerse": 34,
+        "endChapter": 11,
+        "endVerse": 32,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Luke",
+    "startBookId": "luke",
+    "endBookName": "Luke",
+    "endBookId": "luke"
+  },
+  {
+    "dayNumber": 65,
+    "date": "2024-11-19",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "11:33 – 12:48",
+    "portions": [
+      {
+        "bookName": "Luke",
+        "bookId": "luke",
+        "startChapter": 11,
+        "startVerse": 33,
+        "endChapter": 12,
+        "endVerse": 48,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Luke",
+    "startBookId": "luke",
+    "endBookName": "Luke",
+    "endBookId": "luke"
+  },
+  {
+    "dayNumber": 66,
+    "date": "2024-11-20",
+    "dayOfWeek": "Wednesday",
+    "rawReading": "12:49 – 13:35",
+    "portions": [
+      {
+        "bookName": "Luke",
+        "bookId": "luke",
+        "startChapter": 12,
+        "startVerse": 49,
+        "endChapter": 13,
+        "endVerse": 35,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Luke",
+    "startBookId": "luke",
+    "endBookName": "Luke",
+    "endBookId": "luke"
+  },
+  {
+    "dayNumber": 67,
+    "date": "2024-11-21",
+    "dayOfWeek": "Thursday",
+    "rawReading": "14:1 – 15:7",
+    "portions": [
+      {
+        "bookName": "Luke",
+        "bookId": "luke",
+        "startChapter": 14,
+        "startVerse": 1,
+        "endChapter": 15,
+        "endVerse": 7,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Luke",
+    "startBookId": "luke",
+    "endBookName": "Luke",
+    "endBookId": "luke"
+  },
+  {
+    "dayNumber": 68,
+    "date": "2024-11-22",
+    "dayOfWeek": "Friday",
+    "rawReading": "15:8 – 16:9",
+    "portions": [
+      {
+        "bookName": "Luke",
+        "bookId": "luke",
+        "startChapter": 15,
+        "startVerse": 8,
+        "endChapter": 16,
+        "endVerse": 9,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Luke",
+    "startBookId": "luke",
+    "endBookName": "Luke",
+    "endBookId": "luke"
+  },
+  {
+    "dayNumber": 69,
+    "date": "2024-11-23",
+    "dayOfWeek": "Saturday",
+    "rawReading": "16:10 – 17:19",
+    "portions": [
+      {
+        "bookName": "Luke",
+        "bookId": "luke",
+        "startChapter": 16,
+        "startVerse": 10,
+        "endChapter": 17,
+        "endVerse": 19,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Luke",
+    "startBookId": "luke",
+    "endBookName": "Luke",
+    "endBookId": "luke"
+  },
+  {
+    "dayNumber": 70,
+    "date": "2024-11-24",
+    "dayOfWeek": "Sunday",
+    "rawReading": "17:20 – 18:30",
+    "portions": [
+      {
+        "bookName": "Luke",
+        "bookId": "luke",
+        "startChapter": 17,
+        "startVerse": 20,
+        "endChapter": 18,
+        "endVerse": 30,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Luke",
+    "startBookId": "luke",
+    "endBookName": "Luke",
+    "endBookId": "luke"
+  },
+  {
+    "dayNumber": 71,
+    "date": "2024-11-25",
+    "dayOfWeek": "Monday",
+    "rawReading": "18:31 – 19:44",
+    "portions": [
+      {
+        "bookName": "Luke",
+        "bookId": "luke",
+        "startChapter": 18,
+        "startVerse": 31,
+        "endChapter": 19,
+        "endVerse": 44,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Luke",
+    "startBookId": "luke",
+    "endBookName": "Luke",
+    "endBookId": "luke"
+  },
+  {
+    "dayNumber": 72,
+    "date": "2024-11-26",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "19:45 – 21:27",
+    "portions": [
+      {
+        "bookName": "Luke",
+        "bookId": "luke",
+        "startChapter": 19,
+        "startVerse": 45,
+        "endChapter": 21,
+        "endVerse": 27,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Luke",
+    "startBookId": "luke",
+    "endBookName": "Luke",
+    "endBookId": "luke"
+  },
+  {
+    "dayNumber": 73,
+    "date": "2024-11-27",
+    "dayOfWeek": "Wednesday",
+    "rawReading": "21:28 –22:65",
+    "portions": [
+      {
+        "bookName": "Luke",
+        "bookId": "luke",
+        "startChapter": 21,
+        "startVerse": 28,
+        "endChapter": 22,
+        "endVerse": 65,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Luke",
+    "startBookId": "luke",
+    "endBookName": "Luke",
+    "endBookId": "luke"
+  },
+  {
+    "dayNumber": 74,
+    "date": "2024-11-28",
+    "dayOfWeek": "Thursday",
+    "rawReading": "22:66 – 24:11",
+    "portions": [
+      {
+        "bookName": "Luke",
+        "bookId": "luke",
+        "startChapter": 22,
+        "startVerse": 66,
+        "endChapter": 24,
+        "endVerse": 11,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Luke",
+    "startBookId": "luke",
+    "endBookName": "Luke",
+    "endBookId": "luke"
+  },
+  {
+    "dayNumber": 75,
+    "date": "2024-11-29",
+    "dayOfWeek": "Friday",
+    "rawReading": "24:12 – 24:53",
+    "portions": [
+      {
+        "bookName": "Luke",
+        "bookId": "luke",
+        "startChapter": 24,
+        "startVerse": 12,
+        "endChapter": 24,
+        "endVerse": 53,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Luke",
+    "startBookId": "luke",
+    "endBookName": "Luke",
+    "endBookId": "luke"
+  },
+  {
+    "dayNumber": 76,
+    "date": "2024-11-30",
+    "dayOfWeek": "Saturday",
+    "rawReading": "John 1:1 – 1:28",
+    "portions": [
+      {
+        "bookName": "John",
+        "bookId": "john",
+        "startChapter": 1,
+        "startVerse": 1,
+        "endChapter": 1,
+        "endVerse": 28,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "John",
+    "startBookId": "john",
+    "endBookName": "John",
+    "endBookId": "john"
+  },
+  {
+    "dayNumber": 77,
+    "date": "2024-12-01",
+    "dayOfWeek": "Sunday",
+    "rawReading": "1:29 – 3:1",
+    "portions": [
+      {
+        "bookName": "John",
+        "bookId": "john",
+        "startChapter": 1,
+        "startVerse": 29,
+        "endChapter": 3,
+        "endVerse": 1,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "John",
+    "startBookId": "john",
+    "endBookName": "John",
+    "endBookId": "john"
+  },
+  {
+    "dayNumber": 78,
+    "date": "2024-12-02",
+    "dayOfWeek": "Monday",
+    "rawReading": "3:2 – 3:21",
+    "portions": [
+      {
+        "bookName": "John",
+        "bookId": "john",
+        "startChapter": 3,
+        "startVerse": 2,
+        "endChapter": 3,
+        "endVerse": 21,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "John",
+    "startBookId": "john",
+    "endBookName": "John",
+    "endBookId": "john"
+  },
+  {
+    "dayNumber": 79,
+    "date": "2024-12-03",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "3:22 – 4:42",
+    "portions": [
+      {
+        "bookName": "John",
+        "bookId": "john",
+        "startChapter": 3,
+        "startVerse": 22,
+        "endChapter": 4,
+        "endVerse": 42,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "John",
+    "startBookId": "john",
+    "endBookName": "John",
+    "endBookId": "john"
+  },
+  {
+    "dayNumber": 80,
+    "date": "2024-12-04",
+    "dayOfWeek": "Wednesday",
+    "rawReading": "4:43 – 5:30",
+    "portions": [
+      {
+        "bookName": "John",
+        "bookId": "john",
+        "startChapter": 4,
+        "startVerse": 43,
+        "endChapter": 5,
+        "endVerse": 30,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "John",
+    "startBookId": "john",
+    "endBookName": "John",
+    "endBookId": "john"
+  },
+  {
+    "dayNumber": 81,
+    "date": "2024-12-05",
+    "dayOfWeek": "Thursday",
+    "rawReading": "5:31 – 6:21",
+    "portions": [
+      {
+        "bookName": "John",
+        "bookId": "john",
+        "startChapter": 5,
+        "startVerse": 31,
+        "endChapter": 6,
+        "endVerse": 21,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "John",
+    "startBookId": "john",
+    "endBookName": "John",
+    "endBookId": "john"
+  },
+  {
+    "dayNumber": 82,
+    "date": "2024-12-06",
+    "dayOfWeek": "Friday",
+    "rawReading": "6:22 – 7:2",
+    "portions": [
+      {
+        "bookName": "John",
+        "bookId": "john",
+        "startChapter": 6,
+        "startVerse": 22,
+        "endChapter": 7,
+        "endVerse": 2,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "John",
+    "startBookId": "john",
+    "endBookName": "John",
+    "endBookId": "john"
+  },
+  {
+    "dayNumber": 83,
+    "date": "2024-12-07",
+    "dayOfWeek": "Saturday",
+    "rawReading": "7:3 – 8:9",
+    "portions": [
+      {
+        "bookName": "John",
+        "bookId": "john",
+        "startChapter": 7,
+        "startVerse": 3,
+        "endChapter": 8,
+        "endVerse": 9,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "John",
+    "startBookId": "john",
+    "endBookName": "John",
+    "endBookId": "john"
+  },
+  {
+    "dayNumber": 84,
+    "date": "2024-12-08",
+    "dayOfWeek": "Sunday",
+    "rawReading": "8:10 – 8:44",
+    "portions": [
+      {
+        "bookName": "John",
+        "bookId": "john",
+        "startChapter": 8,
+        "startVerse": 10,
+        "endChapter": 8,
+        "endVerse": 44,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "John",
+    "startBookId": "john",
+    "endBookName": "John",
+    "endBookId": "john"
+  },
+  {
+    "dayNumber": 85,
+    "date": "2024-12-09",
+    "dayOfWeek": "Monday",
+    "rawReading": "8:45 – 9:41",
+    "portions": [
+      {
+        "bookName": "John",
+        "bookId": "john",
+        "startChapter": 8,
+        "startVerse": 45,
+        "endChapter": 9,
+        "endVerse": 41,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "John",
+    "startBookId": "john",
+    "endBookName": "John",
+    "endBookId": "john"
+  },
+  {
+    "dayNumber": 86,
+    "date": "2024-12-10",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "10:1 – 11:4",
+    "portions": [
+      {
+        "bookName": "John",
+        "bookId": "john",
+        "startChapter": 10,
+        "startVerse": 1,
+        "endChapter": 11,
+        "endVerse": 4,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "John",
+    "startBookId": "john",
+    "endBookName": "John",
+    "endBookId": "john"
+  },
+  {
+    "dayNumber": 87,
+    "date": "2024-12-11",
+    "dayOfWeek": "Wednesday",
+    "rawReading": "11:5 – 12:11",
+    "portions": [
+      {
+        "bookName": "John",
+        "bookId": "john",
+        "startChapter": 11,
+        "startVerse": 5,
+        "endChapter": 12,
+        "endVerse": 11,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "John",
+    "startBookId": "john",
+    "endBookName": "John",
+    "endBookId": "john"
+  },
+  {
+    "dayNumber": 88,
+    "date": "2024-12-12",
+    "dayOfWeek": "Thursday",
+    "rawReading": "12:12 – 12:50",
+    "portions": [
+      {
+        "bookName": "John",
+        "bookId": "john",
+        "startChapter": 12,
+        "startVerse": 12,
+        "endChapter": 12,
+        "endVerse": 50,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "John",
+    "startBookId": "john",
+    "endBookName": "John",
+    "endBookId": "john"
+  },
+  {
+    "dayNumber": 89,
+    "date": "2024-12-13",
+    "dayOfWeek": "Friday",
+    "rawReading": "13:1 – 14:3",
+    "portions": [
+      {
+        "bookName": "John",
+        "bookId": "john",
+        "startChapter": 13,
+        "startVerse": 1,
+        "endChapter": 14,
+        "endVerse": 3,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "John",
+    "startBookId": "john",
+    "endBookName": "John",
+    "endBookId": "john"
+  },
+  {
+    "dayNumber": 90,
+    "date": "2024-12-14",
+    "dayOfWeek": "Saturday",
+    "rawReading": "14:4 – 14:31",
+    "portions": [
+      {
+        "bookName": "John",
+        "bookId": "john",
+        "startChapter": 14,
+        "startVerse": 4,
+        "endChapter": 14,
+        "endVerse": 31,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "John",
+    "startBookId": "john",
+    "endBookName": "John",
+    "endBookId": "john"
+  },
+  {
+    "dayNumber": 91,
+    "date": "2024-12-15",
+    "dayOfWeek": "Sunday",
+    "rawReading": "15:1 – 16:11",
+    "portions": [
+      {
+        "bookName": "John",
+        "bookId": "john",
+        "startChapter": 15,
+        "startVerse": 1,
+        "endChapter": 16,
+        "endVerse": 11,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "John",
+    "startBookId": "john",
+    "endBookName": "John",
+    "endBookId": "john"
+  },
+  {
+    "dayNumber": 92,
+    "date": "2024-12-16",
+    "dayOfWeek": "Monday",
+    "rawReading": "16:12 – 17:5",
+    "portions": [
+      {
+        "bookName": "John",
+        "bookId": "john",
+        "startChapter": 16,
+        "startVerse": 12,
+        "endChapter": 17,
+        "endVerse": 5,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "John",
+    "startBookId": "john",
+    "endBookName": "John",
+    "endBookId": "john"
+  },
+  {
+    "dayNumber": 93,
+    "date": "2024-12-17",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "17:6 – 17:26",
+    "portions": [
+      {
+        "bookName": "John",
+        "bookId": "john",
+        "startChapter": 17,
+        "startVerse": 6,
+        "endChapter": 17,
+        "endVerse": 26,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "John",
+    "startBookId": "john",
+    "endBookName": "John",
+    "endBookId": "john"
+  },
+  {
+    "dayNumber": 94,
+    "date": "2024-12-18",
+    "dayOfWeek": "Wednesday",
+    "rawReading": "18:1 – 19:30",
+    "portions": [
+      {
+        "bookName": "John",
+        "bookId": "john",
+        "startChapter": 18,
+        "startVerse": 1,
+        "endChapter": 19,
+        "endVerse": 30,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "John",
+    "startBookId": "john",
+    "endBookName": "John",
+    "endBookId": "john"
+  },
+  {
+    "dayNumber": 95,
+    "date": "2024-12-19",
+    "dayOfWeek": "Thursday",
+    "rawReading": "19:31 – 20:13",
+    "portions": [
+      {
+        "bookName": "John",
+        "bookId": "john",
+        "startChapter": 19,
+        "startVerse": 31,
+        "endChapter": 20,
+        "endVerse": 13,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "John",
+    "startBookId": "john",
+    "endBookName": "John",
+    "endBookId": "john"
+  },
+  {
+    "dayNumber": 96,
+    "date": "2024-12-20",
+    "dayOfWeek": "Friday",
+    "rawReading": "20:14 – 20:25",
+    "portions": [
+      {
+        "bookName": "John",
+        "bookId": "john",
+        "startChapter": 20,
+        "startVerse": 14,
+        "endChapter": 20,
+        "endVerse": 25,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "John",
+    "startBookId": "john",
+    "endBookName": "John",
+    "endBookId": "john"
+  },
+  {
+    "dayNumber": 97,
+    "date": "2024-12-21",
+    "dayOfWeek": "Saturday",
+    "rawReading": "20:26 – 21:18",
+    "portions": [
+      {
+        "bookName": "John",
+        "bookId": "john",
+        "startChapter": 20,
+        "startVerse": 26,
+        "endChapter": 21,
+        "endVerse": 18,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "John",
+    "startBookId": "john",
+    "endBookName": "John",
+    "endBookId": "john"
+  },
+  {
+    "dayNumber": 98,
+    "date": "2024-12-22",
+    "dayOfWeek": "Sunday",
+    "rawReading": "21:19 – Acts 1:8",
+    "portions": [
+      {
+        "bookName": "John",
+        "bookId": "john",
+        "startChapter": 21,
+        "startVerse": 19,
+        "endChapter": 21,
+        "endVerse": 25,
+        "portionOrder": 1
+      },
+      {
+        "bookName": "Acts",
+        "bookId": "acts",
+        "startChapter": 1,
+        "startVerse": 1,
+        "endChapter": 1,
+        "endVerse": 8,
+        "portionOrder": 2
+      }
+    ],
+    "startBookName": "John",
+    "startBookId": "john",
+    "endBookName": "Acts",
+    "endBookId": "acts"
+  },
+  {
+    "dayNumber": 99,
+    "date": "2024-12-23",
+    "dayOfWeek": "Monday",
+    "rawReading": "1:9 – 2:4",
+    "portions": [
+      {
+        "bookName": "Acts",
+        "bookId": "acts",
+        "startChapter": 1,
+        "startVerse": 9,
+        "endChapter": 2,
+        "endVerse": 4,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Acts",
+    "startBookId": "acts",
+    "endBookName": "Acts",
+    "endBookId": "acts"
+  },
+  {
+    "dayNumber": 100,
+    "date": "2024-12-24",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "2:5 – 2:22",
+    "portions": [
+      {
+        "bookName": "Acts",
+        "bookId": "acts",
+        "startChapter": 2,
+        "startVerse": 5,
+        "endChapter": 2,
+        "endVerse": 22,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Acts",
+    "startBookId": "acts",
+    "endBookName": "Acts",
+    "endBookId": "acts"
+  },
+  {
+    "dayNumber": 101,
+    "date": "2024-12-25",
+    "dayOfWeek": "Wednesday",
+    "rawReading": "2:23 – 2:41",
+    "portions": [
+      {
+        "bookName": "Acts",
+        "bookId": "acts",
+        "startChapter": 2,
+        "startVerse": 23,
+        "endChapter": 2,
+        "endVerse": 41,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Acts",
+    "startBookId": "acts",
+    "endBookName": "Acts",
+    "endBookId": "acts"
+  },
+  {
+    "dayNumber": 102,
+    "date": "2024-12-26",
+    "dayOfWeek": "Thursday",
+    "rawReading": "2:42 – 3:18",
+    "portions": [
+      {
+        "bookName": "Acts",
+        "bookId": "acts",
+        "startChapter": 2,
+        "startVerse": 42,
+        "endChapter": 3,
+        "endVerse": 18,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Acts",
+    "startBookId": "acts",
+    "endBookName": "Acts",
+    "endBookId": "acts"
+  },
+  {
+    "dayNumber": 103,
+    "date": "2024-12-27",
+    "dayOfWeek": "Friday",
+    "rawReading": "3:19 – 4:37",
+    "portions": [
+      {
+        "bookName": "Acts",
+        "bookId": "acts",
+        "startChapter": 3,
+        "startVerse": 19,
+        "endChapter": 4,
+        "endVerse": 37,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Acts",
+    "startBookId": "acts",
+    "endBookName": "Acts",
+    "endBookId": "acts"
+  },
+  {
+    "dayNumber": 104,
+    "date": "2024-12-28",
+    "dayOfWeek": "Saturday",
+    "rawReading": "5:1 – 6:7",
+    "portions": [
+      {
+        "bookName": "Acts",
+        "bookId": "acts",
+        "startChapter": 5,
+        "startVerse": 1,
+        "endChapter": 6,
+        "endVerse": 7,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Acts",
+    "startBookId": "acts",
+    "endBookName": "Acts",
+    "endBookId": "acts"
+  },
+  {
+    "dayNumber": 105,
+    "date": "2024-12-29",
+    "dayOfWeek": "Sunday",
+    "rawReading": "6:8 – 7:44",
+    "portions": [
+      {
+        "bookName": "Acts",
+        "bookId": "acts",
+        "startChapter": 6,
+        "startVerse": 8,
+        "endChapter": 7,
+        "endVerse": 44,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Acts",
+    "startBookId": "acts",
+    "endBookName": "Acts",
+    "endBookId": "acts"
+  },
+  {
+    "dayNumber": 106,
+    "date": "2024-12-30",
+    "dayOfWeek": "Monday",
+    "rawReading": "7:45 – 8:25",
+    "portions": [
+      {
+        "bookName": "Acts",
+        "bookId": "acts",
+        "startChapter": 7,
+        "startVerse": 45,
+        "endChapter": 8,
+        "endVerse": 25,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Acts",
+    "startBookId": "acts",
+    "endBookName": "Acts",
+    "endBookId": "acts"
+  },
+  {
+    "dayNumber": 107,
+    "date": "2024-12-31",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "8:26 – 9:19",
+    "portions": [
+      {
+        "bookName": "Acts",
+        "bookId": "acts",
+        "startChapter": 8,
+        "startVerse": 26,
+        "endChapter": 9,
+        "endVerse": 19,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Acts",
+    "startBookId": "acts",
+    "endBookName": "Acts",
+    "endBookId": "acts"
+  },
+  {
+    "dayNumber": 108,
+    "date": "2025-01-01",
+    "dayOfWeek": "Wednesday",
+    "rawReading": "9:20 – 10:16",
+    "portions": [
+      {
+        "bookName": "Acts",
+        "bookId": "acts",
+        "startChapter": 9,
+        "startVerse": 20,
+        "endChapter": 10,
+        "endVerse": 16,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Acts",
+    "startBookId": "acts",
+    "endBookName": "Acts",
+    "endBookId": "acts"
+  },
+  {
+    "dayNumber": 109,
+    "date": "2025-01-02",
+    "dayOfWeek": "Thursday",
+    "rawReading": "10:17 – 10:48",
+    "portions": [
+      {
+        "bookName": "Acts",
+        "bookId": "acts",
+        "startChapter": 10,
+        "startVerse": 17,
+        "endChapter": 10,
+        "endVerse": 48,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Acts",
+    "startBookId": "acts",
+    "endBookName": "Acts",
+    "endBookId": "acts"
+  },
+  {
+    "dayNumber": 110,
+    "date": "2025-01-03",
+    "dayOfWeek": "Friday",
+    "rawReading": "11:1 – 12:18",
+    "portions": [
+      {
+        "bookName": "Acts",
+        "bookId": "acts",
+        "startChapter": 11,
+        "startVerse": 1,
+        "endChapter": 12,
+        "endVerse": 18,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Acts",
+    "startBookId": "acts",
+    "endBookName": "Acts",
+    "endBookId": "acts"
+  },
+  {
+    "dayNumber": 111,
+    "date": "2025-01-04",
+    "dayOfWeek": "Saturday",
+    "rawReading": "12:19 – 13:26",
+    "portions": [
+      {
+        "bookName": "Acts",
+        "bookId": "acts",
+        "startChapter": 12,
+        "startVerse": 19,
+        "endChapter": 13,
+        "endVerse": 26,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Acts",
+    "startBookId": "acts",
+    "endBookName": "Acts",
+    "endBookId": "acts"
+  },
+  {
+    "dayNumber": 112,
+    "date": "2025-01-05",
+    "dayOfWeek": "Sunday",
+    "rawReading": "13:27 – 14:24",
+    "portions": [
+      {
+        "bookName": "Acts",
+        "bookId": "acts",
+        "startChapter": 13,
+        "startVerse": 27,
+        "endChapter": 14,
+        "endVerse": 24,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Acts",
+    "startBookId": "acts",
+    "endBookName": "Acts",
+    "endBookId": "acts"
+  },
+  {
+    "dayNumber": 113,
+    "date": "2025-01-06",
+    "dayOfWeek": "Monday",
+    "rawReading": "14:25 – 15:39",
+    "portions": [
+      {
+        "bookName": "Acts",
+        "bookId": "acts",
+        "startChapter": 14,
+        "startVerse": 25,
+        "endChapter": 15,
+        "endVerse": 39,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Acts",
+    "startBookId": "acts",
+    "endBookName": "Acts",
+    "endBookId": "acts"
+  },
+  {
+    "dayNumber": 114,
+    "date": "2025-01-07",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "15:40 – 16:40",
+    "portions": [
+      {
+        "bookName": "Acts",
+        "bookId": "acts",
+        "startChapter": 15,
+        "startVerse": 40,
+        "endChapter": 16,
+        "endVerse": 40,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Acts",
+    "startBookId": "acts",
+    "endBookName": "Acts",
+    "endBookId": "acts"
+  },
+  {
+    "dayNumber": 115,
+    "date": "2025-01-08",
+    "dayOfWeek": "Wednesday",
+    "rawReading": "17:1 – 17:34",
+    "portions": [
+      {
+        "bookName": "Acts",
+        "bookId": "acts",
+        "startChapter": 17,
+        "startVerse": 1,
+        "endChapter": 17,
+        "endVerse": 34,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Acts",
+    "startBookId": "acts",
+    "endBookName": "Acts",
+    "endBookId": "acts"
+  },
+  {
+    "dayNumber": 116,
+    "date": "2025-01-09",
+    "dayOfWeek": "Thursday",
+    "rawReading": "18:1 – 19:22",
+    "portions": [
+      {
+        "bookName": "Acts",
+        "bookId": "acts",
+        "startChapter": 18,
+        "startVerse": 1,
+        "endChapter": 19,
+        "endVerse": 22,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Acts",
+    "startBookId": "acts",
+    "endBookName": "Acts",
+    "endBookId": "acts"
+  },
+  {
+    "dayNumber": 117,
+    "date": "2025-01-10",
+    "dayOfWeek": "Friday",
+    "rawReading": "19:23 – 20:24",
+    "portions": [
+      {
+        "bookName": "Acts",
+        "bookId": "acts",
+        "startChapter": 19,
+        "startVerse": 23,
+        "endChapter": 20,
+        "endVerse": 24,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Acts",
+    "startBookId": "acts",
+    "endBookName": "Acts",
+    "endBookId": "acts"
+  },
+  {
+    "dayNumber": 118,
+    "date": "2025-01-11",
+    "dayOfWeek": "Saturday",
+    "rawReading": "20:25 – 21:26",
+    "portions": [
+      {
+        "bookName": "Acts",
+        "bookId": "acts",
+        "startChapter": 20,
+        "startVerse": 25,
+        "endChapter": 21,
+        "endVerse": 26,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Acts",
+    "startBookId": "acts",
+    "endBookName": "Acts",
+    "endBookId": "acts"
+  },
+  {
+    "dayNumber": 119,
+    "date": "2025-01-12",
+    "dayOfWeek": "Sunday",
+    "rawReading": "21:27 – 22:21",
+    "portions": [
+      {
+        "bookName": "Acts",
+        "bookId": "acts",
+        "startChapter": 21,
+        "startVerse": 27,
+        "endChapter": 22,
+        "endVerse": 21,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Acts",
+    "startBookId": "acts",
+    "endBookName": "Acts",
+    "endBookId": "acts"
+  },
+  {
+    "dayNumber": 120,
+    "date": "2025-01-13",
+    "dayOfWeek": "Monday",
+    "rawReading": "22:22 – 23:35",
+    "portions": [
+      {
+        "bookName": "Acts",
+        "bookId": "acts",
+        "startChapter": 22,
+        "startVerse": 22,
+        "endChapter": 23,
+        "endVerse": 35,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Acts",
+    "startBookId": "acts",
+    "endBookName": "Acts",
+    "endBookId": "acts"
+  },
+  {
+    "dayNumber": 121,
+    "date": "2025-01-14",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "24:1 – 25:12",
+    "portions": [
+      {
+        "bookName": "Acts",
+        "bookId": "acts",
+        "startChapter": 24,
+        "startVerse": 1,
+        "endChapter": 25,
+        "endVerse": 12,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Acts",
+    "startBookId": "acts",
+    "endBookName": "Acts",
+    "endBookId": "acts"
+  },
+  {
+    "dayNumber": 122,
+    "date": "2025-01-15",
+    "dayOfWeek": "Wednesday",
+    "rawReading": "25:13 – 26:32",
+    "portions": [
+      {
+        "bookName": "Acts",
+        "bookId": "acts",
+        "startChapter": 25,
+        "startVerse": 13,
+        "endChapter": 26,
+        "endVerse": 32,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Acts",
+    "startBookId": "acts",
+    "endBookName": "Acts",
+    "endBookId": "acts"
+  },
+  {
+    "dayNumber": 123,
+    "date": "2025-01-16",
+    "dayOfWeek": "Thursday",
+    "rawReading": "27:1 – 28:10",
+    "portions": [
+      {
+        "bookName": "Acts",
+        "bookId": "acts",
+        "startChapter": 27,
+        "startVerse": 1,
+        "endChapter": 28,
+        "endVerse": 10,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Acts",
+    "startBookId": "acts",
+    "endBookName": "Acts",
+    "endBookId": "acts"
+  },
+  {
+    "dayNumber": 124,
+    "date": "2025-01-17",
+    "dayOfWeek": "Friday",
+    "rawReading": "28:11 – Rom. 1:2",
+    "portions": [
+      {
+        "bookName": "Acts",
+        "bookId": "acts",
+        "startChapter": 28,
+        "startVerse": 11,
+        "endChapter": 28,
+        "endVerse": 31,
+        "portionOrder": 1
+      },
+      {
+        "bookName": "Romans",
+        "bookId": "romans",
+        "startChapter": 1,
+        "startVerse": 1,
+        "endChapter": 1,
+        "endVerse": 2,
+        "portionOrder": 2
+      }
+    ],
+    "startBookName": "Acts",
+    "startBookId": "acts",
+    "endBookName": "Romans",
+    "endBookId": "romans"
+  },
+  {
+    "dayNumber": 125,
+    "date": "2025-01-18",
+    "dayOfWeek": "Saturday",
+    "rawReading": "1:3 – 1:17",
+    "portions": [
+      {
+        "bookName": "Romans",
+        "bookId": "romans",
+        "startChapter": 1,
+        "startVerse": 3,
+        "endChapter": 1,
+        "endVerse": 17,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Romans",
+    "startBookId": "romans",
+    "endBookName": "Romans",
+    "endBookId": "romans"
+  },
+  {
+    "dayNumber": 126,
+    "date": "2025-01-19",
+    "dayOfWeek": "Sunday",
+    "rawReading": "1:18 – 2:16",
+    "portions": [
+      {
+        "bookName": "Romans",
+        "bookId": "romans",
+        "startChapter": 1,
+        "startVerse": 18,
+        "endChapter": 2,
+        "endVerse": 16,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Romans",
+    "startBookId": "romans",
+    "endBookName": "Romans",
+    "endBookId": "romans"
+  },
+  {
+    "dayNumber": 127,
+    "date": "2025-01-20",
+    "dayOfWeek": "Monday",
+    "rawReading": "2:17 – 3:31",
+    "portions": [
+      {
+        "bookName": "Romans",
+        "bookId": "romans",
+        "startChapter": 2,
+        "startVerse": 17,
+        "endChapter": 3,
+        "endVerse": 31,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Romans",
+    "startBookId": "romans",
+    "endBookName": "Romans",
+    "endBookId": "romans"
+  },
+  {
+    "dayNumber": 128,
+    "date": "2025-01-21",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "4:1 – 4:17",
+    "portions": [
+      {
+        "bookName": "Romans",
+        "bookId": "romans",
+        "startChapter": 4,
+        "startVerse": 1,
+        "endChapter": 4,
+        "endVerse": 17,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Romans",
+    "startBookId": "romans",
+    "endBookName": "Romans",
+    "endBookId": "romans"
+  },
+  {
+    "dayNumber": 129,
+    "date": "2025-01-22",
+    "dayOfWeek": "Wednesday",
+    "rawReading": "4:18 – 5:14",
+    "portions": [
+      {
+        "bookName": "Romans",
+        "bookId": "romans",
+        "startChapter": 4,
+        "startVerse": 18,
+        "endChapter": 5,
+        "endVerse": 14,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Romans",
+    "startBookId": "romans",
+    "endBookName": "Romans",
+    "endBookId": "romans"
+  },
+  {
+    "dayNumber": 130,
+    "date": "2025-01-23",
+    "dayOfWeek": "Thursday",
+    "rawReading": "5:15 – 6:10",
+    "portions": [
+      {
+        "bookName": "Romans",
+        "bookId": "romans",
+        "startChapter": 5,
+        "startVerse": 15,
+        "endChapter": 6,
+        "endVerse": 10,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Romans",
+    "startBookId": "romans",
+    "endBookName": "Romans",
+    "endBookId": "romans"
+  },
+  {
+    "dayNumber": 131,
+    "date": "2025-01-24",
+    "dayOfWeek": "Friday",
+    "rawReading": "6:11 – 7:6",
+    "portions": [
+      {
+        "bookName": "Romans",
+        "bookId": "romans",
+        "startChapter": 6,
+        "startVerse": 11,
+        "endChapter": 7,
+        "endVerse": 6,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Romans",
+    "startBookId": "romans",
+    "endBookName": "Romans",
+    "endBookId": "romans"
+  },
+  {
+    "dayNumber": 132,
+    "date": "2025-01-25",
+    "dayOfWeek": "Saturday",
+    "rawReading": "7:7 – 7:25",
+    "portions": [
+      {
+        "bookName": "Romans",
+        "bookId": "romans",
+        "startChapter": 7,
+        "startVerse": 7,
+        "endChapter": 7,
+        "endVerse": 25,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Romans",
+    "startBookId": "romans",
+    "endBookName": "Romans",
+    "endBookId": "romans"
+  },
+  {
+    "dayNumber": 133,
+    "date": "2025-01-26",
+    "dayOfWeek": "Sunday",
+    "rawReading": "8:1 – 8:6",
+    "portions": [
+      {
+        "bookName": "Romans",
+        "bookId": "romans",
+        "startChapter": 8,
+        "startVerse": 1,
+        "endChapter": 8,
+        "endVerse": 6,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Romans",
+    "startBookId": "romans",
+    "endBookName": "Romans",
+    "endBookId": "romans"
+  },
+  {
+    "dayNumber": 134,
+    "date": "2025-01-27",
+    "dayOfWeek": "Monday",
+    "rawReading": "8:7 – 8:13",
+    "portions": [
+      {
+        "bookName": "Romans",
+        "bookId": "romans",
+        "startChapter": 8,
+        "startVerse": 7,
+        "endChapter": 8,
+        "endVerse": 13,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Romans",
+    "startBookId": "romans",
+    "endBookName": "Romans",
+    "endBookId": "romans"
+  },
+  {
+    "dayNumber": 135,
+    "date": "2025-01-28",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "8:14 – 8:30",
+    "portions": [
+      {
+        "bookName": "Romans",
+        "bookId": "romans",
+        "startChapter": 8,
+        "startVerse": 14,
+        "endChapter": 8,
+        "endVerse": 30,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Romans",
+    "startBookId": "romans",
+    "endBookName": "Romans",
+    "endBookId": "romans"
+  },
+  {
+    "dayNumber": 136,
+    "date": "2025-01-29",
+    "dayOfWeek": "Wednesday",
+    "rawReading": "8:31 – 9:29",
+    "portions": [
+      {
+        "bookName": "Romans",
+        "bookId": "romans",
+        "startChapter": 8,
+        "startVerse": 31,
+        "endChapter": 9,
+        "endVerse": 29,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Romans",
+    "startBookId": "romans",
+    "endBookName": "Romans",
+    "endBookId": "romans"
+  },
+  {
+    "dayNumber": 137,
+    "date": "2025-01-30",
+    "dayOfWeek": "Thursday",
+    "rawReading": "9:30 – 11:10",
+    "portions": [
+      {
+        "bookName": "Romans",
+        "bookId": "romans",
+        "startChapter": 9,
+        "startVerse": 30,
+        "endChapter": 11,
+        "endVerse": 10,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Romans",
+    "startBookId": "romans",
+    "endBookName": "Romans",
+    "endBookId": "romans"
+  },
+  {
+    "dayNumber": 138,
+    "date": "2025-01-31",
+    "dayOfWeek": "Friday",
+    "rawReading": "11:11 – 12:3",
+    "portions": [
+      {
+        "bookName": "Romans",
+        "bookId": "romans",
+        "startChapter": 11,
+        "startVerse": 11,
+        "endChapter": 12,
+        "endVerse": 3,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Romans",
+    "startBookId": "romans",
+    "endBookName": "Romans",
+    "endBookId": "romans"
+  },
+  {
+    "dayNumber": 139,
+    "date": "2025-02-01",
+    "dayOfWeek": "Saturday",
+    "rawReading": "12:4 – 13:10",
+    "portions": [
+      {
+        "bookName": "Romans",
+        "bookId": "romans",
+        "startChapter": 12,
+        "startVerse": 4,
+        "endChapter": 13,
+        "endVerse": 10,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Romans",
+    "startBookId": "romans",
+    "endBookName": "Romans",
+    "endBookId": "romans"
+  },
+  {
+    "dayNumber": 140,
+    "date": "2025-02-02",
+    "dayOfWeek": "Sunday",
+    "rawReading": "13:11 – 14:23",
+    "portions": [
+      {
+        "bookName": "Romans",
+        "bookId": "romans",
+        "startChapter": 13,
+        "startVerse": 11,
+        "endChapter": 14,
+        "endVerse": 23,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Romans",
+    "startBookId": "romans",
+    "endBookName": "Romans",
+    "endBookId": "romans"
+  },
+  {
+    "dayNumber": 141,
+    "date": "2025-02-03",
+    "dayOfWeek": "Monday",
+    "rawReading": "15:1 – 16:1",
+    "portions": [
+      {
+        "bookName": "Romans",
+        "bookId": "romans",
+        "startChapter": 15,
+        "startVerse": 1,
+        "endChapter": 16,
+        "endVerse": 1,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Romans",
+    "startBookId": "romans",
+    "endBookName": "Romans",
+    "endBookId": "romans"
+  },
+  {
+    "dayNumber": 142,
+    "date": "2025-02-04",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "16:2 – 16:27",
+    "portions": [
+      {
+        "bookName": "Romans",
+        "bookId": "romans",
+        "startChapter": 16,
+        "startVerse": 2,
+        "endChapter": 16,
+        "endVerse": 27,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Romans",
+    "startBookId": "romans",
+    "endBookName": "Romans",
+    "endBookId": "romans"
+  },
+  {
+    "dayNumber": 143,
+    "date": "2025-02-05",
+    "dayOfWeek": "Wednesday",
+    "rawReading": "1 Cor. 1:1 – 1:7",
+    "portions": [
+      {
+        "bookName": "1 Corinthians",
+        "bookId": "1corinthians",
+        "startChapter": 1,
+        "startVerse": 1,
+        "endChapter": 1,
+        "endVerse": 7,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 Corinthians",
+    "startBookId": "1corinthians",
+    "endBookName": "1 Corinthians",
+    "endBookId": "1corinthians"
+  },
+  {
+    "dayNumber": 144,
+    "date": "2025-02-06",
+    "dayOfWeek": "Thursday",
+    "rawReading": "1:8 – 1:25",
+    "portions": [
+      {
+        "bookName": "1 Corinthians",
+        "bookId": "1corinthians",
+        "startChapter": 1,
+        "startVerse": 8,
+        "endChapter": 1,
+        "endVerse": 25,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 Corinthians",
+    "startBookId": "1corinthians",
+    "endBookName": "1 Corinthians",
+    "endBookId": "1corinthians"
+  },
+  {
+    "dayNumber": 145,
+    "date": "2025-02-07",
+    "dayOfWeek": "Friday",
+    "rawReading": "1:26 – 2:10",
+    "portions": [
+      {
+        "bookName": "1 Corinthians",
+        "bookId": "1corinthians",
+        "startChapter": 1,
+        "startVerse": 26,
+        "endChapter": 2,
+        "endVerse": 10,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 Corinthians",
+    "startBookId": "1corinthians",
+    "endBookName": "1 Corinthians",
+    "endBookId": "1corinthians"
+  },
+  {
+    "dayNumber": 146,
+    "date": "2025-02-08",
+    "dayOfWeek": "Saturday",
+    "rawReading": "2:11 – 3:9",
+    "portions": [
+      {
+        "bookName": "1 Corinthians",
+        "bookId": "1corinthians",
+        "startChapter": 2,
+        "startVerse": 11,
+        "endChapter": 3,
+        "endVerse": 9,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 Corinthians",
+    "startBookId": "1corinthians",
+    "endBookName": "1 Corinthians",
+    "endBookId": "1corinthians"
+  },
+  {
+    "dayNumber": 147,
+    "date": "2025-02-09",
+    "dayOfWeek": "Sunday",
+    "rawReading": "3:10 – 3:23",
+    "portions": [
+      {
+        "bookName": "1 Corinthians",
+        "bookId": "1corinthians",
+        "startChapter": 3,
+        "startVerse": 10,
+        "endChapter": 3,
+        "endVerse": 23,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 Corinthians",
+    "startBookId": "1corinthians",
+    "endBookName": "1 Corinthians",
+    "endBookId": "1corinthians"
+  },
+  {
+    "dayNumber": 148,
+    "date": "2025-02-10",
+    "dayOfWeek": "Monday",
+    "rawReading": "4:1 – 5:13",
+    "portions": [
+      {
+        "bookName": "1 Corinthians",
+        "bookId": "1corinthians",
+        "startChapter": 4,
+        "startVerse": 1,
+        "endChapter": 5,
+        "endVerse": 13,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 Corinthians",
+    "startBookId": "1corinthians",
+    "endBookName": "1 Corinthians",
+    "endBookId": "1corinthians"
+  },
+  {
+    "dayNumber": 149,
+    "date": "2025-02-11",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "6:1 – 6:20",
+    "portions": [
+      {
+        "bookName": "1 Corinthians",
+        "bookId": "1corinthians",
+        "startChapter": 6,
+        "startVerse": 1,
+        "endChapter": 6,
+        "endVerse": 20,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 Corinthians",
+    "startBookId": "1corinthians",
+    "endBookName": "1 Corinthians",
+    "endBookId": "1corinthians"
+  },
+  {
+    "dayNumber": 150,
+    "date": "2025-02-12",
+    "dayOfWeek": "Wednesday",
+    "rawReading": "7:1 – 7:38",
+    "portions": [
+      {
+        "bookName": "1 Corinthians",
+        "bookId": "1corinthians",
+        "startChapter": 7,
+        "startVerse": 1,
+        "endChapter": 7,
+        "endVerse": 38,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 Corinthians",
+    "startBookId": "1corinthians",
+    "endBookName": "1 Corinthians",
+    "endBookId": "1corinthians"
+  },
+  {
+    "dayNumber": 151,
+    "date": "2025-02-13",
+    "dayOfWeek": "Thursday",
+    "rawReading": "7:39 – 9:3",
+    "portions": [
+      {
+        "bookName": "1 Corinthians",
+        "bookId": "1corinthians",
+        "startChapter": 7,
+        "startVerse": 39,
+        "endChapter": 9,
+        "endVerse": 3,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 Corinthians",
+    "startBookId": "1corinthians",
+    "endBookName": "1 Corinthians",
+    "endBookId": "1corinthians"
+  },
+  {
+    "dayNumber": 152,
+    "date": "2025-02-14",
+    "dayOfWeek": "Friday",
+    "rawReading": "9:4 – 10:2",
+    "portions": [
+      {
+        "bookName": "1 Corinthians",
+        "bookId": "1corinthians",
+        "startChapter": 9,
+        "startVerse": 4,
+        "endChapter": 10,
+        "endVerse": 2,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 Corinthians",
+    "startBookId": "1corinthians",
+    "endBookName": "1 Corinthians",
+    "endBookId": "1corinthians"
+  },
+  {
+    "dayNumber": 153,
+    "date": "2025-02-15",
+    "dayOfWeek": "Saturday",
+    "rawReading": "10:3 – 10:22",
+    "portions": [
+      {
+        "bookName": "1 Corinthians",
+        "bookId": "1corinthians",
+        "startChapter": 10,
+        "startVerse": 3,
+        "endChapter": 10,
+        "endVerse": 22,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 Corinthians",
+    "startBookId": "1corinthians",
+    "endBookName": "1 Corinthians",
+    "endBookId": "1corinthians"
+  },
+  {
+    "dayNumber": 154,
+    "date": "2025-02-16",
+    "dayOfWeek": "Sunday",
+    "rawReading": "10:23 – 11:15",
+    "portions": [
+      {
+        "bookName": "1 Corinthians",
+        "bookId": "1corinthians",
+        "startChapter": 10,
+        "startVerse": 23,
+        "endChapter": 11,
+        "endVerse": 15,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 Corinthians",
+    "startBookId": "1corinthians",
+    "endBookName": "1 Corinthians",
+    "endBookId": "1corinthians"
+  },
+  {
+    "dayNumber": 155,
+    "date": "2025-02-17",
+    "dayOfWeek": "Monday",
+    "rawReading": "11:16 – 12:3",
+    "portions": [
+      {
+        "bookName": "1 Corinthians",
+        "bookId": "1corinthians",
+        "startChapter": 11,
+        "startVerse": 16,
+        "endChapter": 12,
+        "endVerse": 3,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 Corinthians",
+    "startBookId": "1corinthians",
+    "endBookName": "1 Corinthians",
+    "endBookId": "1corinthians"
+  },
+  {
+    "dayNumber": 156,
+    "date": "2025-02-18",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "12:4 – 12:22",
+    "portions": [
+      {
+        "bookName": "1 Corinthians",
+        "bookId": "1corinthians",
+        "startChapter": 12,
+        "startVerse": 4,
+        "endChapter": 12,
+        "endVerse": 22,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 Corinthians",
+    "startBookId": "1corinthians",
+    "endBookName": "1 Corinthians",
+    "endBookId": "1corinthians"
+  },
+  {
+    "dayNumber": 157,
+    "date": "2025-02-19",
+    "dayOfWeek": "Wednesday",
+    "rawReading": "12:23 – 14:7",
+    "portions": [
+      {
+        "bookName": "1 Corinthians",
+        "bookId": "1corinthians",
+        "startChapter": 12,
+        "startVerse": 23,
+        "endChapter": 14,
+        "endVerse": 7,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 Corinthians",
+    "startBookId": "1corinthians",
+    "endBookName": "1 Corinthians",
+    "endBookId": "1corinthians"
+  },
+  {
+    "dayNumber": 158,
+    "date": "2025-02-20",
+    "dayOfWeek": "Thursday",
+    "rawReading": "14:8 – 14:26",
+    "portions": [
+      {
+        "bookName": "1 Corinthians",
+        "bookId": "1corinthians",
+        "startChapter": 14,
+        "startVerse": 8,
+        "endChapter": 14,
+        "endVerse": 26,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 Corinthians",
+    "startBookId": "1corinthians",
+    "endBookName": "1 Corinthians",
+    "endBookId": "1corinthians"
+  },
+  {
+    "dayNumber": 159,
+    "date": "2025-02-21",
+    "dayOfWeek": "Friday",
+    "rawReading": "14:27 – 14:40",
+    "portions": [
+      {
+        "bookName": "1 Corinthians",
+        "bookId": "1corinthians",
+        "startChapter": 14,
+        "startVerse": 27,
+        "endChapter": 14,
+        "endVerse": 40,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 Corinthians",
+    "startBookId": "1corinthians",
+    "endBookName": "1 Corinthians",
+    "endBookId": "1corinthians"
+  },
+  {
+    "dayNumber": 160,
+    "date": "2025-02-22",
+    "dayOfWeek": "Saturday",
+    "rawReading": "15:1 – 15:28",
+    "portions": [
+      {
+        "bookName": "1 Corinthians",
+        "bookId": "1corinthians",
+        "startChapter": 15,
+        "startVerse": 1,
+        "endChapter": 15,
+        "endVerse": 28,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 Corinthians",
+    "startBookId": "1corinthians",
+    "endBookName": "1 Corinthians",
+    "endBookId": "1corinthians"
+  },
+  {
+    "dayNumber": 161,
+    "date": "2025-02-23",
+    "dayOfWeek": "Sunday",
+    "rawReading": "15:29 – 15:49",
+    "portions": [
+      {
+        "bookName": "1 Corinthians",
+        "bookId": "1corinthians",
+        "startChapter": 15,
+        "startVerse": 29,
+        "endChapter": 15,
+        "endVerse": 49,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 Corinthians",
+    "startBookId": "1corinthians",
+    "endBookName": "1 Corinthians",
+    "endBookId": "1corinthians"
+  },
+  {
+    "dayNumber": 162,
+    "date": "2025-02-24",
+    "dayOfWeek": "Monday",
+    "rawReading": "15:50 – 2 Cor. 1:14",
+    "portions": [
+      {
+        "bookName": "1 Corinthians",
+        "bookId": "1corinthians",
+        "startChapter": 15,
+        "startVerse": 50,
+        "endChapter": 16,
+        "endVerse": 24,
+        "portionOrder": 1
+      },
+      {
+        "bookName": "2 Corinthians",
+        "bookId": "2corinthians",
+        "startChapter": 1,
+        "startVerse": 1,
+        "endChapter": 1,
+        "endVerse": 14,
+        "portionOrder": 2
+      }
+    ],
+    "startBookName": "1 Corinthians",
+    "startBookId": "1corinthians",
+    "endBookName": "2 Corinthians",
+    "endBookId": "2corinthians"
+  },
+  {
+    "dayNumber": 163,
+    "date": "2025-02-25",
+    "dayOfWeek": "Wednesday",
+    "rawReading": "1:15 – 2:11",
+    "portions": [
+      {
+        "bookName": "2 Corinthians",
+        "bookId": "2corinthians",
+        "startChapter": 1,
+        "startVerse": 15,
+        "endChapter": 2,
+        "endVerse": 11,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "2 Corinthians",
+    "startBookId": "2corinthians",
+    "endBookName": "2 Corinthians",
+    "endBookId": "2corinthians"
+  },
+  {
+    "dayNumber": 164,
+    "date": "2025-02-26",
+    "dayOfWeek": "Thursday",
+    "rawReading": "2:12 – 3:12",
+    "portions": [
+      {
+        "bookName": "2 Corinthians",
+        "bookId": "2corinthians",
+        "startChapter": 2,
+        "startVerse": 12,
+        "endChapter": 3,
+        "endVerse": 12,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "2 Corinthians",
+    "startBookId": "2corinthians",
+    "endBookName": "2 Corinthians",
+    "endBookId": "2corinthians"
+  },
+  {
+    "dayNumber": 165,
+    "date": "2025-02-27",
+    "dayOfWeek": "Friday",
+    "rawReading": "3:13 – 4:2",
+    "portions": [
+      {
+        "bookName": "2 Corinthians",
+        "bookId": "2corinthians",
+        "startChapter": 3,
+        "startVerse": 13,
+        "endChapter": 4,
+        "endVerse": 2,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "2 Corinthians",
+    "startBookId": "2corinthians",
+    "endBookName": "2 Corinthians",
+    "endBookId": "2corinthians"
+  },
+  {
+    "dayNumber": 166,
+    "date": "2025-02-28",
+    "dayOfWeek": "Saturday",
+    "rawReading": "4:3 – 4:13",
+    "portions": [
+      {
+        "bookName": "2 Corinthians",
+        "bookId": "2corinthians",
+        "startChapter": 4,
+        "startVerse": 3,
+        "endChapter": 4,
+        "endVerse": 13,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "2 Corinthians",
+    "startBookId": "2corinthians",
+    "endBookName": "2 Corinthians",
+    "endBookId": "2corinthians"
+  },
+  {
+    "dayNumber": 167,
+    "date": "2025-03-01",
+    "dayOfWeek": "Sunday",
+    "rawReading": "4:14 – 5:15",
+    "portions": [
+      {
+        "bookName": "2 Corinthians",
+        "bookId": "2corinthians",
+        "startChapter": 4,
+        "startVerse": 14,
+        "endChapter": 5,
+        "endVerse": 15,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "2 Corinthians",
+    "startBookId": "2corinthians",
+    "endBookName": "2 Corinthians",
+    "endBookId": "2corinthians"
+  },
+  {
+    "dayNumber": 168,
+    "date": "2025-03-02",
+    "dayOfWeek": "Monday",
+    "rawReading": "5:16 – 6:13",
+    "portions": [
+      {
+        "bookName": "2 Corinthians",
+        "bookId": "2corinthians",
+        "startChapter": 5,
+        "startVerse": 16,
+        "endChapter": 6,
+        "endVerse": 13,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "2 Corinthians",
+    "startBookId": "2corinthians",
+    "endBookName": "2 Corinthians",
+    "endBookId": "2corinthians"
+  },
+  {
+    "dayNumber": 169,
+    "date": "2025-03-03",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "6:14 – 7:16",
+    "portions": [
+      {
+        "bookName": "2 Corinthians",
+        "bookId": "2corinthians",
+        "startChapter": 6,
+        "startVerse": 14,
+        "endChapter": 7,
+        "endVerse": 16,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "2 Corinthians",
+    "startBookId": "2corinthians",
+    "endBookName": "2 Corinthians",
+    "endBookId": "2corinthians"
+  },
+  {
+    "dayNumber": 170,
+    "date": "2025-03-04",
+    "dayOfWeek": "Wednesday",
+    "rawReading": "8:1 – 9:5",
+    "portions": [
+      {
+        "bookName": "2 Corinthians",
+        "bookId": "2corinthians",
+        "startChapter": 8,
+        "startVerse": 1,
+        "endChapter": 9,
+        "endVerse": 5,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "2 Corinthians",
+    "startBookId": "2corinthians",
+    "endBookName": "2 Corinthians",
+    "endBookId": "2corinthians"
+  },
+  {
+    "dayNumber": 171,
+    "date": "2025-03-05",
+    "dayOfWeek": "Thursday",
+    "rawReading": "9:6 – 11:15",
+    "portions": [
+      {
+        "bookName": "2 Corinthians",
+        "bookId": "2corinthians",
+        "startChapter": 9,
+        "startVerse": 6,
+        "endChapter": 11,
+        "endVerse": 15,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "2 Corinthians",
+    "startBookId": "2corinthians",
+    "endBookName": "2 Corinthians",
+    "endBookId": "2corinthians"
+  },
+  {
+    "dayNumber": 172,
+    "date": "2025-03-06",
+    "dayOfWeek": "Friday",
+    "rawReading": "11:16 – 12:10",
+    "portions": [
+      {
+        "bookName": "2 Corinthians",
+        "bookId": "2corinthians",
+        "startChapter": 11,
+        "startVerse": 16,
+        "endChapter": 12,
+        "endVerse": 10,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "2 Corinthians",
+    "startBookId": "2corinthians",
+    "endBookName": "2 Corinthians",
+    "endBookId": "2corinthians"
+  },
+  {
+    "dayNumber": 173,
+    "date": "2025-03-07",
+    "dayOfWeek": "Saturday",
+    "rawReading": "12:11 – 13:14",
+    "portions": [
+      {
+        "bookName": "2 Corinthians",
+        "bookId": "2corinthians",
+        "startChapter": 12,
+        "startVerse": 11,
+        "endChapter": 13,
+        "endVerse": 14,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "2 Corinthians",
+    "startBookId": "2corinthians",
+    "endBookName": "2 Corinthians",
+    "endBookId": "2corinthians"
+  },
+  {
+    "dayNumber": 174,
+    "date": "2025-03-08",
+    "dayOfWeek": "Sunday",
+    "rawReading": "Gal. 1:1 – 1:5",
+    "portions": [
+      {
+        "bookName": "Galatians",
+        "bookId": "galatians",
+        "startChapter": 1,
+        "startVerse": 1,
+        "endChapter": 1,
+        "endVerse": 5,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Galatians",
+    "startBookId": "galatians",
+    "endBookName": "Galatians",
+    "endBookId": "galatians"
+  },
+  {
+    "dayNumber": 175,
+    "date": "2025-03-09",
+    "dayOfWeek": "Monday",
+    "rawReading": "1:6 – 2:4",
+    "portions": [
+      {
+        "bookName": "Galatians",
+        "bookId": "galatians",
+        "startChapter": 1,
+        "startVerse": 6,
+        "endChapter": 2,
+        "endVerse": 4,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Galatians",
+    "startBookId": "galatians",
+    "endBookName": "Galatians",
+    "endBookId": "galatians"
+  },
+  {
+    "dayNumber": 176,
+    "date": "2025-03-10",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "2:5 – 2:21",
+    "portions": [
+      {
+        "bookName": "Galatians",
+        "bookId": "galatians",
+        "startChapter": 2,
+        "startVerse": 5,
+        "endChapter": 2,
+        "endVerse": 21,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Galatians",
+    "startBookId": "galatians",
+    "endBookName": "Galatians",
+    "endBookId": "galatians"
+  },
+  {
+    "dayNumber": 177,
+    "date": "2025-03-11",
+    "dayOfWeek": "Wednesday",
+    "rawReading": "3:1 – 3:14",
+    "portions": [
+      {
+        "bookName": "Galatians",
+        "bookId": "galatians",
+        "startChapter": 3,
+        "startVerse": 1,
+        "endChapter": 3,
+        "endVerse": 14,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Galatians",
+    "startBookId": "galatians",
+    "endBookName": "Galatians",
+    "endBookId": "galatians"
+  },
+  {
+    "dayNumber": 178,
+    "date": "2025-03-12",
+    "dayOfWeek": "Thursday",
+    "rawReading": "3:15 – 3:29",
+    "portions": [
+      {
+        "bookName": "Galatians",
+        "bookId": "galatians",
+        "startChapter": 3,
+        "startVerse": 15,
+        "endChapter": 3,
+        "endVerse": 29,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Galatians",
+    "startBookId": "galatians",
+    "endBookName": "Galatians",
+    "endBookId": "galatians"
+  },
+  {
+    "dayNumber": 179,
+    "date": "2025-03-13",
+    "dayOfWeek": "Friday",
+    "rawReading": "4:1 – 4:18",
+    "portions": [
+      {
+        "bookName": "Galatians",
+        "bookId": "galatians",
+        "startChapter": 4,
+        "startVerse": 1,
+        "endChapter": 4,
+        "endVerse": 18,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Galatians",
+    "startBookId": "galatians",
+    "endBookName": "Galatians",
+    "endBookId": "galatians"
+  },
+  {
+    "dayNumber": 180,
+    "date": "2025-03-14",
+    "dayOfWeek": "Saturday",
+    "rawReading": "4:19 – 5:1",
+    "portions": [
+      {
+        "bookName": "Galatians",
+        "bookId": "galatians",
+        "startChapter": 4,
+        "startVerse": 19,
+        "endChapter": 5,
+        "endVerse": 1,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Galatians",
+    "startBookId": "galatians",
+    "endBookName": "Galatians",
+    "endBookId": "galatians"
+  },
+  {
+    "dayNumber": 181,
+    "date": "2025-03-15",
+    "dayOfWeek": "Sunday",
+    "rawReading": "5:2 – 5:26",
+    "portions": [
+      {
+        "bookName": "Galatians",
+        "bookId": "galatians",
+        "startChapter": 5,
+        "startVerse": 2,
+        "endChapter": 5,
+        "endVerse": 26,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Galatians",
+    "startBookId": "galatians",
+    "endBookName": "Galatians",
+    "endBookId": "galatians"
+  },
+  {
+    "dayNumber": 182,
+    "date": "2025-03-16",
+    "dayOfWeek": "Monday",
+    "rawReading": "6:1 – 6:17",
+    "portions": [
+      {
+        "bookName": "Galatians",
+        "bookId": "galatians",
+        "startChapter": 6,
+        "startVerse": 1,
+        "endChapter": 6,
+        "endVerse": 17,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Galatians",
+    "startBookId": "galatians",
+    "endBookName": "Galatians",
+    "endBookId": "galatians"
+  },
+  {
+    "dayNumber": 183,
+    "date": "2025-03-17",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "6:18 – Eph. 1:6",
+    "portions": [
+      {
+        "bookName": "Galatians",
+        "bookId": "galatians",
+        "startChapter": 6,
+        "startVerse": 18,
+        "endChapter": 6,
+        "endVerse": 18,
+        "portionOrder": 1
+      },
+      {
+        "bookName": "Ephesians",
+        "bookId": "ephesians",
+        "startChapter": 1,
+        "startVerse": 1,
+        "endChapter": 1,
+        "endVerse": 6,
+        "portionOrder": 2
+      }
+    ],
+    "startBookName": "Galatians",
+    "startBookId": "galatians",
+    "endBookName": "Ephesians",
+    "endBookId": "ephesians"
+  },
+  {
+    "dayNumber": 184,
+    "date": "2025-03-18",
+    "dayOfWeek": "Wednesday",
+    "rawReading": "1:7 – 1:14",
+    "portions": [
+      {
+        "bookName": "Ephesians",
+        "bookId": "ephesians",
+        "startChapter": 1,
+        "startVerse": 7,
+        "endChapter": 1,
+        "endVerse": 14,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Ephesians",
+    "startBookId": "ephesians",
+    "endBookName": "Ephesians",
+    "endBookId": "ephesians"
+  },
+  {
+    "dayNumber": 185,
+    "date": "2025-03-19",
+    "dayOfWeek": "Thursday",
+    "rawReading": "1:15 – 1:23",
+    "portions": [
+      {
+        "bookName": "Ephesians",
+        "bookId": "ephesians",
+        "startChapter": 1,
+        "startVerse": 15,
+        "endChapter": 1,
+        "endVerse": 23,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Ephesians",
+    "startBookId": "ephesians",
+    "endBookName": "Ephesians",
+    "endBookId": "ephesians"
+  },
+  {
+    "dayNumber": 186,
+    "date": "2025-03-20",
+    "dayOfWeek": "Friday",
+    "rawReading": "2:1 – 2:10",
+    "portions": [
+      {
+        "bookName": "Ephesians",
+        "bookId": "ephesians",
+        "startChapter": 2,
+        "startVerse": 1,
+        "endChapter": 2,
+        "endVerse": 10,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Ephesians",
+    "startBookId": "ephesians",
+    "endBookName": "Ephesians",
+    "endBookId": "ephesians"
+  },
+  {
+    "dayNumber": 187,
+    "date": "2025-03-21",
+    "dayOfWeek": "Saturday",
+    "rawReading": "2:11 – 2:20",
+    "portions": [
+      {
+        "bookName": "Ephesians",
+        "bookId": "ephesians",
+        "startChapter": 2,
+        "startVerse": 11,
+        "endChapter": 2,
+        "endVerse": 20,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Ephesians",
+    "startBookId": "ephesians",
+    "endBookName": "Ephesians",
+    "endBookId": "ephesians"
+  },
+  {
+    "dayNumber": 188,
+    "date": "2025-03-22",
+    "dayOfWeek": "Sunday",
+    "rawReading": "2:21 – 3:13",
+    "portions": [
+      {
+        "bookName": "Ephesians",
+        "bookId": "ephesians",
+        "startChapter": 2,
+        "startVerse": 21,
+        "endChapter": 3,
+        "endVerse": 13,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Ephesians",
+    "startBookId": "ephesians",
+    "endBookName": "Ephesians",
+    "endBookId": "ephesians"
+  },
+  {
+    "dayNumber": 189,
+    "date": "2025-03-23",
+    "dayOfWeek": "Monday",
+    "rawReading": "3:14 – 3:21",
+    "portions": [
+      {
+        "bookName": "Ephesians",
+        "bookId": "ephesians",
+        "startChapter": 3,
+        "startVerse": 14,
+        "endChapter": 3,
+        "endVerse": 21,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Ephesians",
+    "startBookId": "ephesians",
+    "endBookName": "Ephesians",
+    "endBookId": "ephesians"
+  },
+  {
+    "dayNumber": 190,
+    "date": "2025-03-24",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "4:1 – 4:9",
+    "portions": [
+      {
+        "bookName": "Ephesians",
+        "bookId": "ephesians",
+        "startChapter": 4,
+        "startVerse": 1,
+        "endChapter": 4,
+        "endVerse": 9,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Ephesians",
+    "startBookId": "ephesians",
+    "endBookName": "Ephesians",
+    "endBookId": "ephesians"
+  },
+  {
+    "dayNumber": 191,
+    "date": "2025-03-25",
+    "dayOfWeek": "Wednesday",
+    "rawReading": "4:10 – 4:20",
+    "portions": [
+      {
+        "bookName": "Ephesians",
+        "bookId": "ephesians",
+        "startChapter": 4,
+        "startVerse": 10,
+        "endChapter": 4,
+        "endVerse": 20,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Ephesians",
+    "startBookId": "ephesians",
+    "endBookName": "Ephesians",
+    "endBookId": "ephesians"
+  },
+  {
+    "dayNumber": 192,
+    "date": "2025-03-26",
+    "dayOfWeek": "Thursday",
+    "rawReading": "4:21 – 4:32",
+    "portions": [
+      {
+        "bookName": "Ephesians",
+        "bookId": "ephesians",
+        "startChapter": 4,
+        "startVerse": 21,
+        "endChapter": 4,
+        "endVerse": 32,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Ephesians",
+    "startBookId": "ephesians",
+    "endBookName": "Ephesians",
+    "endBookId": "ephesians"
+  },
+  {
+    "dayNumber": 193,
+    "date": "2025-03-27",
+    "dayOfWeek": "Friday",
+    "rawReading": "5:1 – 5:22",
+    "portions": [
+      {
+        "bookName": "Ephesians",
+        "bookId": "ephesians",
+        "startChapter": 5,
+        "startVerse": 1,
+        "endChapter": 5,
+        "endVerse": 22,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Ephesians",
+    "startBookId": "ephesians",
+    "endBookName": "Ephesians",
+    "endBookId": "ephesians"
+  },
+  {
+    "dayNumber": 194,
+    "date": "2025-03-28",
+    "dayOfWeek": "Saturday",
+    "rawReading": "5:23 – 6:9",
+    "portions": [
+      {
+        "bookName": "Ephesians",
+        "bookId": "ephesians",
+        "startChapter": 5,
+        "startVerse": 23,
+        "endChapter": 6,
+        "endVerse": 9,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Ephesians",
+    "startBookId": "ephesians",
+    "endBookName": "Ephesians",
+    "endBookId": "ephesians"
+  },
+  {
+    "dayNumber": 195,
+    "date": "2025-03-29",
+    "dayOfWeek": "Sunday",
+    "rawReading": "6:10 – 6:20",
+    "portions": [
+      {
+        "bookName": "Ephesians",
+        "bookId": "ephesians",
+        "startChapter": 6,
+        "startVerse": 10,
+        "endChapter": 6,
+        "endVerse": 20,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Ephesians",
+    "startBookId": "ephesians",
+    "endBookName": "Ephesians",
+    "endBookId": "ephesians"
+  },
+  {
+    "dayNumber": 196,
+    "date": "2025-03-30",
+    "dayOfWeek": "Monday",
+    "rawReading": "6:21 – Phil. 1:18",
+    "portions": [
+      {
+        "bookName": "Ephesians",
+        "bookId": "ephesians",
+        "startChapter": 6,
+        "startVerse": 21,
+        "endChapter": 6,
+        "endVerse": 24,
+        "portionOrder": 1
+      },
+      {
+        "bookName": "Philippians",
+        "bookId": "philippians",
+        "startChapter": 1,
+        "startVerse": 1,
+        "endChapter": 1,
+        "endVerse": 18,
+        "portionOrder": 2
+      }
+    ],
+    "startBookName": "Ephesians",
+    "startBookId": "ephesians",
+    "endBookName": "Philippians",
+    "endBookId": "philippians"
+  },
+  {
+    "dayNumber": 197,
+    "date": "2025-03-31",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "1:19 – 2:4",
+    "portions": [
+      {
+        "bookName": "Philippians",
+        "bookId": "philippians",
+        "startChapter": 1,
+        "startVerse": 19,
+        "endChapter": 2,
+        "endVerse": 4,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Philippians",
+    "startBookId": "philippians",
+    "endBookName": "Philippians",
+    "endBookId": "philippians"
+  },
+  {
+    "dayNumber": 198,
+    "date": "2025-04-01",
+    "dayOfWeek": "Wednesday",
+    "rawReading": "2:5 – 2:16",
+    "portions": [
+      {
+        "bookName": "Philippians",
+        "bookId": "philippians",
+        "startChapter": 2,
+        "startVerse": 5,
+        "endChapter": 2,
+        "endVerse": 16,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Philippians",
+    "startBookId": "philippians",
+    "endBookName": "Philippians",
+    "endBookId": "philippians"
+  },
+  {
+    "dayNumber": 199,
+    "date": "2025-04-02",
+    "dayOfWeek": "Thursday",
+    "rawReading": "2:17 – 3:6",
+    "portions": [
+      {
+        "bookName": "Philippians",
+        "bookId": "philippians",
+        "startChapter": 2,
+        "startVerse": 17,
+        "endChapter": 3,
+        "endVerse": 6,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Philippians",
+    "startBookId": "philippians",
+    "endBookName": "Philippians",
+    "endBookId": "philippians"
+  },
+  {
+    "dayNumber": 200,
+    "date": "2025-04-03",
+    "dayOfWeek": "Friday",
+    "rawReading": "3:7 – 3:16",
+    "portions": [
+      {
+        "bookName": "Philippians",
+        "bookId": "philippians",
+        "startChapter": 3,
+        "startVerse": 7,
+        "endChapter": 3,
+        "endVerse": 16,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Philippians",
+    "startBookId": "philippians",
+    "endBookName": "Philippians",
+    "endBookId": "philippians"
+  },
+  {
+    "dayNumber": 201,
+    "date": "2025-04-04",
+    "dayOfWeek": "Saturday",
+    "rawReading": "3:17 – 4:9",
+    "portions": [
+      {
+        "bookName": "Philippians",
+        "bookId": "philippians",
+        "startChapter": 3,
+        "startVerse": 17,
+        "endChapter": 4,
+        "endVerse": 9,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Philippians",
+    "startBookId": "philippians",
+    "endBookName": "Philippians",
+    "endBookId": "philippians"
+  },
+  {
+    "dayNumber": 202,
+    "date": "2025-04-05",
+    "dayOfWeek": "Sunday",
+    "rawReading": "4:10 – Col. 1:8",
+    "portions": [
+      {
+        "bookName": "Philippians",
+        "bookId": "philippians",
+        "startChapter": 4,
+        "startVerse": 10,
+        "endChapter": 4,
+        "endVerse": 23,
+        "portionOrder": 1
+      },
+      {
+        "bookName": "Colossians",
+        "bookId": "colossians",
+        "startChapter": 1,
+        "startVerse": 1,
+        "endChapter": 1,
+        "endVerse": 8,
+        "portionOrder": 2
+      }
+    ],
+    "startBookName": "Philippians",
+    "startBookId": "philippians",
+    "endBookName": "Colossians",
+    "endBookId": "colossians"
+  },
+  {
+    "dayNumber": 203,
+    "date": "2025-04-06",
+    "dayOfWeek": "Monday",
+    "rawReading": "1:9 – 1:29",
+    "portions": [
+      {
+        "bookName": "Colossians",
+        "bookId": "colossians",
+        "startChapter": 1,
+        "startVerse": 9,
+        "endChapter": 1,
+        "endVerse": 29,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Colossians",
+    "startBookId": "colossians",
+    "endBookName": "Colossians",
+    "endBookId": "colossians"
+  },
+  {
+    "dayNumber": 204,
+    "date": "2025-04-07",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "2:1 – 2:15",
+    "portions": [
+      {
+        "bookName": "Colossians",
+        "bookId": "colossians",
+        "startChapter": 2,
+        "startVerse": 1,
+        "endChapter": 2,
+        "endVerse": 15,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Colossians",
+    "startBookId": "colossians",
+    "endBookName": "Colossians",
+    "endBookId": "colossians"
+  },
+  {
+    "dayNumber": 205,
+    "date": "2025-04-08",
+    "dayOfWeek": "Wednesday",
+    "rawReading": "2:16 – 3:11",
+    "portions": [
+      {
+        "bookName": "Colossians",
+        "bookId": "colossians",
+        "startChapter": 2,
+        "startVerse": 16,
+        "endChapter": 3,
+        "endVerse": 11,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Colossians",
+    "startBookId": "colossians",
+    "endBookName": "Colossians",
+    "endBookId": "colossians"
+  },
+  {
+    "dayNumber": 206,
+    "date": "2025-04-09",
+    "dayOfWeek": "Thursday",
+    "rawReading": "3:12 – 4:6",
+    "portions": [
+      {
+        "bookName": "Colossians",
+        "bookId": "colossians",
+        "startChapter": 3,
+        "startVerse": 12,
+        "endChapter": 4,
+        "endVerse": 6,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Colossians",
+    "startBookId": "colossians",
+    "endBookName": "Colossians",
+    "endBookId": "colossians"
+  },
+  {
+    "dayNumber": 207,
+    "date": "2025-04-10",
+    "dayOfWeek": "Friday",
+    "rawReading": "4:7 – 1 Thes. 1:10",
+    "portions": [
+      {
+        "bookName": "Colossians",
+        "bookId": "colossians",
+        "startChapter": 4,
+        "startVerse": 7,
+        "endChapter": 4,
+        "endVerse": 18,
+        "portionOrder": 1
+      },
+      {
+        "bookName": "1 Thessalonians",
+        "bookId": "1thessalonians",
+        "startChapter": 1,
+        "startVerse": 1,
+        "endChapter": 1,
+        "endVerse": 10,
+        "portionOrder": 2
+      }
+    ],
+    "startBookName": "Colossians",
+    "startBookId": "colossians",
+    "endBookName": "1 Thessalonians",
+    "endBookId": "1thessalonians"
+  },
+  {
+    "dayNumber": 208,
+    "date": "2025-04-11",
+    "dayOfWeek": "Saturday",
+    "rawReading": "2:1 – 3:13",
+    "portions": [
+      {
+        "bookName": "1 Thessalonians",
+        "bookId": "1thessalonians",
+        "startChapter": 2,
+        "startVerse": 1,
+        "endChapter": 3,
+        "endVerse": 13,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 Thessalonians",
+    "startBookId": "1thessalonians",
+    "endBookName": "1 Thessalonians",
+    "endBookId": "1thessalonians"
+  },
+  {
+    "dayNumber": 209,
+    "date": "2025-04-12",
+    "dayOfWeek": "Sunday",
+    "rawReading": "4:1 – 5:11",
+    "portions": [
+      {
+        "bookName": "1 Thessalonians",
+        "bookId": "1thessalonians",
+        "startChapter": 4,
+        "startVerse": 1,
+        "endChapter": 5,
+        "endVerse": 11,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 Thessalonians",
+    "startBookId": "1thessalonians",
+    "endBookName": "1 Thessalonians",
+    "endBookId": "1thessalonians"
+  },
+  {
+    "dayNumber": 210,
+    "date": "2025-04-13",
+    "dayOfWeek": "Monday",
+    "rawReading": "5:12 – 2 Thes. 1:2",
+    "portions": [
+      {
+        "bookName": "1 Thessalonians",
+        "bookId": "1thessalonians",
+        "startChapter": 5,
+        "startVerse": 12,
+        "endChapter": 5,
+        "endVerse": 28,
+        "portionOrder": 1
+      },
+      {
+        "bookName": "2 Thessalonians",
+        "bookId": "2thessalonians",
+        "startChapter": 1,
+        "startVerse": 1,
+        "endChapter": 1,
+        "endVerse": 2,
+        "portionOrder": 2
+      }
+    ],
+    "startBookName": "1 Thessalonians",
+    "startBookId": "1thessalonians",
+    "endBookName": "2 Thessalonians",
+    "endBookId": "2thessalonians"
+  },
+  {
+    "dayNumber": 211,
+    "date": "2025-04-14",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "1:3 – 2:17",
+    "portions": [
+      {
+        "bookName": "2 Thessalonians",
+        "bookId": "2thessalonians",
+        "startChapter": 1,
+        "startVerse": 3,
+        "endChapter": 2,
+        "endVerse": 17,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "2 Thessalonians",
+    "startBookId": "2thessalonians",
+    "endBookName": "2 Thessalonians",
+    "endBookId": "2thessalonians"
+  },
+  {
+    "dayNumber": 212,
+    "date": "2025-04-15",
+    "dayOfWeek": "Wednesday",
+    "rawReading": "3:1 – 1 Tim. 1:4",
+    "portions": [
+      {
+        "bookName": "2 Thessalonians",
+        "bookId": "2thessalonians",
+        "startChapter": 3,
+        "startVerse": 1,
+        "endChapter": 3,
+        "endVerse": 18,
+        "portionOrder": 1
+      },
+      {
+        "bookName": "1 Timothy",
+        "bookId": "1timothy",
+        "startChapter": 1,
+        "startVerse": 1,
+        "endChapter": 1,
+        "endVerse": 4,
+        "portionOrder": 2
+      }
+    ],
+    "startBookName": "2 Thessalonians",
+    "startBookId": "2thessalonians",
+    "endBookName": "1 Timothy",
+    "endBookId": "1timothy"
+  },
+  {
+    "dayNumber": 213,
+    "date": "2025-04-16",
+    "dayOfWeek": "Thursday",
+    "rawReading": "1:5 – 1:20",
+    "portions": [
+      {
+        "bookName": "1 Timothy",
+        "bookId": "1timothy",
+        "startChapter": 1,
+        "startVerse": 5,
+        "endChapter": 1,
+        "endVerse": 20,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 Timothy",
+    "startBookId": "1timothy",
+    "endBookName": "1 Timothy",
+    "endBookId": "1timothy"
+  },
+  {
+    "dayNumber": 214,
+    "date": "2025-04-17",
+    "dayOfWeek": "Friday",
+    "rawReading": "2:1 – 2:15",
+    "portions": [
+      {
+        "bookName": "1 Timothy",
+        "bookId": "1timothy",
+        "startChapter": 2,
+        "startVerse": 1,
+        "endChapter": 2,
+        "endVerse": 15,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 Timothy",
+    "startBookId": "1timothy",
+    "endBookName": "1 Timothy",
+    "endBookId": "1timothy"
+  },
+  {
+    "dayNumber": 215,
+    "date": "2025-04-18",
+    "dayOfWeek": "Saturday",
+    "rawReading": "3:1 – 3:16",
+    "portions": [
+      {
+        "bookName": "1 Timothy",
+        "bookId": "1timothy",
+        "startChapter": 3,
+        "startVerse": 1,
+        "endChapter": 3,
+        "endVerse": 16,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 Timothy",
+    "startBookId": "1timothy",
+    "endBookName": "1 Timothy",
+    "endBookId": "1timothy"
+  },
+  {
+    "dayNumber": 216,
+    "date": "2025-04-19",
+    "dayOfWeek": "Sunday",
+    "rawReading": "4:1 – 5:16",
+    "portions": [
+      {
+        "bookName": "1 Timothy",
+        "bookId": "1timothy",
+        "startChapter": 4,
+        "startVerse": 1,
+        "endChapter": 5,
+        "endVerse": 16,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 Timothy",
+    "startBookId": "1timothy",
+    "endBookName": "1 Timothy",
+    "endBookId": "1timothy"
+  },
+  {
+    "dayNumber": 217,
+    "date": "2025-04-20",
+    "dayOfWeek": "Monday",
+    "rawReading": "5:17 – 6:20",
+    "portions": [
+      {
+        "bookName": "1 Timothy",
+        "bookId": "1timothy",
+        "startChapter": 5,
+        "startVerse": 17,
+        "endChapter": 6,
+        "endVerse": 20,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 Timothy",
+    "startBookId": "1timothy",
+    "endBookName": "1 Timothy",
+    "endBookId": "1timothy"
+  },
+  {
+    "dayNumber": 218,
+    "date": "2025-04-21",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "6:21 – 2 Tim. 1:14",
+    "portions": [
+      {
+        "bookName": "1 Timothy",
+        "bookId": "1timothy",
+        "startChapter": 6,
+        "startVerse": 21,
+        "endChapter": 6,
+        "endVerse": 21,
+        "portionOrder": 1
+      },
+      {
+        "bookName": "2 Timothy",
+        "bookId": "2timothy",
+        "startChapter": 1,
+        "startVerse": 1,
+        "endChapter": 1,
+        "endVerse": 14,
+        "portionOrder": 2
+      }
+    ],
+    "startBookName": "1 Timothy",
+    "startBookId": "1timothy",
+    "endBookName": "2 Timothy",
+    "endBookId": "2timothy"
+  },
+  {
+    "dayNumber": 219,
+    "date": "2025-04-22",
+    "dayOfWeek": "Wednesday",
+    "rawReading": "1:15 – 2:26",
+    "portions": [
+      {
+        "bookName": "2 Timothy",
+        "bookId": "2timothy",
+        "startChapter": 1,
+        "startVerse": 15,
+        "endChapter": 2,
+        "endVerse": 26,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "2 Timothy",
+    "startBookId": "2timothy",
+    "endBookName": "2 Timothy",
+    "endBookId": "2timothy"
+  },
+  {
+    "dayNumber": 220,
+    "date": "2025-04-23",
+    "dayOfWeek": "Thursday",
+    "rawReading": "3:1 – 4:8",
+    "portions": [
+      {
+        "bookName": "2 Timothy",
+        "bookId": "2timothy",
+        "startChapter": 3,
+        "startVerse": 1,
+        "endChapter": 4,
+        "endVerse": 8,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "2 Timothy",
+    "startBookId": "2timothy",
+    "endBookName": "2 Timothy",
+    "endBookId": "2timothy"
+  },
+  {
+    "dayNumber": 221,
+    "date": "2025-04-24",
+    "dayOfWeek": "Friday",
+    "rawReading": "4:9 – Titus 1:4",
+    "portions": [
+      {
+        "bookName": "2 Timothy",
+        "bookId": "2timothy",
+        "startChapter": 4,
+        "startVerse": 9,
+        "endChapter": 4,
+        "endVerse": 22,
+        "portionOrder": 1
+      },
+      {
+        "bookName": "Titus",
+        "bookId": "titus",
+        "startChapter": 1,
+        "startVerse": 1,
+        "endChapter": 1,
+        "endVerse": 4,
+        "portionOrder": 2
+      }
+    ],
+    "startBookName": "2 Timothy",
+    "startBookId": "2timothy",
+    "endBookName": "Titus",
+    "endBookId": "titus"
+  },
+  {
+    "dayNumber": 222,
+    "date": "2025-04-25",
+    "dayOfWeek": "Saturday",
+    "rawReading": "1:5 – 2:9",
+    "portions": [
+      {
+        "bookName": "Titus",
+        "bookId": "titus",
+        "startChapter": 1,
+        "startVerse": 5,
+        "endChapter": 2,
+        "endVerse": 9,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Titus",
+    "startBookId": "titus",
+    "endBookName": "Titus",
+    "endBookId": "titus"
+  },
+  {
+    "dayNumber": 223,
+    "date": "2025-04-26",
+    "dayOfWeek": "Sunday",
+    "rawReading": "2:10 – 3:8",
+    "portions": [
+      {
+        "bookName": "Titus",
+        "bookId": "titus",
+        "startChapter": 2,
+        "startVerse": 10,
+        "endChapter": 3,
+        "endVerse": 8,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Titus",
+    "startBookId": "titus",
+    "endBookName": "Titus",
+    "endBookId": "titus"
+  },
+  {
+    "dayNumber": 224,
+    "date": "2025-04-27",
+    "dayOfWeek": "Monday",
+    "rawReading": "3:9 – Philem. 1:3",
+    "portions": [
+      {
+        "bookName": "Titus",
+        "bookId": "titus",
+        "startChapter": 3,
+        "startVerse": 9,
+        "endChapter": 3,
+        "endVerse": 15,
+        "portionOrder": 1
+      },
+      {
+        "bookName": "Philemon",
+        "bookId": "philemon",
+        "startChapter": 1,
+        "startVerse": 1,
+        "endChapter": 1,
+        "endVerse": 3,
+        "portionOrder": 2
+      }
+    ],
+    "startBookName": "Titus",
+    "startBookId": "titus",
+    "endBookName": "Philemon",
+    "endBookId": "philemon"
+  },
+  {
+    "dayNumber": 225,
+    "date": "2025-04-28",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "1:4 – Heb. 1:2",
+    "portions": [
+      {
+        "bookName": "Philemon",
+        "bookId": "philemon",
+        "startChapter": 1,
+        "startVerse": 4,
+        "endChapter": 1,
+        "endVerse": 25,
+        "portionOrder": 1
+      },
+      {
+        "bookName": "Hebrews",
+        "bookId": "hebrews",
+        "startChapter": 1,
+        "startVerse": 1,
+        "endChapter": 1,
+        "endVerse": 2,
+        "portionOrder": 2
+      }
+    ],
+    "startBookName": "Philemon",
+    "startBookId": "philemon",
+    "endBookName": "Hebrews",
+    "endBookId": "hebrews"
+  },
+  {
+    "dayNumber": 226,
+    "date": "2025-04-29",
+    "dayOfWeek": "Wednesday",
+    "rawReading": "1:3 – 1:14",
+    "portions": [
+      {
+        "bookName": "Hebrews",
+        "bookId": "hebrews",
+        "startChapter": 1,
+        "startVerse": 3,
+        "endChapter": 1,
+        "endVerse": 14,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Hebrews",
+    "startBookId": "hebrews",
+    "endBookName": "Hebrews",
+    "endBookId": "hebrews"
+  },
+  {
+    "dayNumber": 227,
+    "date": "2025-04-30",
+    "dayOfWeek": "Thursday",
+    "rawReading": "2:1 – 2:18",
+    "portions": [
+      {
+        "bookName": "Hebrews",
+        "bookId": "hebrews",
+        "startChapter": 2,
+        "startVerse": 1,
+        "endChapter": 2,
+        "endVerse": 18,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Hebrews",
+    "startBookId": "hebrews",
+    "endBookName": "Hebrews",
+    "endBookId": "hebrews"
+  },
+  {
+    "dayNumber": 228,
+    "date": "2025-05-01",
+    "dayOfWeek": "Friday",
+    "rawReading": "3:1 – 4:9",
+    "portions": [
+      {
+        "bookName": "Hebrews",
+        "bookId": "hebrews",
+        "startChapter": 3,
+        "startVerse": 1,
+        "endChapter": 4,
+        "endVerse": 9,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Hebrews",
+    "startBookId": "hebrews",
+    "endBookName": "Hebrews",
+    "endBookId": "hebrews"
+  },
+  {
+    "dayNumber": 229,
+    "date": "2025-05-02",
+    "dayOfWeek": "Saturday",
+    "rawReading": "4:10 – 4:16",
+    "portions": [
+      {
+        "bookName": "Hebrews",
+        "bookId": "hebrews",
+        "startChapter": 4,
+        "startVerse": 10,
+        "endChapter": 4,
+        "endVerse": 16,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Hebrews",
+    "startBookId": "hebrews",
+    "endBookName": "Hebrews",
+    "endBookId": "hebrews"
+  },
+  {
+    "dayNumber": 230,
+    "date": "2025-05-03",
+    "dayOfWeek": "Sunday",
+    "rawReading": "5:1 – 6:4",
+    "portions": [
+      {
+        "bookName": "Hebrews",
+        "bookId": "hebrews",
+        "startChapter": 5,
+        "startVerse": 1,
+        "endChapter": 6,
+        "endVerse": 4,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Hebrews",
+    "startBookId": "hebrews",
+    "endBookName": "Hebrews",
+    "endBookId": "hebrews"
+  },
+  {
+    "dayNumber": 231,
+    "date": "2025-05-04",
+    "dayOfWeek": "Monday",
+    "rawReading": "6:5 – 7:6",
+    "portions": [
+      {
+        "bookName": "Hebrews",
+        "bookId": "hebrews",
+        "startChapter": 6,
+        "startVerse": 5,
+        "endChapter": 7,
+        "endVerse": 6,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Hebrews",
+    "startBookId": "hebrews",
+    "endBookName": "Hebrews",
+    "endBookId": "hebrews"
+  },
+  {
+    "dayNumber": 232,
+    "date": "2025-05-05",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "7:7 – 8:10",
+    "portions": [
+      {
+        "bookName": "Hebrews",
+        "bookId": "hebrews",
+        "startChapter": 7,
+        "startVerse": 7,
+        "endChapter": 8,
+        "endVerse": 10,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Hebrews",
+    "startBookId": "hebrews",
+    "endBookName": "Hebrews",
+    "endBookId": "hebrews"
+  },
+  {
+    "dayNumber": 233,
+    "date": "2025-05-06",
+    "dayOfWeek": "Wednesday",
+    "rawReading": "8:11 – 9:10",
+    "portions": [
+      {
+        "bookName": "Hebrews",
+        "bookId": "hebrews",
+        "startChapter": 8,
+        "startVerse": 11,
+        "endChapter": 9,
+        "endVerse": 10,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Hebrews",
+    "startBookId": "hebrews",
+    "endBookName": "Hebrews",
+    "endBookId": "hebrews"
+  },
+  {
+    "dayNumber": 234,
+    "date": "2025-05-07",
+    "dayOfWeek": "Thursday",
+    "rawReading": "9:11 – 9:28",
+    "portions": [
+      {
+        "bookName": "Hebrews",
+        "bookId": "hebrews",
+        "startChapter": 9,
+        "startVerse": 11,
+        "endChapter": 9,
+        "endVerse": 28,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Hebrews",
+    "startBookId": "hebrews",
+    "endBookName": "Hebrews",
+    "endBookId": "hebrews"
+  },
+  {
+    "dayNumber": 235,
+    "date": "2025-05-08",
+    "dayOfWeek": "Friday",
+    "rawReading": "10:1 – 10:35",
+    "portions": [
+      {
+        "bookName": "Hebrews",
+        "bookId": "hebrews",
+        "startChapter": 10,
+        "startVerse": 1,
+        "endChapter": 10,
+        "endVerse": 35,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Hebrews",
+    "startBookId": "hebrews",
+    "endBookName": "Hebrews",
+    "endBookId": "hebrews"
+  },
+  {
+    "dayNumber": 236,
+    "date": "2025-05-09",
+    "dayOfWeek": "Saturday",
+    "rawReading": "10:36 – 11:13",
+    "portions": [
+      {
+        "bookName": "Hebrews",
+        "bookId": "hebrews",
+        "startChapter": 10,
+        "startVerse": 36,
+        "endChapter": 11,
+        "endVerse": 13,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Hebrews",
+    "startBookId": "hebrews",
+    "endBookName": "Hebrews",
+    "endBookId": "hebrews"
+  },
+  {
+    "dayNumber": 237,
+    "date": "2025-05-10",
+    "dayOfWeek": "Sunday",
+    "rawReading": "11:14 – 12:2",
+    "portions": [
+      {
+        "bookName": "Hebrews",
+        "bookId": "hebrews",
+        "startChapter": 11,
+        "startVerse": 14,
+        "endChapter": 12,
+        "endVerse": 2,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Hebrews",
+    "startBookId": "hebrews",
+    "endBookName": "Hebrews",
+    "endBookId": "hebrews"
+  },
+  {
+    "dayNumber": 238,
+    "date": "2025-05-11",
+    "dayOfWeek": "Monday",
+    "rawReading": "12:3 – 12:16",
+    "portions": [
+      {
+        "bookName": "Hebrews",
+        "bookId": "hebrews",
+        "startChapter": 12,
+        "startVerse": 3,
+        "endChapter": 12,
+        "endVerse": 16,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Hebrews",
+    "startBookId": "hebrews",
+    "endBookName": "Hebrews",
+    "endBookId": "hebrews"
+  },
+  {
+    "dayNumber": 239,
+    "date": "2025-05-12",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "12:17 – 12:29",
+    "portions": [
+      {
+        "bookName": "Hebrews",
+        "bookId": "hebrews",
+        "startChapter": 12,
+        "startVerse": 17,
+        "endChapter": 12,
+        "endVerse": 29,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Hebrews",
+    "startBookId": "hebrews",
+    "endBookName": "Hebrews",
+    "endBookId": "hebrews"
+  },
+  {
+    "dayNumber": 240,
+    "date": "2025-05-13",
+    "dayOfWeek": "Wednesday",
+    "rawReading": "13:1 – 13:12",
+    "portions": [
+      {
+        "bookName": "Hebrews",
+        "bookId": "hebrews",
+        "startChapter": 13,
+        "startVerse": 1,
+        "endChapter": 13,
+        "endVerse": 12,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Hebrews",
+    "startBookId": "hebrews",
+    "endBookName": "Hebrews",
+    "endBookId": "hebrews"
+  },
+  {
+    "dayNumber": 241,
+    "date": "2025-05-14",
+    "dayOfWeek": "Thursday",
+    "rawReading": "13:13 – James 1:1",
+    "portions": [
+      {
+        "bookName": "Hebrews",
+        "bookId": "hebrews",
+        "startChapter": 13,
+        "startVerse": 13,
+        "endChapter": 13,
+        "endVerse": 25,
+        "portionOrder": 1
+      },
+      {
+        "bookName": "James",
+        "bookId": "james",
+        "startChapter": 1,
+        "startVerse": 1,
+        "endChapter": 1,
+        "endVerse": 1,
+        "portionOrder": 2
+      }
+    ],
+    "startBookName": "Hebrews",
+    "startBookId": "hebrews",
+    "endBookName": "James",
+    "endBookId": "james"
+  },
+  {
+    "dayNumber": 242,
+    "date": "2025-05-15",
+    "dayOfWeek": "Friday",
+    "rawReading": "1:2 – 1:25",
+    "portions": [
+      {
+        "bookName": "James",
+        "bookId": "james",
+        "startChapter": 1,
+        "startVerse": 2,
+        "endChapter": 1,
+        "endVerse": 25,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "James",
+    "startBookId": "james",
+    "endBookName": "James",
+    "endBookId": "james"
+  },
+  {
+    "dayNumber": 243,
+    "date": "2025-05-16",
+    "dayOfWeek": "Saturday",
+    "rawReading": "1:26 – 2:13",
+    "portions": [
+      {
+        "bookName": "James",
+        "bookId": "james",
+        "startChapter": 1,
+        "startVerse": 26,
+        "endChapter": 2,
+        "endVerse": 13,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "James",
+    "startBookId": "james",
+    "endBookName": "James",
+    "endBookId": "james"
+  },
+  {
+    "dayNumber": 244,
+    "date": "2025-05-17",
+    "dayOfWeek": "Sunday",
+    "rawReading": "2:14 – 3:18",
+    "portions": [
+      {
+        "bookName": "James",
+        "bookId": "james",
+        "startChapter": 2,
+        "startVerse": 14,
+        "endChapter": 3,
+        "endVerse": 18,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "James",
+    "startBookId": "james",
+    "endBookName": "James",
+    "endBookId": "james"
+  },
+  {
+    "dayNumber": 245,
+    "date": "2025-05-18",
+    "dayOfWeek": "Monday",
+    "rawReading": "4:1 – 5:12",
+    "portions": [
+      {
+        "bookName": "James",
+        "bookId": "james",
+        "startChapter": 4,
+        "startVerse": 1,
+        "endChapter": 5,
+        "endVerse": 20,
+        "portionOrder": 1
+      },
+      {
+        "bookName": "1 Peter",
+        "bookId": "1peter",
+        "startChapter": 1,
+        "startVerse": 1,
+        "endChapter": 1,
+        "endVerse": 3,
+        "portionOrder": 2
+      }
+    ],
+    "startBookName": "James",
+    "startBookId": "james",
+    "endBookName": "1 Peter",
+    "endBookId": "1peter"
+  },
+  {
+    "dayNumber": 246,
+    "date": "2025-05-19",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "5:13 – 1 Pet. 1:3",
+    "portions": [
+      {
+        "bookName": "1 Peter",
+        "bookId": "1peter",
+        "startChapter": 5,
+        "startVerse": 13,
+        "endChapter": 1,
+        "endVerse": 3,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 Peter",
+    "startBookId": "1peter",
+    "endBookName": "1 Peter",
+    "endBookId": "1peter"
+  },
+  {
+    "dayNumber": 247,
+    "date": "2025-05-20",
+    "dayOfWeek": "Wednesday",
+    "rawReading": "1:4 – 1:9",
+    "portions": [
+      {
+        "bookName": "1 Peter",
+        "bookId": "1peter",
+        "startChapter": 1,
+        "startVerse": 4,
+        "endChapter": 1,
+        "endVerse": 9,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 Peter",
+    "startBookId": "1peter",
+    "endBookName": "1 Peter",
+    "endBookId": "1peter"
+  },
+  {
+    "dayNumber": 248,
+    "date": "2025-05-21",
+    "dayOfWeek": "Thursday",
+    "rawReading": "1:10 – 1:18",
+    "portions": [
+      {
+        "bookName": "1 Peter",
+        "bookId": "1peter",
+        "startChapter": 1,
+        "startVerse": 10,
+        "endChapter": 1,
+        "endVerse": 18,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 Peter",
+    "startBookId": "1peter",
+    "endBookName": "1 Peter",
+    "endBookId": "1peter"
+  },
+  {
+    "dayNumber": 249,
+    "date": "2025-05-22",
+    "dayOfWeek": "Friday",
+    "rawReading": "1:19 – 2:8",
+    "portions": [
+      {
+        "bookName": "1 Peter",
+        "bookId": "1peter",
+        "startChapter": 1,
+        "startVerse": 19,
+        "endChapter": 2,
+        "endVerse": 8,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 Peter",
+    "startBookId": "1peter",
+    "endBookName": "1 Peter",
+    "endBookId": "1peter"
+  },
+  {
+    "dayNumber": 250,
+    "date": "2025-05-23",
+    "dayOfWeek": "Saturday",
+    "rawReading": "2:9 – 2:25",
+    "portions": [
+      {
+        "bookName": "1 Peter",
+        "bookId": "1peter",
+        "startChapter": 2,
+        "startVerse": 9,
+        "endChapter": 2,
+        "endVerse": 25,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 Peter",
+    "startBookId": "1peter",
+    "endBookName": "1 Peter",
+    "endBookId": "1peter"
+  },
+  {
+    "dayNumber": 251,
+    "date": "2025-05-24",
+    "dayOfWeek": "Sunday",
+    "rawReading": "3:1 – 3:20",
+    "portions": [
+      {
+        "bookName": "1 Peter",
+        "bookId": "1peter",
+        "startChapter": 3,
+        "startVerse": 1,
+        "endChapter": 3,
+        "endVerse": 20,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 Peter",
+    "startBookId": "1peter",
+    "endBookName": "1 Peter",
+    "endBookId": "1peter"
+  },
+  {
+    "dayNumber": 252,
+    "date": "2025-05-25",
+    "dayOfWeek": "Monday",
+    "rawReading": "3:21 – 4:12",
+    "portions": [
+      {
+        "bookName": "1 Peter",
+        "bookId": "1peter",
+        "startChapter": 3,
+        "startVerse": 21,
+        "endChapter": 4,
+        "endVerse": 12,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 Peter",
+    "startBookId": "1peter",
+    "endBookName": "1 Peter",
+    "endBookId": "1peter"
+  },
+  {
+    "dayNumber": 253,
+    "date": "2025-05-26",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "4:13 – 5:3",
+    "portions": [
+      {
+        "bookName": "1 Peter",
+        "bookId": "1peter",
+        "startChapter": 4,
+        "startVerse": 13,
+        "endChapter": 5,
+        "endVerse": 3,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 Peter",
+    "startBookId": "1peter",
+    "endBookName": "1 Peter",
+    "endBookId": "1peter"
+  },
+  {
+    "dayNumber": 254,
+    "date": "2025-05-27",
+    "dayOfWeek": "Wednesday",
+    "rawReading": "5:4 – 5:14",
+    "portions": [
+      {
+        "bookName": "1 Peter",
+        "bookId": "1peter",
+        "startChapter": 5,
+        "startVerse": 4,
+        "endChapter": 5,
+        "endVerse": 14,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 Peter",
+    "startBookId": "1peter",
+    "endBookName": "1 Peter",
+    "endBookId": "1peter"
+  },
+  {
+    "dayNumber": 255,
+    "date": "2025-05-28",
+    "dayOfWeek": "Thursday",
+    "rawReading": "2 Pet. 1:1 – 1:4",
+    "portions": [
+      {
+        "bookName": "2 Peter",
+        "bookId": "2peter",
+        "startChapter": 1,
+        "startVerse": 1,
+        "endChapter": 1,
+        "endVerse": 4,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "2 Peter",
+    "startBookId": "2peter",
+    "endBookName": "2 Peter",
+    "endBookId": "2peter"
+  },
+  {
+    "dayNumber": 256,
+    "date": "2025-05-29",
+    "dayOfWeek": "Friday",
+    "rawReading": "1:5 – 1:18",
+    "portions": [
+      {
+        "bookName": "2 Peter",
+        "bookId": "2peter",
+        "startChapter": 1,
+        "startVerse": 5,
+        "endChapter": 1,
+        "endVerse": 18,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "2 Peter",
+    "startBookId": "2peter",
+    "endBookName": "2 Peter",
+    "endBookId": "2peter"
+  },
+  {
+    "dayNumber": 257,
+    "date": "2025-05-30",
+    "dayOfWeek": "Saturday",
+    "rawReading": "1:19 – 2:9",
+    "portions": [
+      {
+        "bookName": "2 Peter",
+        "bookId": "2peter",
+        "startChapter": 1,
+        "startVerse": 19,
+        "endChapter": 2,
+        "endVerse": 9,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "2 Peter",
+    "startBookId": "2peter",
+    "endBookName": "2 Peter",
+    "endBookId": "2peter"
+  },
+  {
+    "dayNumber": 258,
+    "date": "2025-05-31",
+    "dayOfWeek": "Sunday",
+    "rawReading": "2:10 – 3:6",
+    "portions": [
+      {
+        "bookName": "2 Peter",
+        "bookId": "2peter",
+        "startChapter": 2,
+        "startVerse": 10,
+        "endChapter": 3,
+        "endVerse": 6,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "2 Peter",
+    "startBookId": "2peter",
+    "endBookName": "2 Peter",
+    "endBookId": "2peter"
+  },
+  {
+    "dayNumber": 259,
+    "date": "2025-06-01",
+    "dayOfWeek": "Monday",
+    "rawReading": "3:7 – 3:12",
+    "portions": [
+      {
+        "bookName": "2 Peter",
+        "bookId": "2peter",
+        "startChapter": 3,
+        "startVerse": 7,
+        "endChapter": 3,
+        "endVerse": 12,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "2 Peter",
+    "startBookId": "2peter",
+    "endBookName": "2 Peter",
+    "endBookId": "2peter"
+  },
+  {
+    "dayNumber": 260,
+    "date": "2025-06-02",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "3:13 – 3:16",
+    "portions": [
+      {
+        "bookName": "2 Peter",
+        "bookId": "2peter",
+        "startChapter": 3,
+        "startVerse": 13,
+        "endChapter": 3,
+        "endVerse": 16,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "2 Peter",
+    "startBookId": "2peter",
+    "endBookName": "2 Peter",
+    "endBookId": "2peter"
+  },
+  {
+    "dayNumber": 261,
+    "date": "2025-06-03",
+    "dayOfWeek": "Thursday",
+    "rawReading": "1:3 – 1:6",
+    "portions": [
+      {
+        "bookName": "2 Peter",
+        "bookId": "2peter",
+        "startChapter": 3,
+        "startVerse": 17,
+        "endChapter": 3,
+        "endVerse": 18,
+        "portionOrder": 1
+      },
+      {
+        "bookName": "1 John",
+        "bookId": "1john",
+        "startChapter": 1,
+        "startVerse": 1,
+        "endChapter": 1,
+        "endVerse": 6,
+        "portionOrder": 2
+      }
+    ],
+    "startBookName": "2 Peter",
+    "startBookId": "2peter",
+    "endBookName": "1 John",
+    "endBookId": "1john"
+  },
+  {
+    "dayNumber": 262,
+    "date": "2025-06-04",
+    "dayOfWeek": "Friday",
+    "rawReading": "1:7 – 1:8",
+    "portions": [
+      {
+        "bookName": "1 John",
+        "bookId": "1john",
+        "startChapter": 1,
+        "startVerse": 7,
+        "endChapter": 1,
+        "endVerse": 8,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 John",
+    "startBookId": "1john",
+    "endBookName": "1 John",
+    "endBookId": "1john"
+  },
+  {
+    "dayNumber": 263,
+    "date": "2025-06-05",
+    "dayOfWeek": "Saturday",
+    "rawReading": "1:9 – 2:7",
+    "portions": [
+      {
+        "bookName": "1 John",
+        "bookId": "1john",
+        "startChapter": 1,
+        "startVerse": 9,
+        "endChapter": 2,
+        "endVerse": 7,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 John",
+    "startBookId": "1john",
+    "endBookName": "1 John",
+    "endBookId": "1john"
+  },
+  {
+    "dayNumber": 264,
+    "date": "2025-06-06",
+    "dayOfWeek": "Sunday",
+    "rawReading": "2:8 – 2:19",
+    "portions": [
+      {
+        "bookName": "1 John",
+        "bookId": "1john",
+        "startChapter": 2,
+        "startVerse": 8,
+        "endChapter": 2,
+        "endVerse": 19,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 John",
+    "startBookId": "1john",
+    "endBookName": "1 John",
+    "endBookId": "1john"
+  },
+  {
+    "dayNumber": 265,
+    "date": "2025-06-07",
+    "dayOfWeek": "Monday",
+    "rawReading": "2:20 – 2:29",
+    "portions": [
+      {
+        "bookName": "1 John",
+        "bookId": "1john",
+        "startChapter": 2,
+        "startVerse": 20,
+        "endChapter": 2,
+        "endVerse": 29,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 John",
+    "startBookId": "1john",
+    "endBookName": "1 John",
+    "endBookId": "1john"
+  },
+  {
+    "dayNumber": 266,
+    "date": "2025-06-08",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "3:1 – 3:9",
+    "portions": [
+      {
+        "bookName": "1 John",
+        "bookId": "1john",
+        "startChapter": 3,
+        "startVerse": 1,
+        "endChapter": 3,
+        "endVerse": 9,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 John",
+    "startBookId": "1john",
+    "endBookName": "1 John",
+    "endBookId": "1john"
+  },
+  {
+    "dayNumber": 267,
+    "date": "2025-06-09",
+    "dayOfWeek": "Wednesday",
+    "rawReading": "3:10 – 3:24",
+    "portions": [
+      {
+        "bookName": "1 John",
+        "bookId": "1john",
+        "startChapter": 3,
+        "startVerse": 10,
+        "endChapter": 3,
+        "endVerse": 24,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 John",
+    "startBookId": "1john",
+    "endBookName": "1 John",
+    "endBookId": "1john"
+  },
+  {
+    "dayNumber": 268,
+    "date": "2025-06-10",
+    "dayOfWeek": "Thursday",
+    "rawReading": "4:1 – 4:13",
+    "portions": [
+      {
+        "bookName": "1 John",
+        "bookId": "1john",
+        "startChapter": 4,
+        "startVerse": 1,
+        "endChapter": 4,
+        "endVerse": 13,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 John",
+    "startBookId": "1john",
+    "endBookName": "1 John",
+    "endBookId": "1john"
+  },
+  {
+    "dayNumber": 269,
+    "date": "2025-06-11",
+    "dayOfWeek": "Friday",
+    "rawReading": "4:14 – 5:6",
+    "portions": [
+      {
+        "bookName": "1 John",
+        "bookId": "1john",
+        "startChapter": 4,
+        "startVerse": 14,
+        "endChapter": 5,
+        "endVerse": 6,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "1 John",
+    "startBookId": "1john",
+    "endBookName": "1 John",
+    "endBookId": "1john"
+  },
+  {
+    "dayNumber": 270,
+    "date": "2025-06-12",
+    "dayOfWeek": "Saturday",
+    "rawReading": "5:7 - 5:20",
+    "portions": [
+      {
+        "bookName": "1 John",
+        "bookId": "1john",
+        "startChapter": 5,
+        "startVerse": 7,
+        "endChapter": 5,
+        "endVerse": 21,
+        "portionOrder": 1
+      },
+      {
+        "bookName": "2 John",
+        "bookId": "2john",
+        "startChapter": 1,
+        "startVerse": 1,
+        "endChapter": 1,
+        "endVerse": 9,
+        "portionOrder": 2
+      }
+    ],
+    "startBookName": "1 John",
+    "startBookId": "1john",
+    "endBookName": "2 John",
+    "endBookId": "2john"
+  },
+  {
+    "dayNumber": 271,
+    "date": "2025-06-13",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "1:9 – Jude 1:12",
+    "portions": [
+      {
+        "bookName": "2 John",
+        "bookId": "2john",
+        "startChapter": 1,
+        "startVerse": 10,
+        "endChapter": 1,
+        "endVerse": 13,
+        "portionOrder": 1
+      },
+      {
+        "bookName": "3 John",
+        "bookId": "3john",
+        "startChapter": 1,
+        "startVerse": 1,
+        "endChapter": 1,
+        "endVerse": 8,
+        "portionOrder": 2
+      }
+    ],
+    "startBookName": "2 John",
+    "startBookId": "2john",
+    "endBookName": "3 John",
+    "endBookId": "3john"
+  },
+  {
+    "dayNumber": 272,
+    "date": "2025-06-14",
+    "dayOfWeek": "Wednesday",
+    "rawReading": "1:13 – Rev. 1:2",
+    "portions": [
+      {
+        "bookName": "3 John",
+        "bookId": "3john",
+        "startChapter": 1,
+        "startVerse": 9,
+        "endChapter": 1,
+        "endVerse": 14,
+        "portionOrder": 1
+      },
+      {
+        "bookName": "Jude",
+        "bookId": "jude",
+        "startChapter": 1,
+        "startVerse": 1,
+        "endChapter": 1,
+        "endVerse": 12,
+        "portionOrder": 2
+      }
+    ],
+    "startBookName": "3 John",
+    "startBookId": "3john",
+    "endBookName": "Jude",
+    "endBookId": "jude"
+  },
+  {
+    "dayNumber": 273,
+    "date": "2025-06-15",
+    "dayOfWeek": "Thursday",
+    "rawReading": "1:3 – 1:8",
+    "portions": [
+      {
+        "bookName": "Jude",
+        "bookId": "jude",
+        "startChapter": 1,
+        "startVerse": 13,
+        "endChapter": 1,
+        "endVerse": 25,
+        "portionOrder": 1
+      },
+      {
+        "bookName": "Revelation",
+        "bookId": "revelation",
+        "startChapter": 1,
+        "startVerse": 1,
+        "endChapter": 1,
+        "endVerse": 8,
+        "portionOrder": 2
+      }
+    ],
+    "startBookName": "Jude",
+    "startBookId": "jude",
+    "endBookName": "Revelation",
+    "endBookId": "revelation"
+  },
+  {
+    "dayNumber": 274,
+    "date": "2025-06-16",
+    "dayOfWeek": "Friday",
+    "rawReading": "1:9 – 1:20",
+    "portions": [
+      {
+        "bookName": "Revelation",
+        "bookId": "revelation",
+        "startChapter": 1,
+        "startVerse": 9,
+        "endChapter": 1,
+        "endVerse": 20,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Revelation",
+    "startBookId": "revelation",
+    "endBookName": "Revelation",
+    "endBookId": "revelation"
+  },
+  {
+    "dayNumber": 275,
+    "date": "2025-06-17",
+    "dayOfWeek": "Saturday",
+    "rawReading": "2:1 – 2:6",
+    "portions": [
+      {
+        "bookName": "Revelation",
+        "bookId": "revelation",
+        "startChapter": 2,
+        "startVerse": 1,
+        "endChapter": 2,
+        "endVerse": 6,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Revelation",
+    "startBookId": "revelation",
+    "endBookName": "Revelation",
+    "endBookId": "revelation"
+  },
+  {
+    "dayNumber": 276,
+    "date": "2025-06-18",
+    "dayOfWeek": "Sunday",
+    "rawReading": "2:7",
+    "portions": [
+      {
+        "bookName": "Revelation",
+        "bookId": "revelation",
+        "startChapter": 2,
+        "startVerse": 7,
+        "endChapter": 2,
+        "endVerse": 7,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Revelation",
+    "startBookId": "revelation",
+    "endBookName": "Revelation",
+    "endBookId": "revelation"
+  },
+  {
+    "dayNumber": 277,
+    "date": "2025-06-19",
+    "dayOfWeek": "Monday",
+    "rawReading": "2:8 – 2:17",
+    "portions": [
+      {
+        "bookName": "Revelation",
+        "bookId": "revelation",
+        "startChapter": 2,
+        "startVerse": 8,
+        "endChapter": 2,
+        "endVerse": 17,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Revelation",
+    "startBookId": "revelation",
+    "endBookName": "Revelation",
+    "endBookId": "revelation"
+  },
+  {
+    "dayNumber": 278,
+    "date": "2025-06-20",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "2:18 – 2:29",
+    "portions": [
+      {
+        "bookName": "Revelation",
+        "bookId": "revelation",
+        "startChapter": 2,
+        "startVerse": 18,
+        "endChapter": 2,
+        "endVerse": 29,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Revelation",
+    "startBookId": "revelation",
+    "endBookName": "Revelation",
+    "endBookId": "revelation"
+  },
+  {
+    "dayNumber": 279,
+    "date": "2025-06-21",
+    "dayOfWeek": "Wednesday",
+    "rawReading": "3:1 – 3:10",
+    "portions": [
+      {
+        "bookName": "Revelation",
+        "bookId": "revelation",
+        "startChapter": 3,
+        "startVerse": 1,
+        "endChapter": 3,
+        "endVerse": 10,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Revelation",
+    "startBookId": "revelation",
+    "endBookName": "Revelation",
+    "endBookId": "revelation"
+  },
+  {
+    "dayNumber": 280,
+    "date": "2025-06-22",
+    "dayOfWeek": "Thursday",
+    "rawReading": "3:11 – 3:22",
+    "portions": [
+      {
+        "bookName": "Revelation",
+        "bookId": "revelation",
+        "startChapter": 3,
+        "startVerse": 11,
+        "endChapter": 3,
+        "endVerse": 22,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Revelation",
+    "startBookId": "revelation",
+    "endBookName": "Revelation",
+    "endBookId": "revelation"
+  },
+  {
+    "dayNumber": 281,
+    "date": "2025-06-23",
+    "dayOfWeek": "Friday",
+    "rawReading": "4:1 – 4:11",
+    "portions": [
+      {
+        "bookName": "Revelation",
+        "bookId": "revelation",
+        "startChapter": 4,
+        "startVerse": 1,
+        "endChapter": 4,
+        "endVerse": 11,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Revelation",
+    "startBookId": "revelation",
+    "endBookName": "Revelation",
+    "endBookId": "revelation"
+  },
+  {
+    "dayNumber": 282,
+    "date": "2025-06-24",
+    "dayOfWeek": "Saturday",
+    "rawReading": "5:1 – 6:4",
+    "portions": [
+      {
+        "bookName": "Revelation",
+        "bookId": "revelation",
+        "startChapter": 5,
+        "startVerse": 1,
+        "endChapter": 6,
+        "endVerse": 4,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Revelation",
+    "startBookId": "revelation",
+    "endBookName": "Revelation",
+    "endBookId": "revelation"
+  },
+  {
+    "dayNumber": 283,
+    "date": "2025-06-25",
+    "dayOfWeek": "Sunday",
+    "rawReading": "6:5 – 7:8",
+    "portions": [
+      {
+        "bookName": "Revelation",
+        "bookId": "revelation",
+        "startChapter": 6,
+        "startVerse": 5,
+        "endChapter": 7,
+        "endVerse": 8,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Revelation",
+    "startBookId": "revelation",
+    "endBookName": "Revelation",
+    "endBookId": "revelation"
+  },
+  {
+    "dayNumber": 284,
+    "date": "2025-06-26",
+    "dayOfWeek": "Monday",
+    "rawReading": "7:9 – 8:13",
+    "portions": [
+      {
+        "bookName": "Revelation",
+        "bookId": "revelation",
+        "startChapter": 7,
+        "startVerse": 9,
+        "endChapter": 8,
+        "endVerse": 13,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Revelation",
+    "startBookId": "revelation",
+    "endBookName": "Revelation",
+    "endBookId": "revelation"
+  },
+  {
+    "dayNumber": 285,
+    "date": "2025-06-27",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "9:1 – 10:7",
+    "portions": [
+      {
+        "bookName": "Revelation",
+        "bookId": "revelation",
+        "startChapter": 9,
+        "startVerse": 1,
+        "endChapter": 10,
+        "endVerse": 7,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Revelation",
+    "startBookId": "revelation",
+    "endBookName": "Revelation",
+    "endBookId": "revelation"
+  },
+  {
+    "dayNumber": 286,
+    "date": "2025-06-28",
+    "dayOfWeek": "Wednesday",
+    "rawReading": "10:8 – 11:15",
+    "portions": [
+      {
+        "bookName": "Revelation",
+        "bookId": "revelation",
+        "startChapter": 10,
+        "startVerse": 8,
+        "endChapter": 11,
+        "endVerse": 15,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Revelation",
+    "startBookId": "revelation",
+    "endBookName": "Revelation",
+    "endBookId": "revelation"
+  },
+  {
+    "dayNumber": 287,
+    "date": "2025-06-29",
+    "dayOfWeek": "Thursday",
+    "rawReading": "11:16 – 12:5",
+    "portions": [
+      {
+        "bookName": "Revelation",
+        "bookId": "revelation",
+        "startChapter": 11,
+        "startVerse": 16,
+        "endChapter": 12,
+        "endVerse": 5,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Revelation",
+    "startBookId": "revelation",
+    "endBookName": "Revelation",
+    "endBookId": "revelation"
+  },
+  {
+    "dayNumber": 288,
+    "date": "2025-06-30",
+    "dayOfWeek": "Friday",
+    "rawReading": "12:6 – 13:3",
+    "portions": [
+      {
+        "bookName": "Revelation",
+        "bookId": "revelation",
+        "startChapter": 12,
+        "startVerse": 6,
+        "endChapter": 13,
+        "endVerse": 3,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Revelation",
+    "startBookId": "revelation",
+    "endBookName": "Revelation",
+    "endBookId": "revelation"
+  },
+  {
+    "dayNumber": 289,
+    "date": "2025-07-01",
+    "dayOfWeek": "Saturday",
+    "rawReading": "13:4 – 14:7",
+    "portions": [
+      {
+        "bookName": "Revelation",
+        "bookId": "revelation",
+        "startChapter": 13,
+        "startVerse": 4,
+        "endChapter": 14,
+        "endVerse": 7,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Revelation",
+    "startBookId": "revelation",
+    "endBookName": "Revelation",
+    "endBookId": "revelation"
+  },
+  {
+    "dayNumber": 290,
+    "date": "2025-07-02",
+    "dayOfWeek": "Sunday",
+    "rawReading": "14:8 – 15:8",
+    "portions": [
+      {
+        "bookName": "Revelation",
+        "bookId": "revelation",
+        "startChapter": 14,
+        "startVerse": 8,
+        "endChapter": 15,
+        "endVerse": 8,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Revelation",
+    "startBookId": "revelation",
+    "endBookName": "Revelation",
+    "endBookId": "revelation"
+  },
+  {
+    "dayNumber": 291,
+    "date": "2025-07-03",
+    "dayOfWeek": "Monday",
+    "rawReading": "16:1 – 17:4",
+    "portions": [
+      {
+        "bookName": "Revelation",
+        "bookId": "revelation",
+        "startChapter": 16,
+        "startVerse": 1,
+        "endChapter": 17,
+        "endVerse": 4,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Revelation",
+    "startBookId": "revelation",
+    "endBookName": "Revelation",
+    "endBookId": "revelation"
+  },
+  {
+    "dayNumber": 292,
+    "date": "2025-07-04",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "17:5 – 18:3",
+    "portions": [
+      {
+        "bookName": "Revelation",
+        "bookId": "revelation",
+        "startChapter": 17,
+        "startVerse": 5,
+        "endChapter": 18,
+        "endVerse": 3,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Revelation",
+    "startBookId": "revelation",
+    "endBookName": "Revelation",
+    "endBookId": "revelation"
+  },
+  {
+    "dayNumber": 293,
+    "date": "2025-07-05",
+    "dayOfWeek": "Wednesday",
+    "rawReading": "18:4 – 19:9",
+    "portions": [
+      {
+        "bookName": "Revelation",
+        "bookId": "revelation",
+        "startChapter": 18,
+        "startVerse": 4,
+        "endChapter": 19,
+        "endVerse": 9,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Revelation",
+    "startBookId": "revelation",
+    "endBookName": "Revelation",
+    "endBookId": "revelation"
+  },
+  {
+    "dayNumber": 294,
+    "date": "2025-07-06",
+    "dayOfWeek": "Thursday",
+    "rawReading": "19:10 – 20:6",
+    "portions": [
+      {
+        "bookName": "Revelation",
+        "bookId": "revelation",
+        "startChapter": 19,
+        "startVerse": 10,
+        "endChapter": 20,
+        "endVerse": 6,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Revelation",
+    "startBookId": "revelation",
+    "endBookName": "Revelation",
+    "endBookId": "revelation"
+  },
+  {
+    "dayNumber": 295,
+    "date": "2025-07-07",
+    "dayOfWeek": "Friday",
+    "rawReading": "20:7 – 21:2",
+    "portions": [
+      {
+        "bookName": "Revelation",
+        "bookId": "revelation",
+        "startChapter": 20,
+        "startVerse": 7,
+        "endChapter": 21,
+        "endVerse": 2,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Revelation",
+    "startBookId": "revelation",
+    "endBookName": "Revelation",
+    "endBookId": "revelation"
+  },
+  {
+    "dayNumber": 296,
+    "date": "2025-07-08",
+    "dayOfWeek": "Saturday",
+    "rawReading": "21:3 – 21:13",
+    "portions": [
+      {
+        "bookName": "Revelation",
+        "bookId": "revelation",
+        "startChapter": 21,
+        "startVerse": 3,
+        "endChapter": 21,
+        "endVerse": 13,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Revelation",
+    "startBookId": "revelation",
+    "endBookName": "Revelation",
+    "endBookId": "revelation"
+  },
+  {
+    "dayNumber": 297,
+    "date": "2025-07-09",
+    "dayOfWeek": "Sunday",
+    "rawReading": "21:14 – 21:27",
+    "portions": [
+      {
+        "bookName": "Revelation",
+        "bookId": "revelation",
+        "startChapter": 21,
+        "startVerse": 14,
+        "endChapter": 21,
+        "endVerse": 27,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Revelation",
+    "startBookId": "revelation",
+    "endBookName": "Revelation",
+    "endBookId": "revelation"
+  },
+  {
+    "dayNumber": 298,
+    "date": "2025-07-10",
+    "dayOfWeek": "Monday",
+    "rawReading": "22:1 – 22:5",
+    "portions": [
+      {
+        "bookName": "Revelation",
+        "bookId": "revelation",
+        "startChapter": 22,
+        "startVerse": 1,
+        "endChapter": 22,
+        "endVerse": 5,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Revelation",
+    "startBookId": "revelation",
+    "endBookName": "Revelation",
+    "endBookId": "revelation"
+  },
+  {
+    "dayNumber": 299,
+    "date": "2025-07-11",
+    "dayOfWeek": "Tuesday",
+    "rawReading": "22:6 – 22:21",
+    "portions": [
+      {
+        "bookName": "Revelation",
+        "bookId": "revelation",
+        "startChapter": 22,
+        "startVerse": 6,
+        "endChapter": 22,
+        "endVerse": 21,
+        "portionOrder": 1
+      }
+    ],
+    "startBookName": "Revelation",
+    "startBookId": "revelation",
+    "endBookName": "Revelation",
+    "endBookId": "revelation"
+  }
+]
