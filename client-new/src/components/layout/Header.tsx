@@ -57,6 +57,44 @@ const UserSection = styled.div`
   gap: ${theme.spacing[4]};
 `;
 
+const ProfileButton = styled.button`
+  background-color: ${theme.colors.white};
+  color: ${theme.colors.gray[700]};
+  border: 1px solid ${theme.colors.gray[300]};
+  border-radius: ${theme.borderRadius.lg};
+  padding: ${theme.spacing[2]} ${theme.spacing[3]};
+  font-size: ${theme.fontSizes.sm};
+  font-weight: ${theme.fontWeights.medium};
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: ${theme.spacing[2]};
+
+  &:hover {
+    background-color: ${theme.colors.gray[50]};
+    border-color: ${theme.colors.gray[400]};
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px ${theme.colors.primary[100]};
+  }
+
+  @media (max-width: ${theme.breakpoints.sm}) {
+    padding: ${theme.spacing[2]};
+    
+    span {
+      display: none;
+    }
+  }
+`;
+
+const ProfileIcon = styled.svg`
+  width: 16px;
+  height: 16px;
+`;
+
 const UserInfo = styled.div`
   display: flex;
   flex-direction: column;
@@ -133,6 +171,10 @@ export const Header: React.FC = () => {
     navigate('/dashboard');
   };
 
+  const handleProfileClick = () => {
+    navigate('/profile');
+  };
+
   if (!currentUser) {
     return null; // Don't show header for non-authenticated users
   }
@@ -159,6 +201,14 @@ export const Header: React.FC = () => {
             <UserName>{displayName}</UserName>
             <UserEmail>{currentUser.email}</UserEmail>
           </UserInfo>
+          
+          <ProfileButton onClick={handleProfileClick}>
+            <ProfileIcon viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </ProfileIcon>
+            <span>Profile</span>
+          </ProfileButton>
           
           <LogoutButton onClick={handleLogout}>
             <LogoutIcon viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>

@@ -40,11 +40,8 @@ interface RegisterFormData {
   lastName: string;
   phoneNumber?: string;
   dateOfBirth?: string;
-  timezone: string;
-  preferredLanguage: string;
   reminderTime: string;
   enableReminders: boolean;
-  preferredTranslation: string;
 }
 
 export const Register: React.FC = () => {
@@ -78,12 +75,12 @@ export const Register: React.FC = () => {
         lastName: data.lastName,
         phoneNumber: data.phoneNumber || null,
         dateOfBirth: data.dateOfBirth || null,
-        timezone: data.timezone,
-        preferredLanguage: data.preferredLanguage,
+        timezone: 'UTC', // Default timezone
+        preferredLanguage: 'en', // Default language
         readingPreferences: {
           reminderTime: data.reminderTime,
           enableReminders: data.enableReminders,
-          preferredTranslation: data.preferredTranslation,
+          preferredTranslation: 'ESV', // Default translation
           readingGoal: 'daily'
         },
         privacy: {
@@ -295,37 +292,6 @@ export const Register: React.FC = () => {
             
             <GridContainer>
               <FormGroup>
-                <Label>Timezone *</Label>
-                <Select
-                  {...register('timezone', { required: 'Timezone is required' })}
-                  $hasError={!!errors.timezone}
-                >
-                  <option value="">Select timezone</option>
-                  <option value="America/New_York">Eastern Time</option>
-                  <option value="America/Chicago">Central Time</option>
-                  <option value="America/Denver">Mountain Time</option>
-                  <option value="America/Los_Angeles">Pacific Time</option>
-                  <option value="UTC">UTC</option>
-                </Select>
-                {errors.timezone && <ErrorMessage>{errors.timezone.message}</ErrorMessage>}
-              </FormGroup>
-
-              <FormGroup>
-                <Label>Preferred Language *</Label>
-                <Select
-                  {...register('preferredLanguage', { required: 'Language is required' })}
-                  $hasError={!!errors.preferredLanguage}
-                >
-                  <option value="">Select language</option>
-                  <option value="en">English</option>
-                  <option value="es">Spanish</option>
-                  <option value="fr">French</option>
-                  <option value="de">German</option>
-                </Select>
-                {errors.preferredLanguage && <ErrorMessage>{errors.preferredLanguage.message}</ErrorMessage>}
-              </FormGroup>
-
-              <FormGroup>
                 <Label>Daily Reminder Time *</Label>
                 <Input
                   {...register('reminderTime', { required: 'Reminder time is required' })}
@@ -334,22 +300,6 @@ export const Register: React.FC = () => {
                   $hasError={!!errors.reminderTime}
                 />
                 {errors.reminderTime && <ErrorMessage>{errors.reminderTime.message}</ErrorMessage>}
-              </FormGroup>
-
-              <FormGroup>
-                <Label>Preferred Translation *</Label>
-                <Select
-                  {...register('preferredTranslation', { required: 'Translation is required' })}
-                  $hasError={!!errors.preferredTranslation}
-                >
-                  <option value="">Select translation</option>
-                  <option value="NIV">NIV</option>
-                  <option value="ESV">ESV</option>
-                  <option value="KJV">KJV</option>
-                  <option value="NKJV">NKJV</option>
-                  <option value="NLT">NLT</option>
-                </Select>
-                {errors.preferredTranslation && <ErrorMessage>{errors.preferredTranslation.message}</ErrorMessage>}
               </FormGroup>
             </GridContainer>
 

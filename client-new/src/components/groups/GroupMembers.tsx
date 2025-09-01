@@ -267,7 +267,7 @@ interface GroupInfo {
   endDate: string;
   currentDay: number;
   status: string;
-  memberCount: number;
+  memberCount: number; // Legacy field, use totalMembers instead
   createdBy: string;
   isPublic: boolean;
   maxMembers: number | null;

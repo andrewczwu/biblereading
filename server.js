@@ -8,6 +8,7 @@ const { createReadingSchedule } = require('./api/create-reading-schedule');
 const { createGroupReadingSchedule } = require('./api/create-group-reading-schedule');
 const { joinGroupReadingSchedule, leaveGroupReadingSchedule } = require('./api/join-group-reading-schedule');
 const { getGroupMembers } = require('./api/get-group-members');
+const { getUserSchedules } = require('./api/get-user-schedules');
 const { markReadingCompleted } = require('./api/mark-reading-completed');
 const { getReadingScheduleWithProgress, getDayReading } = require('./api/get-reading-schedule-with-progress');
 const { getReadingTemplates, getReadingTemplate } = require('./api/get-reading-templates');
@@ -23,6 +24,9 @@ app.post('/api/user-profile', createUserProfile);
 app.get('/api/user-profile/:uid', getUserProfile);
 app.put('/api/user-profile/:uid', updateUserProfile);
 app.delete('/api/user-profile/:uid', deleteUserProfile);
+
+// User Schedules endpoints
+app.get('/api/user-schedules/:userId', getUserSchedules);
 
 // Individual Schedule endpoints
 app.post('/api/create-reading-schedule', createReadingSchedule);
@@ -54,6 +58,9 @@ app.get('/', (req, res) => {
         'GET /api/user-profile/:uid': 'Get user profile',
         'PUT /api/user-profile/:uid': 'Update user profile',
         'DELETE /api/user-profile/:uid': 'Delete user profile'
+      },
+      userSchedules: {
+        'GET /api/user-schedules/:userId': 'Get all schedules and group memberships for a user'
       },
       individualSchedules: {
         'POST /api/create-reading-schedule': 'Create individual reading schedule'

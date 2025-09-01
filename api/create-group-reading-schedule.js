@@ -103,7 +103,6 @@ async function createGroupReadingSchedule(req, res) {
       createdBy: createdBy,
       isPublic: isPublic,
       maxMembers: maxMembers,
-      memberCount: 1, // Creator is automatically the first member
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString()
     };
@@ -211,7 +210,6 @@ async function createGroupReadingSchedule(req, res) {
         createdBy: createdBy,
         isPublic: isPublic,
         maxMembers: maxMembers,
-        memberCount: 1
       }
     });
 

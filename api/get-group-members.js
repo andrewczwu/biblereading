@@ -44,7 +44,7 @@ async function getGroupMembers(req, res) {
           groupId: groupData.groupId,
           groupName: groupData.groupName,
           templateName: groupData.templateName,
-          memberCount: groupData.memberCount || 0
+          memberCount: 0
         },
         members: []
       });
@@ -127,7 +127,7 @@ async function getGroupMembers(req, res) {
         endDate: groupData.endDate,
         currentDay: groupData.currentDay,
         status: groupData.status,
-        memberCount: groupData.memberCount || 0,
+        memberCount: 0, // Legacy field, use totalMembers instead
         createdBy: groupData.createdBy,
         isPublic: groupData.isPublic,
         maxMembers: groupData.maxMembers

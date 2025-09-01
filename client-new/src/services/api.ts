@@ -35,6 +35,16 @@ export const userProfileAPI = {
   },
 };
 
+// User Schedules API
+export const userSchedulesAPI = {
+  get: async (userId: string, includeInactive: boolean = false) => {
+    const response = await api.get(`/user-schedules/${userId}`, {
+      params: { includeInactive }
+    });
+    return response.data;
+  },
+};
+
 // Individual Reading Schedule API
 export const individualScheduleAPI = {
   create: async (scheduleData: { userId: string; templateId: string; startDate: string }) => {
@@ -78,12 +88,26 @@ export const groupScheduleAPI = {
 
 // Progress API
 export const progressAPI = {
-  markCompleted: async (progressData: { userId: string; dayNumber: number; isCompleted: boolean }) => {
+  markCompleted: async (progressData: { 
+    userId: string; 
+    dayNumber: number; 
+    isCompleted: boolean;
+    scheduleId?: string;
+    groupId?: string;
+    notes?: string;
+    timeSpentMinutes?: number;
+  }) => {
     const response = await api.post('/mark-reading-completed', progressData);
     return response.data;
   },
 
-  getScheduleWithProgress: async (params: { userId: string; limit?: number }) => {
+  getScheduleWithProgress: async (params: { 
+    userId: string; 
+    limit?: number;
+    offset?: number;
+    scheduleId?: string;
+    groupId?: string;
+  }) => {
     const response = await api.get('/get-reading-schedule-with-progress', { params });
     return response.data;
   },

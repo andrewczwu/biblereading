@@ -10,6 +10,8 @@ import { Register } from './components/auth/Register';
 import { Dashboard } from './components/Dashboard';
 import Schedules from './pages/Schedules';
 import { GroupMembersPage } from './pages/GroupMembersPage';
+import { CalendarPage } from './pages/CalendarPage';
+import { ProfilePage } from './pages/ProfilePage';
 
 function App() {
   return (
@@ -62,6 +64,18 @@ function App() {
           <Route path="/group/:groupId/members" element={
             <PrivateRoute requireProfile>
               <GroupMembersPage />
+            </PrivateRoute>
+          } />
+          
+          <Route path="/calendar" element={
+            <PrivateRoute requireProfile>
+              <CalendarPage />
+            </PrivateRoute>
+          } />
+          
+          <Route path="/profile" element={
+            <PrivateRoute requireProfile>
+              <ProfilePage />
             </PrivateRoute>
           } />
           

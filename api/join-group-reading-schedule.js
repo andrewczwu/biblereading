@@ -1,5 +1,16 @@
 const { db } = require('../config/firebase');
 
+// Helper function to get current member count dynamically
+async function getCurrentMemberCount(groupId) {
+  const membersSnapshot = await db
+    .collection('groupReadingSchedules')
+    .doc(groupId)
+    .collection('members')
+    .where('status', '==', 'active')
+    .get();
+  return membersSnapshot.size;
+}
+
 async function joinGroupReadingSchedule(req, res) {
   try {
     const { userId, groupId, userName = null, email = null } = req.body;
@@ -80,10 +91,20 @@ async function joinGroupReadingSchedule(req, res) {
     }
 
     // Step 3: Check member limit
-    if (groupData.maxMembers && groupData.memberCount >= groupData.maxMembers) {
-      return res.status(400).json({
-        error: `Group is full. Maximum members: ${groupData.maxMembers}`
-      });
+    if (groupData.maxMembers) {
+      // Count current active members dynamically
+      const currentMembersSnapshot = await db
+        .collection('groupReadingSchedules')
+        .doc(groupId)
+        .collection('members')
+        .where('status', '==', 'active')
+        .get();
+      
+      if (currentMembersSnapshot.size >= groupData.maxMembers) {
+        return res.status(400).json({
+          error: `Group is full. Maximum members: ${groupData.maxMembers}`
+        });
+      }
     }
 
     // Step 4: Calculate user's starting progress based on group's current day
@@ -119,13 +140,12 @@ async function joinGroupReadingSchedule(req, res) {
 
     console.log(`✓ Added ${userId} as group member`);
 
-    // Step 6: Update group member count
+    // Step 6: Update group timestamp
     await db.collection('groupReadingSchedules').doc(groupId).update({
-      memberCount: groupData.memberCount + 1,
       updatedAt: new Date().toISOString()
     });
 
-    console.log(`✓ Updated group member count to ${groupData.memberCount + 1}`);
+    console.log(`✓ User joined group successfully`);
 
     // Step 7: Initialize user's progress tracking (optional - create first few days)
     const batch = db.batch();
@@ -167,7 +187,7 @@ async function joinGroupReadingSchedule(req, res) {
         durationDays: groupData.durationDays,
         currentDay: currentDay,
         memberRole: 'member',
-        totalMembers: groupData.memberCount + 1
+        totalMembers: await getCurrentMemberCount(groupId)
       }
     });
 
@@ -239,9 +259,7 @@ async function leaveGroupReadingSchedule(req, res) {
     // Update group member count
     const groupDoc = await db.collection('groupReadingSchedules').doc(groupId).get();
     if (groupDoc.exists) {
-      const groupData = groupDoc.data();
       await db.collection('groupReadingSchedules').doc(groupId).update({
-        memberCount: Math.max(0, groupData.memberCount - 1),
         updatedAt: new Date().toISOString()
       });
     }
