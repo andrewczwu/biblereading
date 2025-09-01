@@ -402,6 +402,7 @@ interface UserSchedule {
     totalReadings: number;
     completedReadings: number;
     completionPercentage: number;
+    pointsEarned?: number;
   };
 }
 
@@ -556,6 +557,9 @@ export const Dashboard: React.FC = () => {
                   </ScheduleMeta>
                 )}
 
+                <PointsText>
+                  🏆 {schedule.progress.pointsEarned || 0} points earned
+                </PointsText>
 
                 <ScheduleActions>
                   <ActionButton 

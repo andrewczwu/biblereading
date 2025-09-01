@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { toast } from 'react-hot-toast';
 import { useAuth } from '../../contexts/AuthContext';
 import { progressAPI } from '../../services/api';
 import { theme } from '../../styles/theme';
@@ -469,26 +470,39 @@ export const WeekView: React.FC<WeekViewProps> = ({ scheduleId, groupId }) => {
   const handleTaskChange = async (dayNumber: number, taskType: keyof CompletionTasks, isChecked: boolean) => {
     if (!currentUser) return;
 
+    // Find the current reading to get its completion tasks
+    const currentReading = readings.find(r => r.dayNumber === dayNumber);
+    if (!currentReading) return;
+
+    // Update the specific task
+    let updatedTasks = {
+      ...(currentReading.completionTasks || { verseText: false, footnotes: false, partner: false }),
+      [taskType]: isChecked
+    };
+
+    // If verse text is unchecked, also uncheck footnotes and partner
+    if (taskType === 'verseText' && !isChecked) {
+      updatedTasks.footnotes = false;
+      updatedTasks.partner = false;
+    }
+
+    // Overall completion is based only on verse text being checked
+    const overallCompleted = updatedTasks.verseText;
+
+    // Store previous state for potential rollback
+    const previousState = {
+      isCompleted: currentReading.isCompleted,
+      completionTasks: currentReading.completionTasks
+    };
+
+    // OPTIMISTIC UPDATE: Update UI immediately for instant feedback
+    setReadings(prev => prev.map(reading => 
+      reading.dayNumber === dayNumber 
+        ? { ...reading, isCompleted: overallCompleted, completionTasks: updatedTasks } 
+        : reading
+    ));
+
     try {
-      // Find the current reading to get its completion tasks
-      const currentReading = readings.find(r => r.dayNumber === dayNumber);
-      if (!currentReading) return;
-
-      // Update the specific task
-      let updatedTasks = {
-        ...(currentReading.completionTasks || { verseText: false, footnotes: false, partner: false }),
-        [taskType]: isChecked
-      };
-
-      // If verse text is unchecked, also uncheck footnotes and partner
-      if (taskType === 'verseText' && !isChecked) {
-        updatedTasks.footnotes = false;
-        updatedTasks.partner = false;
-      }
-
-      // Overall completion is based only on verse text being checked
-      const overallCompleted = updatedTasks.verseText;
-
       const progressData: any = {
         userId: currentUser.uid,
         dayNumber,
@@ -503,14 +517,18 @@ export const WeekView: React.FC<WeekViewProps> = ({ scheduleId, groupId }) => {
 
       await progressAPI.markCompleted(progressData);
       
-      // Update local state
-      setReadings(prev => prev.map(reading => 
-        reading.dayNumber === dayNumber 
-          ? { ...reading, isCompleted: overallCompleted, completionTasks: updatedTasks } 
-          : reading
-      ));
     } catch (error) {
       console.error('Error updating progress:', error);
+      
+      // ROLLBACK: Revert to previous state on error
+      setReadings(prev => prev.map(reading => 
+        reading.dayNumber === dayNumber 
+          ? { ...reading, isCompleted: previousState.isCompleted, completionTasks: previousState.completionTasks } 
+          : reading
+      ));
+      
+      // Show error message to user
+      toast.error('Failed to update progress. Please try again.');
     }
   };
 
