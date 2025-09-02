@@ -371,10 +371,10 @@ export const WeekView: React.FC<WeekViewProps> = ({ scheduleId, groupId }) => {
       return acc;
     }, {});
 
-    return Object.entries(grouped).map(([bookName, bookPortions]: [string, any[]]) => ({
+    return Object.entries(grouped).map(([bookName, bookPortions]) => ({
       bookName,
-      portions: bookPortions,
-      formattedVerse: bookPortions.map(formatSinglePortion).join(', ')
+      portions: bookPortions as any[],
+      formattedVerse: (bookPortions as any[]).map(formatSinglePortion).join(', ')
     }));
   };
 

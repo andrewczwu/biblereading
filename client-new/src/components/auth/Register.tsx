@@ -19,7 +19,6 @@ import {
   Label,
   InputContainer,
   Input,
-  Select,
   PasswordInput,
   PasswordToggle,
   CheckboxContainer,

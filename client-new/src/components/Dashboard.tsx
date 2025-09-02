@@ -292,38 +292,39 @@ const Badge = styled.span<{ $variant: 'individual' | 'group' | 'admin' | 'member
   }}
 `;
 
-const ProgressSection = styled.div`
-  margin-top: ${theme.spacing[3]};
-  padding-top: ${theme.spacing[3]};
-  border-top: 1px solid ${theme.colors.gray[200]};
-`;
+// Progress components for future use
+// const ProgressSection = styled.div`
+//   margin-top: ${theme.spacing[3]};
+//   padding-top: ${theme.spacing[3]};
+//   border-top: 1px solid ${theme.colors.gray[200]};
+// `;
 
-const ProgressBar = styled.div`
-  width: 100%;
-  height: 8px;
-  background: ${theme.colors.gray[200]};
-  border-radius: ${theme.borderRadius.full};
-  overflow: hidden;
-  margin-bottom: ${theme.spacing[2]};
-`;
+// const ProgressBar = styled.div`
+//   width: 100%;
+//   height: 8px;
+//   background: ${theme.colors.gray[200]};
+//   border-radius: ${theme.borderRadius.full};
+//   overflow: hidden;
+//   margin-bottom: ${theme.spacing[2]};
+// `;
 
-const ProgressFill = styled.div<{ $percentage: number }>`
-  height: 100%;
-  background: ${props => 
-    props.$percentage >= 80 ? theme.colors.green[500] :
-    props.$percentage >= 50 ? theme.colors.primary[500] :
-    theme.colors.gray[400]
-  };
-  width: ${props => props.$percentage}%;
-  transition: width 0.3s ease;
-`;
+// const ProgressFill = styled.div<{ $percentage: number }>`
+//   height: 100%;
+//   background: ${props => 
+//     props.$percentage >= 80 ? theme.colors.green[500] :
+//     props.$percentage >= 50 ? theme.colors.primary[500] :
+//     theme.colors.gray[400]
+//   };
+//   width: ${props => props.$percentage}%;
+//   transition: width 0.3s ease;
+// `;
 
-const ProgressText = styled.div`
-  display: flex;
-  justify-content: space-between;
-  font-size: ${theme.fontSizes.sm};
-  color: ${theme.colors.gray[600]};
-`;
+// const ProgressText = styled.div`
+//   display: flex;
+//   justify-content: space-between;
+//   font-size: ${theme.fontSizes.sm};
+//   color: ${theme.colors.gray[600]};
+// `;
 
 const PointsText = styled.div`
   display: flex;
