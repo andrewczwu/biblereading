@@ -1,11 +1,22 @@
-const { db } = require('../config/firebase');
+const { ensureFirebaseInitialized } = require('../config/firebase');
+
+// Lazy initialization of db
+let db = null;
+async function getDb() {
+  if (!db) {
+    await ensureFirebaseInitialized();
+    const firebaseConfig = require('../config/firebase');
+    db = firebaseConfig.db;
+  }
+  return db;
+}
 
 async function getReadingTemplates(req, res) {
   try {
     console.log('Fetching reading templates from Firestore...');
 
     // Get all reading templates from the readingTemplates collection
-    const templatesSnapshot = await db.collection('readingTemplates').get();
+    const templatesSnapshot = await (await getDb()).collection('readingTemplates').get();
 
     if (templatesSnapshot.empty) {
       return res.status(404).json({
@@ -63,7 +74,7 @@ async function getReadingTemplate(req, res) {
     console.log(`Fetching reading template: ${templateId}`);
 
     // Get the specific template
-    const templateDoc = await db.collection('readingTemplates').doc(templateId).get();
+    const templateDoc = await (await getDb()).collection('readingTemplates').doc(templateId).get();
 
     if (!templateDoc.exists) {
       return res.status(404).json({

@@ -1,8 +1,19 @@
-const { db } = require('../config/firebase');
+const { ensureFirebaseInitialized } = require('../config/firebase');
+
+// Lazy initialization of db
+let db = null;
+async function getDb() {
+  if (!db) {
+    await ensureFirebaseInitialized();
+    const firebaseConfig = require('../config/firebase');
+    db = firebaseConfig.db;
+  }
+  return db;
+}
 
 // Helper function to get current member count dynamically
 async function getCurrentMemberCount(groupId) {
-  const membersSnapshot = await db
+  const membersSnapshot = await (await getDb())
     .collection('groupReadingSchedules')
     .doc(groupId)
     .collection('members')
@@ -24,7 +35,7 @@ async function joinGroupReadingSchedule(req, res) {
     console.log(`User ${userId} attempting to join group ${groupId}`);
 
     // Step 1: Check if group exists and is active
-    const groupDoc = await db.collection('groupReadingSchedules').doc(groupId).get();
+    const groupDoc = await (await getDb()).collection('groupReadingSchedules').doc(groupId).get();
     if (!groupDoc.exists) {
       return res.status(404).json({
         error: 'Group reading schedule not found'
@@ -141,14 +152,14 @@ async function joinGroupReadingSchedule(req, res) {
     console.log(`✓ Added ${userId} as group member`);
 
     // Step 6: Update group timestamp
-    await db.collection('groupReadingSchedules').doc(groupId).update({
+    await (await getDb()).collection('groupReadingSchedules').doc(groupId).update({
       updatedAt: new Date().toISOString()
     });
 
     console.log(`✓ User joined group successfully`);
 
     // Step 7: Initialize user's progress tracking (optional - create first few days)
-    const batch = db.batch();
+    const batch = (await getDb()).batch();
     const progressCollection = db
       .collection('groupReadingSchedules')
       .doc(groupId)
@@ -257,9 +268,9 @@ async function leaveGroupReadingSchedule(req, res) {
       });
 
     // Update group member count
-    const groupDoc = await db.collection('groupReadingSchedules').doc(groupId).get();
+    const groupDoc = await (await getDb()).collection('groupReadingSchedules').doc(groupId).get();
     if (groupDoc.exists) {
-      await db.collection('groupReadingSchedules').doc(groupId).update({
+      await (await getDb()).collection('groupReadingSchedules').doc(groupId).update({
         updatedAt: new Date().toISOString()
       });
     }

@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const { ensureFirebaseInitialized } = require('./config/firebase');
 require('dotenv').config();
 
 // Import API endpoint handlers
@@ -259,12 +260,24 @@ app.use((error, req, res, next) => {
   });
 });
 
-// Only start server if not in test environment
-if (process.env.NODE_ENV !== 'test') {
-  app.listen(PORT, () => {
-    console.log(`Bible Reading API server is running on port ${PORT}`);
-    console.log(`Visit http://localhost:${PORT} for API documentation`);
-  });
+// Initialize Firebase before starting server
+async function startServer() {
+  try {
+    await ensureFirebaseInitialized();
+    
+    // Only start server if not in test environment
+    if (process.env.NODE_ENV !== 'test') {
+      app.listen(PORT, () => {
+        console.log(`Bible Reading API server is running on port ${PORT}`);
+        console.log(`Visit http://localhost:${PORT} for API documentation`);
+      });
+    }
+  } catch (error) {
+    console.error('Failed to start server:', error);
+    process.exit(1);
+  }
 }
+
+startServer();
 
 module.exports = app;

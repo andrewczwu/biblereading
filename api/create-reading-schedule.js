@@ -1,4 +1,15 @@
-const { db } = require('../config/firebase');
+const { ensureFirebaseInitialized } = require('../config/firebase');
+
+// Lazy initialization of db
+let db = null;
+async function getDb() {
+  if (!db) {
+    await ensureFirebaseInitialized();
+    const firebaseConfig = require('../config/firebase');
+    db = firebaseConfig.db;
+  }
+  return db;
+}
 
 function calculateDate(startDate, dayOffset) {
   const date = new Date(startDate);
@@ -42,7 +53,7 @@ async function createReadingSchedule(req, res) {
     console.log(`Creating reading schedule for user ${userId} using template ${templateId} starting ${startDate}`);
 
     // Step 1: Get the template
-    const templateDoc = await db.collection('readingTemplates').doc(templateId).get();
+    const templateDoc = await (await getDb()).collection('readingTemplates').doc(templateId).get();
     if (!templateDoc.exists) {
       return res.status(404).json({
         error: `Template ${templateId} not found`
@@ -54,7 +65,7 @@ async function createReadingSchedule(req, res) {
 
     // Step 2: Check if user already has a schedule for this template
     const scheduleId = `${userId}_${templateId}_${startDate}`;
-    const existingSchedule = await db.collection('userReadingSchedules').doc(scheduleId).get();
+    const existingSchedule = await (await getDb()).collection('userReadingSchedules').doc(scheduleId).get();
     
     if (existingSchedule.exists) {
       return res.status(409).json({
@@ -96,12 +107,12 @@ async function createReadingSchedule(req, res) {
       updatedAt: new Date().toISOString()
     };
 
-    await db.collection('userReadingSchedules').doc(scheduleId).set(scheduleData);
+    await (await getDb()).collection('userReadingSchedules').doc(scheduleId).set(scheduleData);
     console.log(`✓ Created main schedule document: ${scheduleId}`);
 
     // Step 6: Create daily schedule documents in batches
     const batchSize = 500;
-    let batch = db.batch();
+    let batch = (await getDb()).batch();
     let batchCount = 0;
     let processedCount = 0;
 
@@ -152,7 +163,7 @@ async function createReadingSchedule(req, res) {
       if (batchCount >= batchSize) {
         await batch.commit();
         console.log(`✓ Created batch of ${batchCount} daily schedule entries`);
-        batch = db.batch();
+        batch = (await getDb()).batch();
         batchCount = 0;
       }
     }

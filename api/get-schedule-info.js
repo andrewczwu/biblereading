@@ -1,4 +1,15 @@
-const { db } = require('../config/firebase');
+const { ensureFirebaseInitialized } = require('../config/firebase');
+
+// Lazy initialization of db
+let db = null;
+async function getDb() {
+  if (!db) {
+    await ensureFirebaseInitialized();
+    const firebaseConfig = require('../config/firebase');
+    db = firebaseConfig.db;
+  }
+  return db;
+}
 
 async function getScheduleInfo(req, res) {
   try {
@@ -28,7 +39,7 @@ async function getScheduleInfo(req, res) {
       // Individual schedule
       console.log(`Processing individual schedule: ${scheduleId}`);
       
-      scheduleRef = db.collection('userReadingSchedules').doc(scheduleId);
+      scheduleRef = (await getDb()).collection('userReadingSchedules').doc(scheduleId);
       const scheduleDoc = await scheduleRef.get();
       
       if (!scheduleDoc.exists) {
@@ -44,7 +55,7 @@ async function getScheduleInfo(req, res) {
       console.log(`Processing group schedule: ${groupId}`);
       isGroupSchedule = true;
       
-      scheduleRef = db.collection('groupReadingSchedules').doc(groupId);
+      scheduleRef = (await getDb()).collection('groupReadingSchedules').doc(groupId);
       const groupDoc = await scheduleRef.get();
       
       if (!groupDoc.exists) {

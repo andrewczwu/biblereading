@@ -1,4 +1,15 @@
-const { db } = require('../config/firebase');
+const { ensureFirebaseInitialized } = require('../config/firebase');
+
+// Lazy initialization of db
+let db = null;
+async function getDb() {
+  if (!db) {
+    await ensureFirebaseInitialized();
+    const firebaseConfig = require('../config/firebase');
+    db = firebaseConfig.db;
+  }
+  return db;
+}
 
 async function getUserSchedules(req, res) {
   try {
@@ -14,7 +25,7 @@ async function getUserSchedules(req, res) {
     console.log(`Getting schedules for user ${userId}`);
 
     // Get user's individual reading schedules
-    let schedulesQuery = db.collection('userReadingSchedules');
+    let schedulesQuery = (await getDb()).collection('userReadingSchedules');
 
     // Filter by userId prefix (schedules are typically named userId_templateId_startDate)
     schedulesQuery = schedulesQuery.where('userId', '==', userId);
@@ -40,7 +51,7 @@ async function getUserSchedules(req, res) {
 
       try {
         // Get progress data for this schedule
-        const progressSnapshot = await db
+        const progressSnapshot = await (await getDb())
           .collection('userReadingSchedules')
           .doc(doc.id)
           .collection('progress')
@@ -91,10 +102,10 @@ async function getUserSchedules(req, res) {
     const groupMemberships = [];
     
     // Query all group schedules where user is a member
-    const allGroupsSnapshot = await db.collection('groupReadingSchedules').get();
+    const allGroupsSnapshot = await (await getDb()).collection('groupReadingSchedules').get();
     
     for (const groupDoc of allGroupsSnapshot.docs) {
-      const memberDoc = await db
+      const memberDoc = await (await getDb())
         .collection('groupReadingSchedules')
         .doc(groupDoc.id)
         .collection('members')
@@ -126,7 +137,7 @@ async function getUserSchedules(req, res) {
 
         // Calculate points from group progress
         try {
-          const groupProgressSnapshot = await db
+          const groupProgressSnapshot = await (await getDb())
             .collection('groupReadingSchedules')
             .doc(groupDoc.id)
             .collection('progress')
@@ -158,7 +169,7 @@ async function getUserSchedules(req, res) {
         // Count active members dynamically to ensure accuracy
         let actualMemberCount = 0;
         try {
-          const activeMembersSnapshot = await db
+          const activeMembersSnapshot = await (await getDb())
             .collection('groupReadingSchedules')
             .doc(groupDoc.id)
             .collection('members')

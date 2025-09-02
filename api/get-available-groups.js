@@ -1,11 +1,22 @@
-const { db } = require('../config/firebase');
+const { ensureFirebaseInitialized } = require('../config/firebase');
+
+// Lazy initialization of db
+let db = null;
+async function getDb() {
+  if (!db) {
+    await ensureFirebaseInitialized();
+    const firebaseConfig = require('../config/firebase');
+    db = firebaseConfig.db;
+  }
+  return db;
+}
 
 async function getAvailableGroups(req, res) {
   try {
     console.log('Getting available public groups');
 
     // Query for public group reading schedules that are active
-    const groupsSnapshot = await db
+    const groupsSnapshot = await (await getDb())
       .collection('groupReadingSchedules')
       .where('isPublic', '==', true)
       .where('status', '==', 'active')
@@ -27,7 +38,7 @@ async function getAvailableGroups(req, res) {
       // Get current member count
       let memberCount = 0;
       try {
-        const membersSnapshot = await db
+        const membersSnapshot = await (await getDb())
           .collection('groupReadingSchedules')
           .doc(doc.id)
           .collection('members')

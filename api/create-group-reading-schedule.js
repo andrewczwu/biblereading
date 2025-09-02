@@ -1,4 +1,15 @@
-const { db } = require('../config/firebase');
+const { ensureFirebaseInitialized } = require('../config/firebase');
+
+// Lazy initialization of db
+let db = null;
+async function getDb() {
+  if (!db) {
+    await ensureFirebaseInitialized();
+    const firebaseConfig = require('../config/firebase');
+    db = firebaseConfig.db;
+  }
+  return db;
+}
 
 function calculateDate(startDate, dayOffset) {
   const date = new Date(startDate);
@@ -55,7 +66,7 @@ async function createGroupReadingSchedule(req, res) {
     console.log(`Creating group reading schedule: ${groupName} using template ${templateId} starting ${startDate}`);
 
     // Step 1: Get the template
-    const templateDoc = await db.collection('readingTemplates').doc(templateId).get();
+    const templateDoc = await (await getDb()).collection('readingTemplates').doc(templateId).get();
     if (!templateDoc.exists) {
       return res.status(404).json({
         error: `Template ${templateId} not found`
@@ -68,7 +79,7 @@ async function createGroupReadingSchedule(req, res) {
     // Step 2: Generate or validate group ID
     const groupId = customGroupId || generateGroupId(groupName);
     
-    const existingGroup = await db.collection('groupReadingSchedules').doc(groupId).get();
+    const existingGroup = await (await getDb()).collection('groupReadingSchedules').doc(groupId).get();
     if (existingGroup.exists) {
       return res.status(409).json({
         error: 'Group ID already exists. Please choose a different group name or provide a custom group ID',
@@ -113,7 +124,7 @@ async function createGroupReadingSchedule(req, res) {
       updatedAt: new Date().toISOString()
     };
 
-    await db.collection('groupReadingSchedules').doc(groupId).set(groupScheduleData);
+    await (await getDb()).collection('groupReadingSchedules').doc(groupId).set(groupScheduleData);
     console.log(`✓ Created group schedule document: ${groupId}`);
 
     // Step 6: Add creator as the first member with admin role
@@ -138,7 +149,7 @@ async function createGroupReadingSchedule(req, res) {
 
     // Step 7: Create daily schedule documents in batches
     const batchSize = 500;
-    let batch = db.batch();
+    let batch = (await getDb()).batch();
     let batchCount = 0;
     let processedCount = 0;
 
@@ -187,7 +198,7 @@ async function createGroupReadingSchedule(req, res) {
       if (batchCount >= batchSize) {
         await batch.commit();
         console.log(`✓ Created batch of ${batchCount} daily schedule entries`);
-        batch = db.batch();
+        batch = (await getDb()).batch();
         batchCount = 0;
       }
     }

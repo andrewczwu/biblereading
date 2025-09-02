@@ -1,4 +1,15 @@
-const { db } = require('../config/firebase');
+const { ensureFirebaseInitialized } = require('../config/firebase');
+
+// Lazy initialization of db
+let db = null;
+async function getDb() {
+  if (!db) {
+    await ensureFirebaseInitialized();
+    const firebaseConfig = require('../config/firebase');
+    db = firebaseConfig.db;
+  }
+  return db;
+}
 
 async function createUserProfile(req, res) {
   try {
@@ -45,7 +56,7 @@ async function createUserProfile(req, res) {
     console.log(`Creating user profile for ${email} (${uid})`);
 
     // Check if user profile already exists and is active
-    const existingProfile = await db.collection('userProfiles').doc(uid).get();
+    const existingProfile = await (await getDb()).collection('userProfiles').doc(uid).get();
     if (existingProfile.exists) {
       const profileData = existingProfile.data();
       
@@ -122,7 +133,7 @@ async function createUserProfile(req, res) {
     };
 
     // Create the user profile document
-    await db.collection('userProfiles').doc(uid).set(userProfileData);
+    await (await getDb()).collection('userProfiles').doc(uid).set(userProfileData);
     
     console.log(`✓ Created user profile for ${email}`);
 
@@ -163,7 +174,7 @@ async function getUserProfile(req, res) {
     console.log(`Getting user profile for ${uid}`);
 
     // Get user profile document
-    const profileDoc = await db.collection('userProfiles').doc(uid).get();
+    const profileDoc = await (await getDb()).collection('userProfiles').doc(uid).get();
     
     if (!profileDoc.exists) {
       return res.status(404).json({
@@ -204,7 +215,7 @@ async function updateUserProfile(req, res) {
     console.log(`Updating user profile for ${uid}`);
 
     // Check if user profile exists
-    const profileDoc = await db.collection('userProfiles').doc(uid).get();
+    const profileDoc = await (await getDb()).collection('userProfiles').doc(uid).get();
     
     if (!profileDoc.exists) {
       return res.status(404).json({
@@ -248,12 +259,12 @@ async function updateUserProfile(req, res) {
     updateData.updatedAt = new Date().toISOString();
 
     // Update the profile
-    await db.collection('userProfiles').doc(uid).update(updateData);
+    await (await getDb()).collection('userProfiles').doc(uid).update(updateData);
     
     console.log(`✓ Updated user profile for ${uid}`);
 
     // Get updated profile
-    const updatedProfile = await db.collection('userProfiles').doc(uid).get();
+    const updatedProfile = await (await getDb()).collection('userProfiles').doc(uid).get();
 
     res.status(200).json({
       message: 'User profile updated successfully',
@@ -271,7 +282,7 @@ async function updateUserProfile(req, res) {
 
 async function updateUserStats(uid, statsUpdate) {
   try {
-    const profileRef = db.collection('userProfiles').doc(uid);
+    const profileRef = (await getDb()).collection('userProfiles').doc(uid);
     const profileDoc = await profileRef.get();
     
     if (!profileDoc.exists) {
@@ -308,7 +319,7 @@ async function deleteUserProfile(req, res) {
     console.log(`Deleting user profile for ${uid}`);
 
     // Check if user profile exists
-    const profileDoc = await db.collection('userProfiles').doc(uid).get();
+    const profileDoc = await (await getDb()).collection('userProfiles').doc(uid).get();
     
     if (!profileDoc.exists) {
       return res.status(404).json({
@@ -322,7 +333,7 @@ async function deleteUserProfile(req, res) {
     // 3. Require additional authentication/confirmation
 
     // For now, soft delete by marking as inactive
-    await db.collection('userProfiles').doc(uid).update({
+    await (await getDb()).collection('userProfiles').doc(uid).update({
       isActive: false,
       deletedAt: new Date().toISOString(),
       updatedAt: new Date().toISOString()

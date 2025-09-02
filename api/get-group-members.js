@@ -1,4 +1,15 @@
-const { db } = require('../config/firebase');
+const { ensureFirebaseInitialized } = require('../config/firebase');
+
+// Lazy initialization of db
+let db = null;
+async function getDb() {
+  if (!db) {
+    await ensureFirebaseInitialized();
+    const firebaseConfig = require('../config/firebase');
+    db = firebaseConfig.db;
+  }
+  return db;
+}
 
 async function getGroupMembers(req, res) {
   try {
@@ -14,7 +25,7 @@ async function getGroupMembers(req, res) {
     console.log(`Getting members for group ${groupId}`);
 
     // Step 1: Check if group exists
-    const groupDoc = await db.collection('groupReadingSchedules').doc(groupId).get();
+    const groupDoc = await (await getDb()).collection('groupReadingSchedules').doc(groupId).get();
     if (!groupDoc.exists) {
       return res.status(404).json({
         error: 'Group reading schedule not found'
@@ -56,7 +67,7 @@ async function getGroupMembers(req, res) {
       
       try {
         // Get user profile information
-        const userProfileDoc = await db.collection('userProfiles').doc(memberData.userId).get();
+        const userProfileDoc = await (await getDb()).collection('userProfiles').doc(memberData.userId).get();
         let userProfile = null;
         
         if (userProfileDoc.exists) {

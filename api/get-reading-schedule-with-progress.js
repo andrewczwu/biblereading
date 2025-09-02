@@ -1,4 +1,15 @@
-const { db } = require('../config/firebase');
+const { ensureFirebaseInitialized } = require('../config/firebase');
+
+// Lazy initialization of db
+let db = null;
+async function getDb() {
+  if (!db) {
+    await ensureFirebaseInitialized();
+    const firebaseConfig = require('../config/firebase');
+    db = firebaseConfig.db;
+  }
+  return db;
+}
 
 async function getReadingScheduleWithProgress(req, res) {
   try {
@@ -36,7 +47,7 @@ async function getReadingScheduleWithProgress(req, res) {
       // Individual schedule
       console.log(`Processing individual schedule: ${scheduleId}`);
       
-      scheduleRef = db.collection('userReadingSchedules').doc(scheduleId);
+      scheduleRef = (await getDb()).collection('userReadingSchedules').doc(scheduleId);
       const scheduleDoc = await scheduleRef.get();
       
       if (!scheduleDoc.exists) {
@@ -61,7 +72,7 @@ async function getReadingScheduleWithProgress(req, res) {
       console.log(`Processing group schedule: ${groupId}`);
       isGroupSchedule = true;
       
-      scheduleRef = db.collection('groupReadingSchedules').doc(groupId);
+      scheduleRef = (await getDb()).collection('groupReadingSchedules').doc(groupId);
       const groupDoc = await scheduleRef.get();
       
       if (!groupDoc.exists) {
@@ -261,7 +272,7 @@ async function getDayReading(req, res) {
 
     // Get schedule reference and verify access
     if (scheduleId) {
-      scheduleRef = db.collection('userReadingSchedules').doc(scheduleId);
+      scheduleRef = (await getDb()).collection('userReadingSchedules').doc(scheduleId);
       const scheduleDoc = await scheduleRef.get();
       
       if (!scheduleDoc.exists || scheduleDoc.data().userId !== userId) {
@@ -270,7 +281,7 @@ async function getDayReading(req, res) {
       
       progressCollection = scheduleRef.collection('progress');
     } else {
-      scheduleRef = db.collection('groupReadingSchedules').doc(groupId);
+      scheduleRef = (await getDb()).collection('groupReadingSchedules').doc(groupId);
       const memberDoc = await scheduleRef.collection('members').doc(userId).get();
       
       if (!memberDoc.exists || memberDoc.data().status !== 'active') {
