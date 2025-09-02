@@ -3,8 +3,14 @@ import { cacheUtils } from '../utils/cache';
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000/api';
 
+// For production, the API endpoints are already prefixed with /api in the Cloud Functions URL
+const isProduction = import.meta.env.PROD;
+const baseURL = isProduction && API_BASE_URL.includes('cloudfunctions.net') 
+  ? API_BASE_URL 
+  : API_BASE_URL;
+
 const api = axios.create({
-  baseURL: API_BASE_URL,
+  baseURL: baseURL,
   headers: {
     'Content-Type': 'application/json',
   },

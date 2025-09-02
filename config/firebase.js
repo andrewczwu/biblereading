@@ -14,7 +14,7 @@ async function initializeFirebase() {
       console.log('✓ Firebase initialized with service account from Secret Manager');
     } catch (error) {
       console.warn('Failed to retrieve service account from Secret Manager, falling back to local file:', error.message);
-      
+      /*
       // Fallback to local service account file for development
       try {
         const serviceAccount = require('../biblereading-pkey.json');
@@ -26,6 +26,7 @@ async function initializeFirebase() {
         console.error('Failed to initialize Firebase with local service account:', localError);
         throw localError;
       }
+        */
     }
   }
 }
