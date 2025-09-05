@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import { progressAPI } from '../../services/api';
 import { theme } from '../../styles/theme';
@@ -158,15 +159,37 @@ const ReadingInfo = styled.div`
   line-height: 1.2;
 `;
 
+const ReadingLink = styled.a`
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
+  transition: all 0.2s;
+  
+  &:hover {
+    transform: translateY(-1px);
+  }
+`;
+
 const BookName = styled.div`
   font-weight: ${theme.fontWeights.semibold};
   color: ${theme.colors.primary[700]};
   margin-bottom: ${theme.spacing[1]};
+  transition: color 0.2s;
+  
+  ${ReadingLink}:hover & {
+    color: ${theme.colors.primary[800]};
+    text-decoration: underline;
+  }
 `;
 
 const ChapterVerse = styled.div`
   color: ${theme.colors.gray[600]};
   margin-bottom: ${theme.spacing[2]};
+  transition: color 0.2s;
+  
+  ${ReadingLink}:hover & {
+    color: ${theme.colors.gray[800]};
+  }
 `;
 
 
@@ -226,6 +249,9 @@ interface ReadingCalendarProps {
 
 export const ReadingCalendar: React.FC<ReadingCalendarProps> = ({ scheduleId, groupId }) => {
   const { currentUser } = useAuth();
+  const navigate = useNavigate();
+  
+  console.log('ReadingCalendar props:', { scheduleId, groupId });
   const [currentDate, setCurrentDate] = useState(new Date());
   const [readings, setReadings] = useState<ReadingDay[]>([]);
   const [loading, setLoading] = useState(true);
@@ -366,6 +392,29 @@ export const ReadingCalendar: React.FC<ReadingCalendarProps> = ({ scheduleId, gr
     });
   };
 
+  const handleReadingClick = (bookName: string, chapterVerse: string, dayNumber: number) => {
+    const label = `${bookName} ${chapterVerse}`;
+    const scheduleType = groupId ? 'group' : 'individual';
+    const id = groupId || scheduleId;
+    
+    console.log('ReadingCalendar handleReadingClick:', { groupId, scheduleId, id, scheduleType });
+    
+    if (!id) {
+      console.error('No schedule ID available for reading click');
+      return;
+    }
+    
+    const params = new URLSearchParams({
+      label,
+      scheduleId: id,
+      scheduleType,
+      dayNumber: dayNumber.toString(),
+      return: '/calendar'
+    });
+    
+    navigate(`/bible-reading?${params.toString()}`);
+  };
+
   const dayHeaders = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   const monthNames = [
     'January', 'February', 'March', 'April', 'May', 'June',
@@ -434,10 +483,19 @@ export const ReadingCalendar: React.FC<ReadingCalendarProps> = ({ scheduleId, gr
               <>
                 <ReadingInfo>
                   {groupPortionsByBook(day.reading.portions).map((bookGroup, index) => (
-                    <div key={index} style={{ marginBottom: '4px' }}>
+                    <ReadingLink 
+                      key={index} 
+                      style={{ marginBottom: '4px' }}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        handleReadingClick(bookGroup.bookName, bookGroup.formattedVerse, day.reading!.dayNumber);
+                      }}
+                      href="#"
+                    >
                       <BookName>{bookGroup.bookName.substring(0, 4)}</BookName>
                       <ChapterVerse>{bookGroup.formattedVerse}</ChapterVerse>
-                    </div>
+                    </ReadingLink>
                   ))}
                 </ReadingInfo>
               </>

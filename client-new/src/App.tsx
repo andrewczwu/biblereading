@@ -8,12 +8,14 @@ import { PrivateRoute } from './components/auth/PrivateRoute';
 import { Header } from './components/layout/Header';
 import { Login } from './components/auth/Login';
 import { Register } from './components/auth/Register';
+import { ForgotPassword } from './components/auth/ForgotPassword';
 import { Dashboard } from './components/Dashboard';
 import Schedules from './pages/Schedules';
 import { GroupMembersPage } from './pages/GroupMembersPage';
 import { CalendarPage } from './pages/CalendarPage';
 import { ProfilePage } from './pages/ProfilePage';
 import { JoinGroupPage } from './pages/JoinGroupPage';
+import { BibleReading } from './pages/BibleReading';
 import { cacheUtils } from './utils/cache';
 
 const AppContainer = styled.div`
@@ -69,6 +71,7 @@ function App() {
           {/* Public routes */}
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
           
           {/* Protected routes */}
           <Route path="/dashboard" element={
@@ -104,6 +107,12 @@ function App() {
           <Route path="/profile" element={
             <PrivateRoute requireProfile>
               <ProfilePage />
+            </PrivateRoute>
+          } />
+          
+          <Route path="/bible-reading" element={
+            <PrivateRoute requireProfile>
+              <BibleReading />
             </PrivateRoute>
           } />
           

@@ -328,6 +328,7 @@ export const CalendarPage: React.FC = () => {
         </ScheduleSelector>
       )}
 
+      {console.log('CalendarPage selectedSchedule:', selectedSchedule)}
       {selectedSchedule && (
         <>
           {/* View Toggle - show on both mobile and desktop */}
