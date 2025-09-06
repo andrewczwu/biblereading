@@ -223,11 +223,14 @@ const ReadingSection = styled.div`
 const ReadingLink = styled.a`
   text-decoration: none;
   cursor: pointer;
-  display: inline-block;
+  display: block;
   transition: all 0.2s;
+  padding: ${theme.spacing[1]} 0;
+  border-radius: ${theme.borderRadius.sm};
   
   &:hover {
     transform: translateY(-1px);
+    background: ${theme.colors.gray[50]};
   }
 `;
 
@@ -237,6 +240,7 @@ const BookName = styled.div`
   color: ${theme.colors.primary[700]};
   margin-bottom: ${theme.spacing[1]};
   transition: color 0.2s;
+  pointer-events: none;
   
   ${ReadingLink}:hover & {
     color: ${theme.colors.primary[800]};
@@ -247,12 +251,13 @@ const BookName = styled.div`
 const ChapterVerse = styled.div`
   font-size: ${theme.fontSizes.sm};
   color: ${theme.colors.gray[600]};
-  margin-bottom: ${theme.spacing[3]};
   line-height: 1.4;
   transition: color 0.2s;
+  pointer-events: none;
   
   ${ReadingLink}:hover & {
     color: ${theme.colors.gray[800]};
+    text-decoration: underline;
   }
 `;
 
@@ -511,7 +516,7 @@ export const WeekView: React.FC<WeekViewProps> = ({ scheduleId, groupId }) => {
       scheduleId: id,
       scheduleType,
       dayNumber: dayNumber.toString(),
-      return: '/calendar'
+      return: '/calendar?viewMode=week'
     });
     
     console.log('WeekView navigating with params:', params.toString());

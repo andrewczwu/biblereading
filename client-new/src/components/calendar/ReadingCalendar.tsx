@@ -164,9 +164,12 @@ const ReadingLink = styled.a`
   cursor: pointer;
   display: block;
   transition: all 0.2s;
+  padding: ${theme.spacing[1]} 0;
+  border-radius: ${theme.borderRadius.sm};
   
   &:hover {
     transform: translateY(-1px);
+    background: ${theme.colors.primary[50]};
   }
 `;
 
@@ -175,6 +178,7 @@ const BookName = styled.div`
   color: ${theme.colors.primary[700]};
   margin-bottom: ${theme.spacing[1]};
   transition: color 0.2s;
+  pointer-events: none;
   
   ${ReadingLink}:hover & {
     color: ${theme.colors.primary[800]};
@@ -186,9 +190,11 @@ const ChapterVerse = styled.div`
   color: ${theme.colors.gray[600]};
   margin-bottom: ${theme.spacing[2]};
   transition: color 0.2s;
+  pointer-events: none;
   
   ${ReadingLink}:hover & {
     color: ${theme.colors.gray[800]};
+    text-decoration: underline;
   }
 `;
 
@@ -409,7 +415,7 @@ export const ReadingCalendar: React.FC<ReadingCalendarProps> = ({ scheduleId, gr
       scheduleId: id,
       scheduleType,
       dayNumber: dayNumber.toString(),
-      return: '/calendar'
+      return: '/calendar?viewMode=month'
     });
     
     navigate(`/bible-reading?${params.toString()}`);

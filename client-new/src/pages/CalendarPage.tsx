@@ -196,6 +196,11 @@ export const CalendarPage: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<'month' | 'week'>(() => {
+    // Check URL parameter first
+    const urlViewMode = searchParams.get('viewMode');
+    if (urlViewMode === 'week' || urlViewMode === 'month') {
+      return urlViewMode;
+    }
     // Default to week view on mobile, month view on desktop
     return window.innerWidth <= 768 ? 'week' : 'month';
   });
@@ -271,6 +276,14 @@ export const CalendarPage: React.FC = () => {
       fetchAvailableSchedules();
     }
   }, [currentUser, searchParams]);
+
+  useEffect(() => {
+    // Update view mode when URL parameter changes
+    const urlViewMode = searchParams.get('viewMode');
+    if (urlViewMode === 'week' || urlViewMode === 'month') {
+      setViewMode(urlViewMode);
+    }
+  }, [searchParams]);
 
   const handleScheduleSelect = (schedule: Schedule) => {
     setSelectedSchedule(schedule);

@@ -15,20 +15,26 @@ const SmallSpinner = styled(LoadingSpinner)`
 `;
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+  height: calc(100vh - 64px);
+  width: 100%;
+  position: relative;
   background: ${theme.colors.gray[50]};
 `;
 
-const Header = styled.div`
+const Header = styled.header`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: ${theme.spacing[4]};
-  background: white;
+  padding: 0 ${theme.spacing[4]};
+  background: ${theme.colors.white};
   border-bottom: 1px solid ${theme.colors.gray[200]};
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  z-index: 10;
 `;
 
 const Title = styled.h1`
@@ -36,15 +42,23 @@ const Title = styled.h1`
   font-weight: ${theme.fontWeights.bold};
   color: ${theme.colors.gray[900]};
   margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 50%;
+  margin-right: ${theme.spacing[4]};
 
   @media (max-width: ${theme.breakpoints.sm}) {
     font-size: ${theme.fontSizes.base};
+    max-width: 40%;
   }
 `;
 
 const Actions = styled.div`
   display: flex;
   gap: ${theme.spacing[3]};
+  flex-shrink: 0;
+  align-items: center;
 `;
 
 const Button = styled.button<{ variant?: 'primary' | 'secondary' }>`
@@ -54,9 +68,11 @@ const Button = styled.button<{ variant?: 'primary' | 'secondary' }>`
   font-size: ${theme.fontSizes.sm};
   cursor: pointer;
   transition: all 0.2s;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: ${theme.spacing[2]};
+  flex-shrink: 0;
+  white-space: nowrap;
 
   ${props => props.variant === 'primary' ? `
     background: ${theme.colors.primary[600]};
@@ -83,15 +99,20 @@ const Button = styled.button<{ variant?: 'primary' | 'secondary' }>`
 `;
 
 const IframeContainer = styled.div`
-  flex: 1;
-  position: relative;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: white;
+  overflow: auto;
 `;
 
 const Iframe = styled.iframe`
   width: 100%;
   height: 100%;
   border: none;
+  display: block;
 `;
 
 const LoadingOverlay = styled.div`
@@ -142,8 +163,6 @@ export const BibleReading: React.FC = () => {
   const dayNumber = searchParams.get('dayNumber');
   const returnPath = searchParams.get('return') || '/calendar';
 
-  console.log('URL params:', { label, scheduleId, scheduleType, dayNumber, returnPath });
-  console.log('Auth state:', { user: user ? { uid: user.uid } : null, authLoading });
 
   const bibleUrl = label ? generateBibleUrl(label) : null;
 
@@ -166,23 +185,7 @@ export const BibleReading: React.FC = () => {
   };
 
   const handleMarkComplete = async () => {
-    console.log('handleMarkComplete called', { 
-      user: user ? { uid: user.uid, email: user.email } : null, 
-      scheduleId, 
-      dayNumber, 
-      scheduleType 
-    });
-    
-    const validations = {
-      hasUser: !!user,
-      hasScheduleId: !!scheduleId && scheduleId !== '',
-      hasDayNumber: !!dayNumber,
-      hasScheduleType: !!scheduleType
-    };
-    console.log('Validation checks:', validations);
-    
     if (!user || !scheduleId || scheduleId === '' || !dayNumber || !scheduleType) {
-      console.error('Missing required data:', { user: !!user, scheduleId, dayNumber, scheduleType });
       toast.error('Missing schedule information. Cannot mark as complete.');
       return;
     }
@@ -206,7 +209,6 @@ export const BibleReading: React.FC = () => {
         params.scheduleId = scheduleId;
       }
 
-      console.log('Sending params to API:', params);
       await progressAPI.markCompleted(params);
 
       toast.success('Reading marked as complete!');
@@ -267,38 +269,45 @@ export const BibleReading: React.FC = () => {
       <Header>
         <Title>{label}</Title>
         <Actions>
-          {console.log('Render check:', { scheduleId, dayNumber, scheduleType, scheduleIdTruthy: !!scheduleId && scheduleId !== '' })}
-          {scheduleId && scheduleId !== '' && dayNumber && scheduleType ? (
-            <Button 
-              variant="primary" 
-              onClick={handleMarkComplete}
-              disabled={marking}
-            >
-              {marking ? (
-                <>
-                  <SmallSpinner />
-                  Marking...
-                </>
-              ) : (
-                <>
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                    <path 
-                      d="M16.667 5L7.5 14.167L3.333 10" 
-                      stroke="currentColor" 
-                      strokeWidth="2" 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                  Mark Complete
-                </>
-              )}
-            </Button>
-          ) : (
-            <Button variant="secondary" disabled>
-              Mark Complete (No Schedule Info)
-            </Button>
-          )}
+          {(() => {
+            const condition = !!(scheduleId && scheduleId !== '' && dayNumber && scheduleType);
+            
+            if (condition) {
+              return (
+                <Button 
+                  variant="primary" 
+                  onClick={handleMarkComplete}
+                  disabled={marking}
+                >
+                  {marking ? (
+                    <>
+                      <SmallSpinner />
+                      Marking...
+                    </>
+                  ) : (
+                    <>
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path 
+                          d="M16.667 5L7.5 14.167L3.333 10" 
+                          stroke="currentColor" 
+                          strokeWidth="2" 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                      Mark Complete
+                    </>
+                  )}
+                </Button>
+              );
+            } else {
+              return (
+                <Button variant="secondary" disabled>
+                  Mark Complete (No Schedule Info)
+                </Button>
+              );
+            }
+          })()}
           <Button onClick={handleBack}>
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
               <path 
