@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
 import { useAuth } from '../../contexts/AuthContext';
 import { progressAPI } from '../../services/api';
@@ -219,18 +220,45 @@ const ReadingSection = styled.div`
   }
 `;
 
+const ReadingLink = styled.a`
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
+  transition: all 0.2s;
+  padding: ${theme.spacing[1]} 0;
+  border-radius: ${theme.borderRadius.sm};
+  
+  &:hover {
+    transform: translateY(-1px);
+    background: ${theme.colors.gray[50]};
+  }
+`;
+
 const BookName = styled.div`
   font-size: ${theme.fontSizes.base};
   font-weight: ${theme.fontWeights.semibold};
   color: ${theme.colors.primary[700]};
   margin-bottom: ${theme.spacing[1]};
+  transition: color 0.2s;
+  pointer-events: none;
+  
+  ${ReadingLink}:hover & {
+    color: ${theme.colors.primary[800]};
+    text-decoration: underline;
+  }
 `;
 
 const ChapterVerse = styled.div`
   font-size: ${theme.fontSizes.sm};
   color: ${theme.colors.gray[600]};
-  margin-bottom: ${theme.spacing[3]};
   line-height: 1.4;
+  transition: color 0.2s;
+  pointer-events: none;
+  
+  ${ReadingLink}:hover & {
+    color: ${theme.colors.gray[800]};
+    text-decoration: underline;
+  }
 `;
 
 const CompletionSection = styled.div`
@@ -331,6 +359,9 @@ interface WeekViewProps {
 
 export const WeekView: React.FC<WeekViewProps> = ({ scheduleId, groupId }) => {
   const { currentUser } = useAuth();
+  const navigate = useNavigate();
+  
+  console.log('WeekView props:', { scheduleId, groupId });
   const [readings, setReadings] = useState<ReadingDay[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -465,6 +496,31 @@ export const WeekView: React.FC<WeekViewProps> = ({ scheduleId, groupId }) => {
       newStart.setDate(prev.getDate() + (direction === 'next' ? 7 : -7));
       return newStart;
     });
+  };
+
+  const handleReadingClick = (bookName: string, chapterVerse: string, dayNumber: number) => {
+    const label = `${bookName} ${chapterVerse}`;
+    const scheduleType = groupId ? 'group' : 'individual';
+    const id = groupId || scheduleId;
+    
+    console.log('WeekView handleReadingClick:', { groupId, scheduleId, id, scheduleType });
+    
+    if (!id) {
+      console.error('No schedule ID available for reading click');
+      console.warn('This will result in Mark Complete button not showing');
+      return;
+    }
+    
+    const params = new URLSearchParams({
+      label,
+      scheduleId: id,
+      scheduleType,
+      dayNumber: dayNumber.toString(),
+      return: '/calendar?viewMode=week'
+    });
+    
+    console.log('WeekView navigating with params:', params.toString());
+    navigate(`/bible-reading?${params.toString()}`);
   };
 
   const handleTaskChange = async (dayNumber: number, taskType: keyof CompletionTasks, isChecked: boolean) => {
@@ -611,8 +667,16 @@ export const WeekView: React.FC<WeekViewProps> = ({ scheduleId, groupId }) => {
                   <>
                     {groupPortionsByBook(day.reading.portions).map((bookGroup, idx) => (
                       <ReadingSection key={idx}>
-                        <BookName>{bookGroup.bookName}</BookName>
-                        <ChapterVerse>{bookGroup.formattedVerse}</ChapterVerse>
+                        <ReadingLink 
+                          onClick={(e) => {
+                            e.preventDefault();
+                            handleReadingClick(bookGroup.bookName, bookGroup.formattedVerse, day.reading!.dayNumber);
+                          }}
+                          href="#"
+                        >
+                          <BookName>{bookGroup.bookName}</BookName>
+                          <ChapterVerse>{bookGroup.formattedVerse}</ChapterVerse>
+                        </ReadingLink>
                       </ReadingSection>
                     ))}
                     
