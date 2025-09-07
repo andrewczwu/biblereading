@@ -19,7 +19,8 @@
       "Bash(npm create:*)",
       "Bash(curl:*)",
       "Bash(NODE_ENV=test npx jest __tests__/api/user-profile.test.js --verbose)",
-      "Bash(NODE_ENV=test npm test -- --passWithNoTests)"
+      "Bash(NODE_ENV=test npm test -- --passWithNoTests)",
+      "Bash(npm run build:*)"
     ],
     "deny": [],
     "ask": []

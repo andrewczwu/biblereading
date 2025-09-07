@@ -3,7 +3,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { useAuth } from '../contexts/AuthContext';
 import { progressAPI } from '../services/api';
-import { generateBibleUrl, parseReadingLabel } from '../utils/bibleBooks';
+import { generateBibleUrl } from '../utils/bibleBooks';
 import toast from 'react-hot-toast';
 import { LoadingSpinner } from '../components/ui/LoadingStates';
 import { theme } from '../styles/theme';
