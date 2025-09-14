@@ -37,8 +37,6 @@ interface ProfileFormData {
   displayName: string;
   firstName: string;
   lastName: string;
-  dateOfBirth: string;
-  phoneNumber: string;
 }
 
 export const ProfilePage: React.FC = () => {
@@ -58,9 +56,7 @@ export const ProfilePage: React.FC = () => {
       reset({
         displayName: userProfile.displayName || '',
         firstName: userProfile.firstName || '',
-        lastName: userProfile.lastName || '',
-        dateOfBirth: userProfile.dateOfBirth || '',
-        phoneNumber: userProfile.phoneNumber || ''
+        lastName: userProfile.lastName || ''
       });
     }
   }, [userProfile, reset]);
@@ -168,27 +164,6 @@ export const ProfilePage: React.FC = () => {
             {errors.displayName && <ErrorMessage>{errors.displayName.message}</ErrorMessage>}
           </FormGroup>
 
-          <FormRow>
-            <FormGroup>
-              <Label htmlFor="dateOfBirth">Date of Birth</Label>
-              <StyledInput
-                id="dateOfBirth"
-                type="date"
-                disabled={!isEditing}
-                {...register('dateOfBirth')}
-              />
-            </FormGroup>
-
-            <FormGroup>
-              <Label htmlFor="phoneNumber">Phone Number</Label>
-              <StyledInput
-                id="phoneNumber"
-                type="tel"
-                disabled={!isEditing}
-                {...register('phoneNumber')}
-              />
-            </FormGroup>
-          </FormRow>
 
 
           <ButtonGroup>

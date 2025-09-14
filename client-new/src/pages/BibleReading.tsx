@@ -61,7 +61,7 @@ const Actions = styled.div`
   align-items: center;
 `;
 
-const Button = styled.button<{ variant?: 'primary' | 'secondary' }>`
+const Button = styled.button<{ variant?: 'primary' | 'secondary' | 'success' }>`
   padding: ${theme.spacing[2]} ${theme.spacing[4]};
   border-radius: ${theme.borderRadius.md};
   font-weight: 600;
@@ -74,28 +74,50 @@ const Button = styled.button<{ variant?: 'primary' | 'secondary' }>`
   flex-shrink: 0;
   white-space: nowrap;
 
-  ${props => props.variant === 'primary' ? `
-    background: ${theme.colors.primary[600]};
-    color: white;
-    border: none;
-    
-    &:hover:not(:disabled) {
-      background: ${theme.colors.primary[700]};
+  ${props => {
+    if (props.variant === 'primary') {
+      return `
+        background: ${theme.colors.primary[600]};
+        color: white;
+        border: none;
+        
+        &:hover:not(:disabled) {
+          background: ${theme.colors.primary[700]};
+        }
+        
+        &:disabled {
+          background: ${theme.colors.gray[300]};
+          cursor: not-allowed;
+        }
+      `;
+    } else if (props.variant === 'success') {
+      return `
+        background: ${theme.colors.green[600]};
+        color: white;
+        border: none;
+        
+        &:hover:not(:disabled) {
+          background: ${theme.colors.green[700]};
+        }
+        
+        &:disabled {
+          background: ${theme.colors.green[600]};
+          cursor: default;
+          opacity: 0.9;
+        }
+      `;
+    } else {
+      return `
+        background: white;
+        color: ${theme.colors.gray[700]};
+        border: 1px solid ${theme.colors.gray[300]};
+        
+        &:hover:not(:disabled) {
+          background: ${theme.colors.gray[50]};
+        }
+      `;
     }
-    
-    &:disabled {
-      background: ${theme.colors.gray[300]};
-      cursor: not-allowed;
-    }
-  ` : `
-    background: white;
-    color: ${theme.colors.gray[700]};
-    border: 1px solid ${theme.colors.gray[300]};
-    
-    &:hover:not(:disabled) {
-      background: ${theme.colors.gray[50]};
-    }
-  `}
+  }}
 `;
 
 const IframeContainer = styled.div`
@@ -156,6 +178,7 @@ export const BibleReading: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [marking, setMarking] = useState(false);
   const [iframeLoaded, setIframeLoaded] = useState(false);
+  const [isCompleted, setIsCompleted] = useState(false);
 
   const label = searchParams.get('label');
   const scheduleId = searchParams.get('scheduleId');
@@ -176,6 +199,41 @@ export const BibleReading: React.FC = () => {
 
     return () => clearTimeout(timer);
   }, [iframeLoaded]);
+
+  // Fetch completion status
+  useEffect(() => {
+    const fetchCompletionStatus = async () => {
+      if (!user || !scheduleId || !dayNumber || !scheduleType) return;
+
+      try {
+        const params: any = {
+          userId: user.uid
+        };
+
+        if (scheduleType === 'group') {
+          params.groupId = scheduleId;
+        } else {
+          params.scheduleId = scheduleId;
+        }
+
+        const response = await progressAPI.getScheduleWithProgress(params);
+        
+        if (response.readings) {
+          const reading = response.readings.find((r: any) => 
+            r.dayNumber === parseInt(dayNumber)
+          );
+          
+          if (reading?.completionTasks?.verseText) {
+            setIsCompleted(true);
+          }
+        }
+      } catch (error) {
+        console.error('Error fetching completion status:', error);
+      }
+    };
+
+    fetchCompletionStatus();
+  }, [user, scheduleId, dayNumber, scheduleType]);
 
   const handleIframeLoad = () => {
     setIframeLoaded(true);
@@ -211,12 +269,8 @@ export const BibleReading: React.FC = () => {
 
       await progressAPI.markCompleted(params);
 
+      setIsCompleted(true);
       toast.success('Reading marked as complete!');
-      
-      // Give a brief moment for the toast to show
-      setTimeout(() => {
-        navigate(returnPath);
-      }, 500);
     } catch (error) {
       console.error('Error marking reading complete:', error);
       toast.error('Failed to mark reading as complete');
@@ -275,14 +329,27 @@ export const BibleReading: React.FC = () => {
             if (condition) {
               return (
                 <Button 
-                  variant="primary" 
+                  variant={isCompleted ? "success" : "primary"} 
                   onClick={handleMarkComplete}
-                  disabled={marking}
+                  disabled={marking || isCompleted}
                 >
                   {marking ? (
                     <>
                       <SmallSpinner />
                       Marking...
+                    </>
+                  ) : isCompleted ? (
+                    <>
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path 
+                          d="M16.667 5L7.5 14.167L3.333 10" 
+                          stroke="currentColor" 
+                          strokeWidth="2" 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                      Completed
                     </>
                   ) : (
                     <>

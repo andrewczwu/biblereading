@@ -37,10 +37,6 @@ interface RegisterFormData {
   displayName: string;
   firstName: string;
   lastName: string;
-  phoneNumber?: string;
-  dateOfBirth?: string;
-  reminderTime: string;
-  enableReminders: boolean;
 }
 
 export const Register: React.FC = () => {
@@ -72,13 +68,13 @@ export const Register: React.FC = () => {
         displayName: data.displayName,
         firstName: data.firstName,
         lastName: data.lastName,
-        phoneNumber: data.phoneNumber || null,
-        dateOfBirth: data.dateOfBirth || null,
+        phoneNumber: null,
+        dateOfBirth: null,
         timezone: 'UTC', // Default timezone
         preferredLanguage: 'en', // Default language
         readingPreferences: {
-          reminderTime: data.reminderTime,
-          enableReminders: data.enableReminders,
+          reminderTime: '08:00',
+          enableReminders: true,
           preferredTranslation: 'ESV', // Default translation
           readingGoal: 'daily'
         },
@@ -266,54 +262,9 @@ export const Register: React.FC = () => {
                 {errors.lastName && <ErrorMessage>{errors.lastName.message}</ErrorMessage>}
               </FormGroup>
 
-              <FormGroup>
-                <Label>Phone Number (Optional)</Label>
-                <Input
-                  {...register('phoneNumber')}
-                  type="tel"
-                  placeholder="+1234567890"
-                />
-              </FormGroup>
-
-              <FormGroup>
-                <Label>Date of Birth (Optional)</Label>
-                <Input
-                  {...register('dateOfBirth')}
-                  type="date"
-                />
-              </FormGroup>
             </GridContainer>
           </Section>
 
-          {/* Reading Preferences */}
-          <Section>
-            <SectionTitle>Reading Preferences</SectionTitle>
-            
-            <GridContainer>
-              <FormGroup>
-                <Label>Daily Reminder Time *</Label>
-                <Input
-                  {...register('reminderTime', { required: 'Reminder time is required' })}
-                  type="time"
-                  defaultValue="08:00"
-                  $hasError={!!errors.reminderTime}
-                />
-                {errors.reminderTime && <ErrorMessage>{errors.reminderTime.message}</ErrorMessage>}
-              </FormGroup>
-            </GridContainer>
-
-            <CheckboxContainer>
-              <Checkbox
-                {...register('enableReminders')}
-                type="checkbox"
-                defaultChecked
-                id="enableReminders"
-              />
-              <CheckboxLabel htmlFor="enableReminders">
-                Enable daily reminders
-              </CheckboxLabel>
-            </CheckboxContainer>
-          </Section>
 
           <ButtonContainer>
             <Button type="submit" disabled={loading}>
